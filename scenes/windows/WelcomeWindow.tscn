@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b51joitctnqtg"]
+
+[ext_resource type="FontFile" uid="uid://b75fm5jbk1qk8" path="res://fonts/Tomorrow-Italic.ttf" id="1_6ph2y"]
+[ext_resource type="Script" uid="uid://dd0jet7fi345e" path="res://scripts/windows/welcome_window_controller.gd" id="1_o3twq"]
+[ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="1_rvda4"]
+[ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="2_rvda4"]
+[ext_resource type="FontFile" uid="uid://1l5s45rufli3" path="res://fonts/Tomorrow-SemiBold.ttf" id="3_o3twq"]
+
+[node name="WelcomeWindowWND" type="Window"]
+title = "WELCOME_WINDOW_TTL"
+initial_position = 1
+size = Vector2i(640, 250)
+transient = true
+exclusive = true
+script = ExtResource("1_o3twq")
+
+[node name="WelcomeWindowVBC" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WelcomeHeaderLB" type="Label" parent="WelcomeWindowVBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "WELCOME_WINDOW_HEADER_LB"
+horizontal_alignment = 1
+
+[node name="WelcomeMsgRTL" type="RichTextLabel" parent="WelcomeWindowVBC"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_rvda4")
+theme_override_fonts/italics_font = ExtResource("1_6ph2y")
+theme_override_fonts/bold_italics_font = ExtResource("2_rvda4")
+theme_override_fonts/bold_font = ExtResource("3_o3twq")
+bbcode_enabled = true
+text = "WELCOME_WINDOW_MSG_RTL"
+fit_content = true
+vertical_alignment = 1
+
+[node name="StartBTN" type="Button" parent="WelcomeWindowVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "WELCOME_WINDOW_START_BTN"

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpp1a11c7u1p8"]
+
+[ext_resource type="Script" uid="uid://bhkwfv88idqna" path="res://scripts/windows/wp_import_window_controller.gd" id="1_jqjb6"]
+[ext_resource type="Script" uid="uid://io47526ry36b" path="res://scripts/buttons/add_wallpapers_handler.gd" id="2_1mjy0"]
+[ext_resource type="Script" uid="uid://og5mwlwh5dc2" path="res://scripts/list_container_controller.gd" id="2_352b4"]
+[ext_resource type="PackedScene" uid="uid://csyenpvs8wqb1" path="res://scenes/custom_components/ImportedWallpaperEntry.tscn" id="3_yjsvw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wavjq"]
+bg_color = Color(0.12, 0.12, 0.12, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[node name="WPImportWND" type="Window"]
+title = "WP_IMPORT_WINDOW_TTL"
+initial_position = 1
+size = Vector2i(600, 480)
+script = ExtResource("1_jqjb6")
+
+[node name="ElementsContainerVBC" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImportHeaderLB" type="Label" parent="ElementsContainerVBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "WP_IMPORT_HEADER_LB"
+horizontal_alignment = 1
+
+[node name="WPNoLB" type="Label" parent="ElementsContainerVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.621524, 0.621524, 0.621524, 1)
+theme_override_font_sizes/font_size = 15
+text = "WP_IMPORT_WP_NO_LB"
+horizontal_alignment = 1
+
+[node name="WPListP" type="Panel" parent="ElementsContainerVBC"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wavjq")
+
+[node name="WPListSC" type="ScrollContainer" parent="ElementsContainerVBC/WPListP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WPListVBC" type="VBoxContainer" parent="ElementsContainerVBC/WPListP/WPListSC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_352b4")
+item_res = ExtResource("3_yjsvw")
+
+[node name="AddWallpapersBTN" type="Button" parent="ElementsContainerVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ADD_WP_BTN"
+script = ExtResource("2_1mjy0")
+
+[node name="LoadWallpapersBTN" type="Button" parent="ElementsContainerVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "WP_IMPORT_LOAD_BTN"
+
+[node name="AddWallpaperFD" type="FileDialog" parent="."]
+title = "Open File(s)"
+initial_position = 1
+ok_button_text = "Open"
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")

@@ -1,0 +1,180 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5ol4xpiwl53n"]
+
+[ext_resource type="Script" uid="uid://c3g3ax1os3avq" path="res://scripts/settings_panels/img_proc_controller.gd" id="1_husjb"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrbld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrbld"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6lyx"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_husjb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx8ue"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[node name="ImgProcSectionVBC" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_husjb")
+
+[node name="ImgProcHeaderLB" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "STTS_IMG_PROC_HEADER_LB"
+
+[node name="HeaderBodyHS" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
+
+[node name="ThumbsProcLB" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "STTS_THUMBS_PROC_LB"
+autowrap_mode = 3
+
+[node name="ThumbsProcCfgElsHBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+localize_numeral_system = false
+
+[node name="ThumbsDFOptsVBC" type="VBoxContainer" parent="ThumbsProcCfgElsHBC"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="ThumbsDFLB" type="Label" parent="ThumbsProcCfgElsHBC/ThumbsDFOptsVBC"]
+layout_mode = 2
+text = "STTS_DF_LB"
+
+[node name="ThumbsDFSB" type="SpinBox" parent="ThumbsProcCfgElsHBC/ThumbsDFOptsVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.01
+update_on_text_changed = true
+
+[node name="ThumbsApplyDFBTN" type="Button" parent="ThumbsProcCfgElsHBC/ThumbsDFOptsVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "STTS_APPLY_BTN"
+
+[node name="DFOptsThumbVS" type="VSeparator" parent="ThumbsProcCfgElsHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qrbld")
+
+[node name="PrvwThumbBaseP" type="Panel" parent="ThumbsProcCfgElsHBC"]
+clip_children = 2
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrbld")
+
+[node name="ThumbTextureTR" type="TextureRect" parent="ThumbsProcCfgElsHBC/PrvwThumbBaseP"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ThumbFrameP" type="Panel" parent="ThumbsProcCfgElsHBC/PrvwThumbBaseP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6lyx")
+
+[node name="ThumsPrvwHS" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_husjb")
+
+[node name="PrvwProcHeaderLB" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "STTS_PRVW_PROC_LB"
+autowrap_mode = 3
+
+[node name="PrvwDFOptsHBC" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+localize_numeral_system = false
+
+[node name="PrvwDFOptsVBC" type="VBoxContainer" parent="PrvwDFOptsHBC"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="PrvwDFLB" type="Label" parent="PrvwDFOptsHBC/PrvwDFOptsVBC"]
+layout_mode = 2
+text = "STTS_DF_LB"
+
+[node name="PrvwDFSB" type="SpinBox" parent="PrvwDFOptsHBC/PrvwDFOptsVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.01
+update_on_text_changed = true
+
+[node name="PrvwApplyDFBTN" type="Button" parent="PrvwDFOptsHBC/PrvwDFOptsVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "STTS_APPLY_BTN"
+
+[node name="DFOptionsPrvwVS" type="VSeparator" parent="PrvwDFOptsHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qrbld")
+
+[node name="PrvwBaseP" type="Panel" parent="PrvwDFOptsHBC"]
+clip_children = 2
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hx8ue")
+
+[node name="PrvwTextureTR" type="TextureRect" parent="PrvwDFOptsHBC/PrvwBaseP"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6

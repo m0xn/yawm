@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://clowtv2p8orur"]
+
+[ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="1_pacub"]
+[ext_resource type="Script" uid="uid://ca031qgo87now" path="res://scripts/settings_panels/license_btns_handler.gd" id="1_pc0dt"]
+[ext_resource type="PackedScene" uid="uid://d0strmyqw0x0b" path="res://scenes/license_windows/AppLicense.tscn" id="3_l2ci0"]
+[ext_resource type="Texture2D" uid="uid://c1xdb5s6icw4a" path="res://graphics/app_icons/github.svg" id="3_nh1wb"]
+[ext_resource type="Script" uid="uid://chrji6x6uvc71" path="res://scripts/redirect_to_github.gd" id="4_7wauj"]
+[ext_resource type="PackedScene" uid="uid://cljiws3pum2ep" path="res://scenes/license_windows/GodotLicense.tscn" id="4_vx0tj"]
+[ext_resource type="PackedScene" uid="uid://kooboykfrnnn" path="res://scenes/license_windows/TomorrowFontLicense.tscn" id="5_nh1wb"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o14x"]
+
+[node name="CreditsSectionVBC" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_pc0dt")
+
+[node name="CreditsHeaderLB" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "CRDTS_HEADER_LB"
+
+[node name="HeaderBodyHS" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
+
+[node name="DevInfoLB" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
+theme_override_fonts/italics_font = ExtResource("1_pacub")
+bbcode_enabled = true
+text = "CRDTS_DEV_INFO_RTL"
+
+[node name="SvgIconsLB" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
+theme_override_fonts/italics_font = ExtResource("1_pacub")
+bbcode_enabled = true
+text = "CRDTS_SVG_ICONS_RTL"
+
+[node name="GELB" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
+theme_override_fonts/italics_font = ExtResource("1_pacub")
+bbcode_enabled = true
+text = "CRDTS_GE_RTL"
+
+[node name="LicenseBtnsHBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="GDLicenseBTN" type="Button" parent="LicenseBtnsHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "CRDTS_GD_LICENSE_BTN"
+
+[node name="FontLicenseBTN" type="Button" parent="LicenseBtnsHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "CRDTS_FONT_LICENSE_BTN"
+
+[node name="AppLicenseBTN" type="Button" parent="LicenseBtnsHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "CRDTS_APP_LICENSE_BTN"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0o14x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_nh1wb")
+script = ExtResource("4_7wauj")
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.67451, 0.67451, 0.67451, 1)
+bbcode_enabled = true
+text = "[url=https://www.github.com/m0xn/yaw]m0xn/yawm[/url]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AppLicenseWND" parent="." instance=ExtResource("3_l2ci0")]
+visible = false
+
+[node name="GDLicenseWND" parent="." instance=ExtResource("4_vx0tj")]
+visible = false
+
+[node name="FontLicenseWND" parent="." instance=ExtResource("5_nh1wb")]
+visible = false

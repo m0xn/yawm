@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bmqc04ivq2oew"
+
+[deps]
+
+files=["res://translation/WPM Translation Table - Sheet1.es.translation", "res://translation/WPM Translation Table - Sheet1.en.translation"]
+
+source_file="res://translation/WPM Translation Table - Sheet1.csv"
+dest_files=["res://translation/WPM Translation Table - Sheet1.es.translation", "res://translation/WPM Translation Table - Sheet1.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6gigxjv0lenm"]
+
+[ext_resource type="Script" uid="uid://dpa5xqtsn3ckq" path="res://scripts/windows/startup_settings_controller.gd" id="1_56kyj"]
+[ext_resource type="PackedScene" uid="uid://4gjb1b7nhkh2" path="res://scenes/settings_panels/DirSection.tscn" id="2_ldl8f"]
+[ext_resource type="FontFile" uid="uid://b1ossgbydysof" path="res://fonts/Tomorrow-Medium.ttf" id="2_lky2e"]
+[ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CommandsSection.tscn" id="3_j2yrx"]
+[ext_resource type="Texture2D" uid="uid://dwg10s2k07ksa" path="res://graphics/os_logos/linux_logo.svg" id="3_wsrws"]
+[ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="4_ldl8f"]
+
+[node name="StartupSettingsWND" type="Window"]
+title = "STARTUP_STTS_WINDOW_TTL"
+initial_position = 1
+size = Vector2i(640, 370)
+transient = true
+exclusive = true
+script = ExtResource("1_56kyj")
+
+[node name="MainP" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DetectedOSInfoHBC" type="HBoxContainer" parent="MainP/VBoxContainer"]
+layout_mode = 2
+
+[node name="DetectedOSLb" type="Label" parent="MainP/VBoxContainer/DetectedOSInfoHBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.603922, 0.6, 0.588235, 1)
+theme_override_fonts/font = ExtResource("2_lky2e")
+text = "DETECTED_OS_LB"
+autowrap_mode = 2
+
+[node name="DetectedOSLogoTR" type="TextureRect" parent="MainP/VBoxContainer/DetectedOSInfoHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_wsrws")
+stretch_mode = 2
+
+[node name="DetectedOSNameLB" type="Label" parent="MainP/VBoxContainer/DetectedOSInfoHBC"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.603922, 0.6, 0.588235, 1)
+theme_override_fonts/font = ExtResource("2_lky2e")
+text = "OS_PLACEHOLDER"
+autowrap_mode = 2
+
+[node name="ScrollContainerSC" type="ScrollContainer" parent="MainP/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelsContainerVBC" type="VBoxContainer" parent="MainP/VBoxContainer/ScrollContainerSC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="DirSectionVBC" parent="MainP/VBoxContainer/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("2_ldl8f")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CmdsSectionVBC" parent="MainP/VBoxContainer/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("3_j2yrx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StartupNoticeLB" type="Label" parent="MainP/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.6, 0.588235, 1)
+theme_override_fonts/font = ExtResource("4_ldl8f")
+text = "STARTUP_FIELD_NOTICE_LB"
+autowrap_mode = 2
+
+[node name="SaveBTN" type="Button" parent="MainP/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SAVE_BTN"

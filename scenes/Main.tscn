@@ -1,0 +1,317 @@
+[gd_scene load_steps=31 format=3 uid="uid://dq72qw2ggilrk"]
+
+[ext_resource type="Script" uid="uid://dlywt5uosyndb" path="res://scripts/thumbnails/thumbnail_loader.gd" id="1_0bbpv"]
+[ext_resource type="Script" uid="uid://2l3wbvsgcvhb" path="res://scripts/globals/load_globals_refs.gd" id="1_rarhs"]
+[ext_resource type="PackedScene" uid="uid://dh3gs7fmk5jdn" path="res://scenes/custom_components/WallpaperThumbnail.tscn" id="2_nxtc6"]
+[ext_resource type="FontFile" uid="uid://cjntax1xa75sl" path="res://fonts/Tomorrow-MediumItalic.ttf" id="2_rvslj"]
+[ext_resource type="Texture2D" uid="uid://buvtdh0slsxgf" path="res://graphics/app_icons/mag_glass.svg" id="3_c01mt"]
+[ext_resource type="PackedScene" uid="uid://csyenpvs8wqb1" path="res://scenes/custom_components/ImportedWallpaperEntry.tscn" id="3_jlsqs"]
+[ext_resource type="Script" uid="uid://5kv6sv6j207r" path="res://scripts/thumbnails/thumbnail_size_controller.gd" id="3_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://cpp1a11c7u1p8" path="res://scenes/windows/WallpaperLoader.tscn" id="4_lhr70"]
+[ext_resource type="PackedScene" uid="uid://btm413rvs2ac5" path="res://scenes/windows/ProgressWindow.tscn" id="5_bjd11"]
+[ext_resource type="PackedScene" uid="uid://b4fxnfkkvwm27" path="res://scenes/windows/SettingsWindow.tscn" id="6_3p2gp"]
+[ext_resource type="PackedScene" uid="uid://cba2ari7wjvi2" path="res://scenes/custom_components/DebugEntry.tscn" id="7_2ofn6"]
+[ext_resource type="Script" uid="uid://io47526ry36b" path="res://scripts/buttons/add_wallpapers_handler.gd" id="8_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://bp7ddcbiwa5vd" path="res://scenes/windows/ErrorWindow.tscn" id="8_xa025"]
+[ext_resource type="Texture2D" uid="uid://dlpy2aaa5uh1x" path="res://graphics/app_icons/info_icon.svg" id="11_cvmbd"]
+[ext_resource type="Script" uid="uid://vp743cucdf3r" path="res://scripts/wp_drag_handler.gd" id="11_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://bh73ow2kq0yqq" path="res://graphics/app_icons/gear.svg" id="13_qmy6f"]
+[ext_resource type="Script" uid="uid://dln7u6r54342t" path="res://scripts/theme_loader.gd" id="14_cvmbd"]
+[ext_resource type="Script" uid="uid://ckffwky45ar64" path="res://scripts/buttons/set_wp_handler.gd" id="15_2ofn6"]
+[ext_resource type="Script" uid="uid://dt4h3il8esl0h" path="res://scripts/buttons/open_settings_btn.gd" id="15_cvmbd"]
+[ext_resource type="Script" uid="uid://bod7hsqwl482g" path="res://scripts/settings_controller.gd" id="15_ft6cd"]
+[ext_resource type="Texture2D" uid="uid://brcqcg6r7geut" path="res://graphics/app_icons/logs.svg" id="16_nfivy"]
+[ext_resource type="Script" uid="uid://bvbyhood7bkkp" path="res://scripts/buttons/open_wp_handler.gd" id="16_xa025"]
+[ext_resource type="PackedScene" uid="uid://b51joitctnqtg" path="res://scenes/windows/WelcomeWindow.tscn" id="18_bb450"]
+[ext_resource type="Script" uid="uid://doghvsswc3d8o" path="res://scripts/buttons/open_logs_btn.gd" id="19_yxlcp"]
+[ext_resource type="PackedScene" uid="uid://bqisj0gcl5dd" path="res://scenes/windows/DebugWindow.tscn" id="22_yxlcp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcsgt"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxtc6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnwvq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnwvq"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb450"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[node name="AppRoot" type="Control" node_paths=PackedStringArray("global_nodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rarhs")
+global_nodes = {
+"app_root_ref": NodePath("."),
+"grid_container_ref": NodePath("MainUIHBC/ThumbnailsVBC/ThumbnailsP/ThumbnailsSC/ThumbnailsGC"),
+"preview_label_ref": NodePath("MainUIHBC/PreviewVBC/PreviewLabelsVBC/PreviewFileLB"),
+"preview_rect_ref": NodePath("MainUIHBC/PreviewVBC/PreviewImgP/PreviewImgTR"),
+"scale_factor_label_ref": NodePath("MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC/ScaleFactorLB"),
+"scale_slider_ref": NodePath("MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC/ScaleHSL"),
+"wallpaper_count_label_ref": NodePath("MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC/WallpaperCountLB")
+}
+global_res = Dictionary[String, PackedScene]({
+"debug_entry_res": ExtResource("7_2ofn6"),
+"imported_wallpaper_res": ExtResource("3_jlsqs"),
+"progress_window_res": ExtResource("5_bjd11"),
+"settings_window_res": ExtResource("6_3p2gp"),
+"wallpaper_loader_window_res": ExtResource("4_lhr70"),
+"wallpaper_thumbnail_res": ExtResource("2_nxtc6")
+})
+
+[node name="SettingsController" type="Node" parent="."]
+script = ExtResource("15_ft6cd")
+
+[node name="MainUIHBC" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ThumbnailsVBC" type="VBoxContainer" parent="MainUIHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ThumbnailsInfoP" type="Panel" parent="MainUIHBC/ThumbnailsVBC"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcsgt")
+
+[node name="InfoContainerHBC" type="HBoxContainer" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WallpaperCountLB" type="Label" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "WP_COUNT_LB"
+vertical_alignment = 1
+
+[node name="CountScaleHS" type="VSeparator" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+layout_mode = 2
+
+[node name="ThumbnailScaleLB" type="Label" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+layout_mode = 2
+text = "THUMB_SCALE_LB"
+vertical_alignment = 1
+
+[node name="ScaleSliderHS" type="VSeparator" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nxtc6")
+
+[node name="MagGlassIconTR" type="TextureRect" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_c01mt")
+stretch_mode = 2
+
+[node name="ScaleHSL" type="HSlider" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 1.0
+exp_edit = true
+
+[node name="ScaleFactorLB" type="Label" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.0x"
+
+[node name="ThumbnailsP" type="Panel" parent="MainUIHBC/ThumbnailsVBC"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_vcsgt")
+
+[node name="ThumbnailsSC" type="ScrollContainer" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsP"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThumbnailsGC" type="GridContainer" parent="MainUIHBC/ThumbnailsVBC/ThumbnailsP/ThumbnailsSC"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+script = ExtResource("1_0bbpv")
+
+[node name="AddWallpaperBTN" type="Button" parent="MainUIHBC/ThumbnailsVBC"]
+layout_mode = 2
+text = "ADD_WP_BTN"
+script = ExtResource("8_q8u5g")
+
+[node name="DNDTooltipHBC" type="HBoxContainer" parent="MainUIHBC/ThumbnailsVBC"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="InfoIconTR" type="TextureRect" parent="MainUIHBC/ThumbnailsVBC/DNDTooltipHBC"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("11_cvmbd")
+expand_mode = 1
+
+[node name="DNDTooltipLB" type="Label" parent="MainUIHBC/ThumbnailsVBC/DNDTooltipHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.741385, 0.741385, 0.741385, 1)
+theme_override_fonts/font = ExtResource("2_rvslj")
+text = "DRAG_AND_DROP_LB"
+
+[node name="PreviewVBC" type="VBoxContainer" parent="MainUIHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="PreviewLabelsVBC" type="VBoxContainer" parent="MainUIHBC/PreviewVBC"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="PreviewLB" type="Label" parent="MainUIHBC/PreviewVBC/PreviewLabelsVBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PREVIEW_LB"
+
+[node name="PreviewFileLB" type="Label" parent="MainUIHBC/PreviewVBC/PreviewLabelsVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737193, 0.737193, 0.737193, 1)
+theme_override_font_sizes/font_size = 20
+text = "..."
+
+[node name="PreviewHS" type="HSeparator" parent="MainUIHBC/PreviewVBC"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qnwvq")
+
+[node name="PreviewImgP" type="Panel" parent="MainUIHBC/PreviewVBC"]
+custom_minimum_size = Vector2(480, 270)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnwvq")
+
+[node name="PreviewImgTR" type="TextureRect" parent="MainUIHBC/PreviewVBC/PreviewImgP"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="SetWallpaperBTN" type="Button" parent="MainUIHBC/PreviewVBC"]
+layout_mode = 2
+text = "SET_AS_WP_BTN"
+script = ExtResource("15_2ofn6")
+
+[node name="OpenWallpaperBTN" type="Button" parent="MainUIHBC/PreviewVBC"]
+layout_mode = 2
+text = "OPEN_IN_IMG_VIEWER_BTN"
+script = ExtResource("16_xa025")
+
+[node name="CenterCorrectionHS" type="HSeparator" parent="MainUIHBC/PreviewVBC"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qnwvq")
+
+[node name="UIControlsHBC" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -184.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 100.0
+grow_horizontal = 0
+
+[node name="LogsP" type="Panel" parent="UIControlsHBC"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bb450")
+
+[node name="LogsBTN" type="TextureButton" parent="UIControlsHBC/LogsP"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("16_nfivy")
+stretch_mode = 3
+script = ExtResource("19_yxlcp")
+
+[node name="SettingsP" type="Panel" parent="UIControlsHBC"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bb450")
+
+[node name="SettingsBTN" type="TextureButton" parent="UIControlsHBC/SettingsP"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("13_qmy6f")
+stretch_mode = 3
+script = ExtResource("15_cvmbd")
+
+[node name="WallpaperDNDListener" type="Node" parent="."]
+script = ExtResource("11_wp0k4")
+
+[node name="ThemeLoader" type="Node" parent="."]
+script = ExtResource("14_cvmbd")
+
+[node name="AddWallpaperFD" type="FileDialog" parent="."]
+title = "Open File(s)"
+initial_position = 1
+ok_button_text = "Open"
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
+
+[node name="WelcomeWindowWND" parent="." instance=ExtResource("18_bb450")]
+visible = false
+
+[node name="DebugWindowWND" parent="." instance=ExtResource("22_yxlcp")]
+visible = false
+
+[node name="ErrorWindowWND" parent="." instance=ExtResource("8_xa025")]
+visible = false

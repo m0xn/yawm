@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjsmoyw3n623n"]
+
+[ext_resource type="Script" uid="uid://vyuojff1n8i5" path="res://scripts/settings_panels/misc_section_controller.gd" id="1_sgufv"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
+color = Color(1, 1, 1, 1)
+
+[node name="MiscSectionVBC" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_sgufv")
+
+[node name="MiscHeaderLB" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "STTS_MISC_LB"
+
+[node name="HeaderBodyHS" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
+
+[node name="LangVBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LangLB" type="Label" parent="LangVBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STTS_LANG_LB"
+autowrap_mode = 3
+
+[node name="LangOB" type="OptionButton" parent="LangVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 2
+popup/item_0/text = "es"
+popup/item_0/id = 0
+popup/item_1/text = "en"
+popup/item_1/id = 1
+
+[node name="AccColorVBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AccColorLB" type="Label" parent="AccColorVBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STTS_ACC_COLOR_LB"
+autowrap_mode = 3
+
+[node name="AccColorCB" type="ColorPickerButton" parent="AccColorVBC"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScaleStepVBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScaleStepLB" type="Label" parent="ScaleStepVBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STTS_SCALE_STEP_LB"
+autowrap_mode = 3
+
+[node name="ScaleStepSB" type="SpinBox" parent="ScaleStepVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 0.5
+step = 0.01
+value = 0.1
+update_on_text_changed = true
+
+[node name="ThumbsInitialScaleVBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ThumbsInitialScaleLB" type="Label" parent="ThumbsInitialScaleVBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STTS_THUMBS_INIT_SCALE_LB"
+autowrap_mode = 3
+
+[node name="ThumbsInitialScaleSB" type="SpinBox" parent="ThumbsInitialScaleVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 0.5
+update_on_text_changed = true
+
+[node name="EnableDNDHintCB" type="CheckBox" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "STTS_ENABLE_DND_HINT_LB"

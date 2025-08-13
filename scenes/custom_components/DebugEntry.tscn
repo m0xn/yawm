@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cba2ari7wjvi2"]
+
+[ext_resource type="Texture2D" uid="uid://ddt6qgqxwqb12" path="res://graphics/app_icons/debug_error_icon.svg" id="1_7ehrl"]
+[ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="2_kg5mp"]
+[ext_resource type="FontFile" uid="uid://b75fm5jbk1qk8" path="res://fonts/Tomorrow-Italic.ttf" id="4_0ykx2"]
+[ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="4_kg5mp"]
+[ext_resource type="FontFile" uid="uid://boscn51rhegt4" path="res://fonts/Tomorrow-Bold.ttf" id="5_0ykx2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it30x"]
+bg_color = Color(0.752941, 0.109804, 0.156863, 1)
+
+[node name="MainUIHBC" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="ColorIndicatorP" type="Panel" parent="."]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_it30x")
+
+[node name="LogTypeIconTR" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_7ehrl")
+stretch_mode = 2
+
+[node name="LogMsgRTL" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_kg5mp")
+theme_override_fonts/italics_font = ExtResource("4_0ykx2")
+theme_override_fonts/bold_italics_font = ExtResource("4_kg5mp")
+theme_override_fonts/bold_font = ExtResource("5_0ykx2")
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true

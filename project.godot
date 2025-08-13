@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="YAWM"
+run/main_scene="uid://dq72qw2ggilrk"
+config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+
+[autoload]
+
+Utils="*res://scripts/globals/utils.gd"
+AppData="*res://scripts/globals/app_data.gd"
+Global="*res://scripts/globals/globals.gd"
+AccentMap="*res://scripts/globals/accent_map.gd"
+Types="*res://scripts/globals/types.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://external_scripts/": "red",
+"res://fonts/": "teal",
+"res://graphics/": "orange",
+"res://scenes/": "blue",
+"res://scripts/": "yellow",
+"res://themes/": "pink",
+"res://translation/": "green"
+}
+
+[gui]
+
+theme/custom="uid://bpy5dyipuxv1b"
+theme/custom_font="uid://b1ossgbydysof"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation/WPM Translation Table - Sheet1.en.translation", "res://translation/WPM Translation Table - Sheet1.es.translation")
+locale/test="es"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.190762, 0.190763, 0.190762, 1)

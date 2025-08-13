@@ -1,0 +1,73 @@
+keys,es,en
+PREVIEW_LB,Previsualizando:,Previewing:
+SET_AS_WP_BTN,Poner como fondo de pantalla,Set as wallpaper
+OPEN_IN_IMG_VIEWER_BTN,Abrir en visor de fotos,Open in image viewer
+ADD_WP_BTN,Añadir fondos de pantalla,Add wallpapers
+DBG_FPS_LB,FPS:,FPS:
+DBG_TIME_TAKEN_LB,Tiempo de carga:,Time taken:
+DRAG_AND_DROP_LB,Puedes añadir nuevos fondos de pantalla arrastrándolos a esta ventana,You can add new wallpapers by dragging files to this window
+WP_COUNT_LB,Fondos de pantalla:,Wallpapers:
+THUMB_SCALE_LB,Escala:,Scale:
+WP_IMPORT_WINDOW_TTL,Cargador de fondos de pantalla,Wallpaper loader
+WP_IMPORT_HEADER_LB,Listado de fondos de pantalla a cargar,List of wallpapers to load
+WP_IMPORT_WP_NO_LB,N.º de fondos de pantalla:,No. of wallpapers:
+WP_IMPORT_LOAD_BTN,Cargar,Load
+P_BAR_WINDOW_TTL,Barra de progreso,Progress bar
+P_BAR_IMPORTING_INFO_LB,Importando fondos de pantalla...,Importing wallpapers...
+STTS_WINDOW_TTL,Configuración,Settings
+STTS_DIR_HEADER_LB,Carpetas ,Folders
+STTS_WPS_DIR_LB,Carpeta para los fondos de pantalla,Folder for wallpapers
+STTS_THUMBS_DIR_LB,Carpeta para las miniaturas,Folder for thumbnails
+STTS_PROCESS_PRVW_CB,Procesar imágenes de previsualización,Process preview images
+STTS_PRVW_DIR_LB,Carpeta para las imágenes de previsualización,Folder for preview images
+STTS_CMDS_HEADER_LB,Comandos,Commands
+STTS_SET_AS_WP_SCRIPT_LB,Poner como fondo de pantalla (script),Set as wallpaper (script)
+STTS_IMG_PROC_HEADER_LB,Procesamiento de imágenes,Image processing
+STTS_THUMBS_PROC_LB,Miniaturas,Thumbnails
+STTS_PRVW_PROC_LB,Imagen de previsualización,Preview image
+STTS_DF_LB,Factor de reescalado,Downscale factor
+STTS_APPLY_BTN,Aplicar,Apply
+STTS_XFORM_THUMBS_LB,Renderizando miniaturas con el factor de escala:,Rendering thumbnails with scale factor:
+STTS_XFORM_PRVW_LB,Renderizando imágenes de previsualización con el factor de escala:,Rendering preview images with scale factor:
+STTS_MISC_LB,Misceláneo,Miscellaneous
+STTS_LANG_LB,Idioma,Language
+STTS_ACC_COLOR_LB,Color de acento,Accent color
+STTS_SCALE_STEP_LB,Incremento en la escala de las miniaturas,Thumbnail scale step
+STTS_THUMBS_INIT_SCALE_LB,Escala incial de las miniaturas,Thumbnail's initial scale
+STTS_ENABLE_DND_HINT_LB,Habilitar pista para arrastrar imágenes a la aplicación,Enable hint to drag and drop images to the app
+CRDTS_HEADER_LB,Créditos,Credits
+CRDTS_DEV_INFO_RTL,> [i]Desarrollado por: [color=#a980ed]m0xn (Rodrigo)[/color][/i],> [i]Developed by: [color=#a980ed]m0xn (Rodrigo)[/color][/i]
+CRDTS_SVG_ICONS_RTL,> [i]Iconos del programa: [url=https://www.svgrepo.com][color=lightblue]SVG REPO[/color][/url][/i],> [i]App icons: [url=https://www.svgrepo.com][color=lightblue]SVG REPO[/color][/url][/i]
+CRDTS_GE_RTL,> [i]Creado con: [color=#448cbc]Godot Engine[/color][/i],> [i]Made with: [color=#448cbc]Godot Engine[/color][/i]
+CRDTS_GD_LICENSE_BTN,Licencia de Godot,Godot's license
+CRDTS_FONT_LICENSE_BTN,Licencia de la fuente de texto,Font's license
+CRDTS_APP_LICENSE_BTN,Licencia del programa,App's license
+WELCOME_WINDOW_TTL,Bienvenida,Welcome
+WELCOME_WINDOW_HEADER_LB,¡Bienvenid@!,Welcome!
+WELCOME_WINDOW_MSG_RTL,"Como es tu primera vez utilizando [color=#a980ed]YAWM[/color] ([i][b][color=#a980ed]Y[/color][/b]et [b][color=#a980ed]A[/color][/b]nother [b][color=#a980ed]W[/color][/b]allpaper [b][color=#a980ed]M[/color][/b]anager[/i]) es necesario que configures algunos parámetros para el correcto funcionamiento del programa. Puedes modificar el resto de parámetros de la configuración más tarde haciendo click sobre el icono del engranaje situado en la esquina inferior derecha del programa.
+[b]¡Gracias por utilizar mi programa! Espero que te sea de utilidad ;-)[/b]","Since it's your first time using [color=#a980ed]YAWM[/color] ([i][b][color=#a980ed]Y[/color][/b]et [b][color=#a980ed]A[/color][/b]nother [b][color=#a980ed]W[/color][/b]allpaper [b][color=#a980ed]M[/color][/b]anager[/i]) you'll need to configure some of the apps settings in order for it to work properly. You can later configure the rest of the settings parameters by clicking on the gear icon located at the bottom right of the app.
+[b]Thank you for using my app! Hope it comes in handy ;-)[/b]"
+WELCOME_WINDOW_START_BTN,Empezar,Start
+STARTUP_STTS_WINDOW_TTL,Configuración inicial,Startup settings
+SAVE_BTN,Guardar,Save
+STARTUP_FIELD_NOTICE_LB,*Debes rellenar todos los campos para que el programa funcione correctamente,*You must fill all fields for the app to work properly
+DETECTED_OS_LB,Sistema operativo detectado:,Detected OS:
+PROCESS_WPS_WINDOW_TTL,Procesar fondos de pantalla encontrados,Process found wallpapers
+PROCESS_WPS_WINDOW_MSG_LB,¿Deseas importar todos los fondos de pantalla encontrados en '{0}'?,Do you want to import all wallpapers found at '{0}'?
+YES_BTN,Sí,Yes
+NO_BTN,No,No
+CLOSE_BTN,Cerrar,Close
+ERROR_WINDOW_TTL,Se ha producido un error,An error has ocurred
+DEBUG_WINDOW_TTL,Ventana de depurado,Debugging window
+DEBUG_WINDOW_HEADER,Registros de la aplicación,App logs
+DBG_ALREADY_SELECTED_DIR,"Estar carpeta ya está en uso, selecciona otra diferente.","This folder is already being used, choose another one."
+DBG_MISSING_FIELDS,Debes rellenar todos los campos de configuración para comenzar a utilizar el programa.,You must fill all settings field in order to start using the app.
+DBG_MISSING_SELECTED_WP,"No has seleccionado ningún fondo de pantalla todavía.\n[color=gray][i]Ayuda: Si no has importado ningún fondo de pantalla, puedes darle al botón [b]%s[/b] o arrastrar nuevos archivos a esta ventana[/i].[/color]","You haven't selected any wallpaper yet.\n[color=gray][i]Hint: If you haven't imported any wallpapers, you can click on the [b]%s[/b] button or drag new files to this window[/i].[/color]"
+DBG_INVALID_SET_WP_CMD,Se ha producido un error intentando poner el fondo de pantalla con el comando [i]%s[/i].\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Puedes elegir un [i]script[/i] haciendo click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img] o introducir el comando completo en el campo de texto[/i][/color].\n[i]Error encontrado tras la ejecución fallida del comando:[/i],An error ocurred trying to set the wallpaper with the command [i]%s[/i].\n[color=gray][i]Hint: check the value of [b]%s > %s[/b] in the app settings[img=22][/img]. You can select any script by clicking on the button with the magnifying glass icon [img][/img] or introduce the full command into the text field[/i][/color].\n[i]Error obtained after failed command execution:[/i]
+DBG_INVALID_OPEN_WP_CMD,Se ha producido un error intentando abrir el fondo de pantalla con el comando [i]%s[/i].\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Introduce el comando del sistema asociado al programa para ver imágenes de tu preferencia[/i][/color].\n[i]Error encontrado tras la ejecución fallida del comando:[/i],An error ocurred trying to open the wallpaper with the command [i]%s[/i].[color=gray][i]Hint: check the value of [b] %s > %s[/b] in the app settings [img=22]res://graphics/app_icons/gear.svg[/img]. Set the system command linked to your image viewer of preference[/i][/color].\n[i]Error obtained after failed command execution:[/i]
+DBG_INVALID_DIR_PATH,La carpeta [b][i]%s[/i][/b] no existe.\n[color=gray][i]Ayuda: Haz click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img] para seleccionar una carpeta dentro de tu sistema[/i][/color].,The folder [b][i]%s[/i][/b] doesn't exist.\n[color=gray][i]Hint: click on the button with the magnifying glass [img]res://graphics/app_icons/mag_glass.svg[/img] to select one of the folders inside your system.
+DBG_INVALID_WPS_DIR_PATH,No se ha podido cargar la imagen [b]%s[/b] puesto que no se ha introducido una ruta válida para la carpeta de fondos de pantalla.\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Puedes elegir una carpeta haciendo click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img][/i][/color],Couldn't load image [b]%s[/b] due to an invalid path for the wallpapers folder.\n[color=gray]Hint: check the value of [b]%s > %s[/b] in the app settings [img=22]res://graphics/app_icons/gear.svg[/img][/color]. You can select any folder click on the button with the magnifying glass icon [img]res://graphics/app_icons/mag_glass.svg[/img].
+DBG_INVALID_PRVW_DIR_PATH,No se ha podido cargar la imagen [b]%s[/b] puesto que no se ha introducido una ruta válida para la carpeta de imágenes de previsualización.\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Puedes elegir una carpeta haciendo click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img][/i][/color],Couldn't load image [b]%s[/b] due to an invalid path for the preview images folder.\n[color=gray]Hint: check the value of [b]%s > %s[/b] in the app settings [img=22]res://graphics/app_icons/gear.svg[/img][/color]. You can select any folder click on the button with the magnifying glass icon [img]res://graphics/app_icons/mag_glass.svg[/img].
+DBG_MISSING_THUMBS_DIR,No se ha podido encontrar una carpeta para las miniaturas de los fondos de pantalla.\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Puedes elegir una carpeta haciendo click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img][/i][/color],Couldn't find a folder for the wallpaper thumbnails.\n[color=gray][i]Hint: check the value of [b]%s > %s[/b] in the app settings [img=22]res://graphics/app_icons/gear.svg[/img][/color]. You can select any folder click on the button with the magnifying glass icon [img]res://graphics/app_icons/mag_glass.svg[/img][/i][/color].
+DBG_UNSUPPORTED_FILE_FORMAT,La extensión de archivo [b]%s[/b] no está contemplada en el programa.\n[color=gray][i]Ayuda: Si tu imagen tiene un [b]formato[/b] de imagen pero la extensión que le has asignado no está contemplada en [b]este programa[/b] saltará este error. Puedes comprobar en páginas como [color=lightblue][url=https://www.checkfiletype.com/][b]esta[/b][/url][/color] cuál es el verdadero formato de tu imagen para asociarle la extensión correspondiente.[/i][/color],"File extension [b]%s[/b] is not supported in the app.\n[color=gray][i]Hint: If your image file has a different [b]format[/b] than its extension, and that extension isn't suported [b]in this app[/b], this error will pop up. You can check the true image format in webpages like [color=ligthblue][url=https://www.checkfiletype.com/][b]this one[/b][/url][/color] so you can modify your file extension accordingly[/i][/color]"
+DBG_THUMB_W_UNSUPPORTED_FF,Se intentó cargar la miniatura [b]%s[/b] con el formato [b]%s[/b] no contemplado en el programa.\n[color=gray][i]Ayuda: Si tu imagen tiene un [b]formato[/b] de imagen pero la extensión que le has asignado no está contemplada en [b]este programa[/b] saltará este error. Puedes comprobar en páginas como [color=lightblue][url=https://www.checkfiletype.com/][b]esta[/b][/url][/color] cuál es el verdadero formato de tu imagen para asociarle la extensión correspondiente.[/i][/color],"Tried to load thumbnail [b]%s[/b] with unsupported file format [b]%s[/b].\n[color=gray][i]Hint: If your image file has a different [b]format[/b] than its extension, and that extension isn't suported [b]in this app[/b], this error will pop up. You can check the true image format in webpages like [color=ligthblue][url=https://www.checkfiletype.com/][b]this one[/b][/url][/color] so you can modify your file extension accordingly[/i][/color]"

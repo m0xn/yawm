@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://dajf1oyojh3am"]
+
+[ext_resource type="Script" uid="uid://d3gxdd41lfqk1" path="res://scripts/settings_panels/command_section_controller.gd" id="1_hoism"]
+[ext_resource type="Texture2D" uid="uid://buvtdh0slsxgf" path="res://graphics/app_icons/mag_glass.svg" id="2_nj6p6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
+color = Color(1, 1, 1, 1)
+
+[node name="CmdsSectionVBC" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_hoism")
+
+[node name="CmdsHeaderLB" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "STTS_CMDS_HEADER_LB"
+
+[node name="HeaderBodyHS" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
+
+[node name="SetAsWpScriptHBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SetAsWpCmdLB" type="Label" parent="SetAsWpScriptHBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STTS_SET_AS_WP_SCRIPT_LB"
+autowrap_mode = 3
+
+[node name="SetAsWpScriptHBC" type="HBoxContainer" parent="SetAsWpScriptHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SetAsWpScriptLE" type="LineEdit" parent="SetAsWpScriptHBC/SetAsWpScriptHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SetAsWpScriptBTN" type="Button" parent="SetAsWpScriptHBC/SetAsWpScriptHBC"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+icon = ExtResource("2_nj6p6")
+icon_alignment = 1
+
+[node name="OpenInImgVwrHBC" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="OpenInImgVwrLB" type="Label" parent="OpenInImgVwrHBC"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPEN_IN_IMG_VIEWER_BTN"
+autowrap_mode = 3
+
+[node name="OpenInImgVwrHBC" type="HBoxContainer" parent="OpenInImgVwrHBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OpenInImgVwrLE" type="LineEdit" parent="OpenInImgVwrHBC/OpenInImgVwrHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OpenInImgVwrBTN" type="Button" parent="OpenInImgVwrHBC/OpenInImgVwrHBC"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+icon = ExtResource("2_nj6p6")
+icon_alignment = 1
+
+[node name="SetAsWpScriptFD" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+ok_button_text = "Open"
+file_mode = 0
+access = 2

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4fxnfkkvwm27"]
+
+[ext_resource type="Script" uid="uid://dfeg1qi438rd7" path="res://scripts/windows/settings_window.gd" id="1_t1c6x"]
+[ext_resource type="PackedScene" uid="uid://4gjb1b7nhkh2" path="res://scenes/settings_panels/DirSection.tscn" id="3_bkfuf"]
+[ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CommandsSection.tscn" id="4_rhflm"]
+[ext_resource type="PackedScene" uid="uid://b5ol4xpiwl53n" path="res://scenes/settings_panels/ImgProcSection.tscn" id="5_cwfu7"]
+[ext_resource type="PackedScene" uid="uid://cjsmoyw3n623n" path="res://scenes/settings_panels/MiscSection.tscn" id="6_bxgur"]
+[ext_resource type="PackedScene" uid="uid://clowtv2p8orur" path="res://scenes/settings_panels/CreditsSection.tscn" id="7_d3gnn"]
+
+[node name="SettingsWindow" type="Window"]
+title = "STTS_WINDOW_TTL"
+initial_position = 1
+size = Vector2i(700, 500)
+script = ExtResource("1_t1c6x")
+
+[node name="MainP" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainerSC" type="ScrollContainer" parent="MainP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelsContainerVBC" type="VBoxContainer" parent="MainP/ScrollContainerSC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="DirSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("3_bkfuf")]
+layout_mode = 2
+
+[node name="CmdsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("4_rhflm")]
+layout_mode = 2
+
+[node name="ImgProcSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("5_cwfu7")]
+layout_mode = 2
+
+[node name="MiscSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("6_bxgur")]
+layout_mode = 2
+
+[node name="CreditsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("7_d3gnn")]
+layout_mode = 2

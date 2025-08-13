@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqisj0gcl5dd"]
+
+[ext_resource type="Script" uid="uid://cuswjymoa1x07" path="res://scripts/windows/base_hide_window.gd" id="1_txxn0"]
+
+[node name="DebugWindowWND" type="Window"]
+title = "DEBUG_WINDOW_TTL"
+initial_position = 1
+size = Vector2i(640, 480)
+script = ExtResource("1_txxn0")
+
+[node name="MainUIVBC" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DebugHeaderLB" type="Label" parent="MainUIVBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "DEBUG_WINDOW_HEADER"
+horizontal_alignment = 1
+
+[node name="DebugEntryContainerP" type="Panel" parent="MainUIVBC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DebugEntryContainerSC" type="ScrollContainer" parent="MainUIVBC/DebugEntryContainerP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="DebugEntryContainerVBC" type="VBoxContainer" parent="MainUIVBC/DebugEntryContainerP/DebugEntryContainerSC"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

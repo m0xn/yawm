@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://btm413rvs2ac5"]
+
+[ext_resource type="Script" uid="uid://cqfyxb8v1dx2j" path="res://scripts/windows/progress_handler.gd" id="1_rt716"]
+[ext_resource type="Script" uid="uid://cjyjtrmc7thn0" path="res://scripts/buttons/cancel_progress.gd" id="2_4jt1w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w8n70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rt716"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4jt1w"]
+
+[node name="ProgressWND" type="Window"]
+title = "P_BAR_WINDOW_TTL"
+initial_position = 1
+size = Vector2i(700, 120)
+always_on_top = true
+script = ExtResource("1_rt716")
+
+[node name="ElementsContainerVBC" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressInfoLB" type="Label" parent="ElementsContainerVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLACEHOLDER_PROGRESS_INFO"
+
+[node name="ProgressBarPB" type="ProgressBar" parent="ElementsContainerVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ElementBeingProcessedLB" type="Label" parent="ElementsContainerVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
+theme_override_font_sizes/font_size = 10
+text = "CURRENT_PROCESSED_ELEMENT_PLACEHOLDER"
+horizontal_alignment = 1
+
+[node name="CancelSectionHS" type="HSeparator" parent="ElementsContainerVBC"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w8n70")
+
+[node name="CancelSectionVBC" type="HBoxContainer" parent="ElementsContainerVBC"]
+layout_mode = 2
+
+[node name="LeftMarginVS" type="VSeparator" parent="ElementsContainerVBC/CancelSectionVBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_rt716")
+
+[node name="CancelButtonBTN" type="Button" parent="ElementsContainerVBC/CancelSectionVBC"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CANCEL"
+script = ExtResource("2_4jt1w")
+
+[node name="RightMarginVS" type="VSeparator" parent="ElementsContainerVBC/CancelSectionVBC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4jt1w")

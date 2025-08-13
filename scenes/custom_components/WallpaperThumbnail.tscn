@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh3gs7fmk5jdn"]
+
+[ext_resource type="Script" uid="uid://y5bmr12kc2b5" path="res://scripts/thumbnails/thumbnail_info.gd" id="1_lnwe1"]
+[ext_resource type="Script" uid="uid://d6bnk3mfi516" path="res://scripts/thumbnails/thumbnail_controller.gd" id="1_x0nna"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esulh"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0nna"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[node name="SlantedP" type="Panel"]
+clip_children = 1
+custom_minimum_size = Vector2(150, 150)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_esulh")
+script = ExtResource("1_lnwe1")
+
+[node name="WallpaperTR" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FrameP" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x0nna")
+script = ExtResource("1_x0nna")
