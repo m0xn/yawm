@@ -16,9 +16,22 @@ func is_a_valid_dir(path: String, le_ref: LineEdit) -> bool:
 	return true
 
 func _ready() -> void:
-	$EnablePrvwProcessingCB.button_down.connect(func ():
-		$PrvwDirVBC.call("hide" if $PrvwDirVBC.visible else "show")
-		AppData.settings.set_value("dirs", "enable_prvw_processing", not AppData.settings.get_value("dirs", "enable_prvw_processing"))
+	%WpsDirLE.text = AppData.settings.get_value("dirs", "wps_dir")
+	%ThumbsDirLE.text = AppData.settings.get_value("dirs", "thumbs_dir")
+	%PrvwDirLE.text = AppData.settings.get_value("dirs", "prvw_dir")
+
+	for dir_name in ["wps_dir", "thumbs_dir", "prvw_dir"]:
+		if AppData.settings.get_value("dirs", dir_name) == "":
+			if not DirAccess.dir_exists_absolute("user://" + dir_name):
+				DirAccess.make_dir_absolute("user://" + dir_name)
+
+			var default_path = OS.get_user_data_dir().path_join(dir_name)
+			get_node("%%%sLE" % dir_name.to_pascal_case()).text = default_path
+			AppData.settings.set_value("dirs", dir_name, default_path)
+
+	$EnablePrvwProcessingCB.toggled.connect(func (toggled_on):
+		$PrvwDirVBC.call("show" if toggled_on else "hide")
+		AppData.settings.set_value("dirs", "enable_prvw_processing", toggled_on)
 		prvw_toggled.emit(AppData.settings.get_value("dirs", "enable_prvw_processing"))
 	)
 
@@ -40,10 +53,6 @@ func _ready() -> void:
 		var valid_dir = is_a_valid_dir(path, %PrvwDirLE)
 		AppData.settings.set_value("dirs", "prvw_dir", path if valid_dir else "")
 	)
-
-	%WpsDirLE.text = AppData.settings.get_value("dirs", "wps_dir")
-	%ThumbsDirLE.text = AppData.settings.get_value("dirs", "thumbs_dir")
-	%PrvwDirLE.text = AppData.settings.get_value("dirs", "prvw_dir")
 
 	$SearchDirFD.dir_selected.connect(load_dir_path)
 
