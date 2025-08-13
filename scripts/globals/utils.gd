@@ -149,5 +149,5 @@ class Debug:
 				error_window.close_requested.connect(on_error_close)
 
 class Str:
-	static func flatten_output(accumulator: String, next_output: String, sep := "\n") -> String:
+	static func flatten_array(accumulator: String, next_output: String, sep := "\n") -> String:
 		return accumulator + sep + next_output
