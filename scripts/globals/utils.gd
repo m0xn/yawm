@@ -3,8 +3,6 @@ extends Node
 class ImgProcessing:
 	static func render_img(img_path: String, filename: String, downscale_factor: float, output_dir: String) -> Image:
 		var img = Image.load_from_file(img_path)
-		print(img)
-
 		var img_size = img.get_size()
 		img.resize(img_size.x * downscale_factor, img_size.y * downscale_factor)
 
@@ -151,3 +149,15 @@ class Debug:
 class Str:
 	static func flatten_array(accumulator: String, next_output: String, sep := "\n") -> String:
 		return accumulator + sep + next_output
+
+class Stts:
+	static func change_locale(locale_idx: int, local_opt_btn_ref: OptionButton) -> void:
+		var new_locale = local_opt_btn_ref.get_item_text(locale_idx)
+		AppData.settings.set_value("misc", "locale_idx", locale_idx)
+
+		ProjectSettings.set_setting("internationalization/locale/test", new_locale)
+		ProjectSettings.save()
+
+	static func detect_imparity(caller_node: Node, value: Variant, stts_section: String, stts_name: String) -> void:
+		print("Section:\t%s\nName:\t%s\nValue:\t%s\nDefault value:\t%s\nImparity:\t%s\n\n" % [stts_section, stts_name, value, DefaultSettings.map[stts_section][stts_name], value != DefaultSettings.map[stts_section][stts_name]])
+		caller_node.get_parent().get_node("ResetSettingBTN").call("show" if value != DefaultSettings.map[stts_section][stts_name] else "hide")

@@ -24,6 +24,7 @@ AppData="*res://scripts/globals/app_data.gd"
 Global="*res://scripts/globals/globals.gd"
 AccentMap="*res://scripts/globals/accent_map.gd"
 Types="*res://scripts/globals/types.gd"
+DefaultSettings="*res://scripts/globals/default_settings.gd"
 
 [display]
 

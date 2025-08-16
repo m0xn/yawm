@@ -315,3 +315,7 @@ visible = false
 
 [node name="ErrorWindowWND" parent="." instance=ExtResource("8_xa025")]
 visible = false
+
+[node name="SettingsWindow" parent="." instance=ExtResource("6_3p2gp")]
+unique_name_in_owner = true
+visible = false
