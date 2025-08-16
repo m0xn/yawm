@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbq8oa244tjsq"]
+
+[ext_resource type="Texture2D" uid="uid://wcbix1wcjm8b" path="res://graphics/app_icons/reset_icon.svg" id="1_hnref"]
+
+[node name="ResetSettingBTN" type="TextureButton"]
+offset_right = 20.0
+offset_bottom = 20.0
+texture_normal = ExtResource("1_hnref")
+stretch_mode = 3
+flip_h = true

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4fxnfkkvwm27"]
 
 [ext_resource type="Script" uid="uid://dfeg1qi438rd7" path="res://scripts/windows/settings_window.gd" id="1_t1c6x"]
-[ext_resource type="PackedScene" uid="uid://4gjb1b7nhkh2" path="res://scenes/settings_panels/DirSection.tscn" id="3_bkfuf"]
-[ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CommandsSection.tscn" id="4_rhflm"]
-[ext_resource type="PackedScene" uid="uid://b5ol4xpiwl53n" path="res://scenes/settings_panels/ImgProcSection.tscn" id="5_cwfu7"]
-[ext_resource type="PackedScene" uid="uid://cjsmoyw3n623n" path="res://scenes/settings_panels/MiscSection.tscn" id="6_bxgur"]
-[ext_resource type="PackedScene" uid="uid://clowtv2p8orur" path="res://scenes/settings_panels/CreditsSection.tscn" id="7_d3gnn"]
+[ext_resource type="PackedScene" uid="uid://4gjb1b7nhkh2" path="res://scenes/settings_panels/DirSections.tscn" id="3_bkfuf"]
+[ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CmdsSection.tscn" id="3_rhflm"]
+[ext_resource type="PackedScene" uid="uid://b5ol4xpiwl53n" path="res://scenes/settings_panels/ImgProcSection.tscn" id="4_rhflm"]
+[ext_resource type="PackedScene" uid="uid://cjsmoyw3n623n" path="res://scenes/settings_panels/MiscSection.tscn" id="5_bxgur"]
+[ext_resource type="PackedScene" uid="uid://clowtv2p8orur" path="res://scenes/settings_panels/CreditsSection.tscn" id="6_d3gnn"]
 
 [node name="SettingsWindow" type="Window"]
 title = "STTS_WINDOW_TTL"
@@ -39,17 +39,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
-[node name="DirSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("3_bkfuf")]
+[node name="DirsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("3_bkfuf")]
 layout_mode = 2
 
-[node name="CmdsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("4_rhflm")]
+[node name="CmdsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("3_rhflm")]
 layout_mode = 2
 
-[node name="ImgProcSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("5_cwfu7")]
+[node name="ImgProcSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("4_rhflm")]
 layout_mode = 2
 
-[node name="MiscSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("6_bxgur")]
+[node name="MiscSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("5_bxgur")]
 layout_mode = 2
 
-[node name="CreditsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("7_d3gnn")]
+[node name="CreditsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("6_d3gnn")]
 layout_mode = 2
+script = null

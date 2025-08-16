@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5ol4xpiwl53n"]
+[gd_scene load_steps=10 format=3 uid="uid://b5ol4xpiwl53n"]
 
-[ext_resource type="Script" uid="uid://c3g3ax1os3avq" path="res://scripts/settings_panels/img_proc_controller.gd" id="1_husjb"]
+[ext_resource type="Script" uid="uid://igxasc0b61eq" path="res://scripts/img_proc_controller.gd" id="1_40mog"]
+[ext_resource type="Script" uid="uid://1e6esojl2i6u" path="res://scripts/settings/spinbox_setting_entry.gd" id="2_40mog"]
+[ext_resource type="PackedScene" uid="uid://bbq8oa244tjsq" path="res://scenes/custom_components/ResetSettingBtn.tscn" id="2_iauv4"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
 color = Color(1, 1, 1, 1)
@@ -38,7 +40,7 @@ anchor_right = 1.0
 offset_bottom = 146.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-script = ExtResource("1_husjb")
+script = ExtResource("1_40mog")
 
 [node name="ImgProcHeaderLB" type="Label" parent="."]
 layout_mode = 2
@@ -57,45 +59,55 @@ theme_override_font_sizes/font_size = 20
 text = "STTS_THUMBS_PROC_LB"
 autowrap_mode = 3
 
-[node name="ThumbsProcCfgElsHBC" type="HBoxContainer" parent="."]
+[node name="ThumbsDfHBC" type="HBoxContainer" parent="."]
 layout_mode = 2
 localize_numeral_system = false
 
-[node name="ThumbsDFOptsVBC" type="VBoxContainer" parent="ThumbsProcCfgElsHBC"]
+[node name="ThumbsProcCfgVBC" type="VBoxContainer" parent="ThumbsDfHBC"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="ThumbsDFLB" type="Label" parent="ThumbsProcCfgElsHBC/ThumbsDFOptsVBC"]
+[node name="ThumbsDfLB" type="Label" parent="ThumbsDfHBC/ThumbsProcCfgVBC"]
 layout_mode = 2
 text = "STTS_DF_LB"
 
-[node name="ThumbsDFSB" type="SpinBox" parent="ThumbsProcCfgElsHBC/ThumbsDFOptsVBC"]
+[node name="ThumbsDfHBC" type="HBoxContainer" parent="ThumbsDfHBC/ThumbsProcCfgVBC" node_paths=PackedStringArray("editable_node")]
+layout_mode = 2
+script = ExtResource("2_40mog")
+stts_section = "img_proc"
+stts_name = "thumbs_df"
+editable_node = NodePath("ThumbsDfSB")
+
+[node name="ThumbsDfSB" type="SpinBox" parent="ThumbsDfHBC/ThumbsProcCfgVBC/ThumbsDfHBC"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 min_value = 0.01
 max_value = 1.0
 step = 0.01
 value = 0.01
-update_on_text_changed = true
 
-[node name="ThumbsApplyDFBTN" type="Button" parent="ThumbsProcCfgElsHBC/ThumbsDFOptsVBC"]
+[node name="ResetSettingBTN" parent="ThumbsDfHBC/ThumbsProcCfgVBC/ThumbsDfHBC" instance=ExtResource("2_iauv4")]
+layout_mode = 2
+
+[node name="ThumbsApplyDFBTN" type="Button" parent="ThumbsDfHBC/ThumbsProcCfgVBC"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "STTS_APPLY_BTN"
 
-[node name="DFOptsThumbVS" type="VSeparator" parent="ThumbsProcCfgElsHBC"]
+[node name="DFOptsThumbVS" type="VSeparator" parent="ThumbsDfHBC"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_qrbld")
 
-[node name="PrvwThumbBaseP" type="Panel" parent="ThumbsProcCfgElsHBC"]
+[node name="PrvwThumbBaseP" type="Panel" parent="ThumbsDfHBC"]
 clip_children = 2
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qrbld")
 
-[node name="ThumbTextureTR" type="TextureRect" parent="ThumbsProcCfgElsHBC/PrvwThumbBaseP"]
+[node name="ThumbTextureTR" type="TextureRect" parent="ThumbsDfHBC/PrvwThumbBaseP"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -106,7 +118,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 6
 
-[node name="ThumbFrameP" type="Panel" parent="ThumbsProcCfgElsHBC/PrvwThumbBaseP"]
+[node name="ThumbFrameP" type="Panel" parent="ThumbsDfHBC/PrvwThumbBaseP"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,46 +141,57 @@ theme_override_font_sizes/font_size = 20
 text = "STTS_PRVW_PROC_LB"
 autowrap_mode = 3
 
-[node name="PrvwDFOptsHBC" type="HBoxContainer" parent="."]
+[node name="PrvwDfHBC" type="HBoxContainer" parent="."]
 visible = false
 layout_mode = 2
 localize_numeral_system = false
 
-[node name="PrvwDFOptsVBC" type="VBoxContainer" parent="PrvwDFOptsHBC"]
+[node name="PrvwProcCfgVBC" type="VBoxContainer" parent="PrvwDfHBC"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="PrvwDFLB" type="Label" parent="PrvwDFOptsHBC/PrvwDFOptsVBC"]
+[node name="PrvwDfLB" type="Label" parent="PrvwDfHBC/PrvwProcCfgVBC"]
 layout_mode = 2
 text = "STTS_DF_LB"
 
-[node name="PrvwDFSB" type="SpinBox" parent="PrvwDFOptsHBC/PrvwDFOptsVBC"]
+[node name="PrvwDfHBC" type="HBoxContainer" parent="PrvwDfHBC/PrvwProcCfgVBC" node_paths=PackedStringArray("editable_node")]
+layout_mode = 2
+script = ExtResource("2_40mog")
+stts_section = "img_proc"
+stts_name = "prvw_df"
+editable_node = NodePath("PrvwDfSB")
+
+[node name="PrvwDfSB" type="SpinBox" parent="PrvwDfHBC/PrvwProcCfgVBC/PrvwDfHBC"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 min_value = 0.01
 max_value = 1.0
 step = 0.01
 value = 0.01
 update_on_text_changed = true
 
-[node name="PrvwApplyDFBTN" type="Button" parent="PrvwDFOptsHBC/PrvwDFOptsVBC"]
+[node name="ResetSettingBTN" parent="PrvwDfHBC/PrvwProcCfgVBC/PrvwDfHBC" instance=ExtResource("2_iauv4")]
+layout_mode = 2
+
+[node name="PrvwApplyDFBTN" type="Button" parent="PrvwDfHBC/PrvwProcCfgVBC"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "STTS_APPLY_BTN"
 
-[node name="DFOptionsPrvwVS" type="VSeparator" parent="PrvwDFOptsHBC"]
+[node name="DFOptionsPrvwVS" type="VSeparator" parent="PrvwDfHBC"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_qrbld")
 
-[node name="PrvwBaseP" type="Panel" parent="PrvwDFOptsHBC"]
+[node name="PrvwBaseP" type="Panel" parent="PrvwDfHBC"]
 clip_children = 2
 custom_minimum_size = Vector2(320, 180)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hx8ue")
 
-[node name="PrvwTextureTR" type="TextureRect" parent="PrvwDFOptsHBC/PrvwBaseP"]
+[node name="PrvwTextureTR" type="TextureRect" parent="PrvwDfHBC/PrvwBaseP"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15

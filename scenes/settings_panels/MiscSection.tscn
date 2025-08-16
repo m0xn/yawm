@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjsmoyw3n623n"]
+[gd_scene load_steps=8 format=3 uid="uid://cjsmoyw3n623n"]
 
-[ext_resource type="Script" uid="uid://vyuojff1n8i5" path="res://scripts/settings_panels/misc_section_controller.gd" id="1_sgufv"]
+[ext_resource type="Script" uid="uid://bi3j3ttpnehmv" path="res://scripts/settings/lang_setting_entry.gd" id="1_1fncs"]
+[ext_resource type="PackedScene" uid="uid://bbq8oa244tjsq" path="res://scenes/custom_components/ResetSettingBtn.tscn" id="2_1fncs"]
+[ext_resource type="Script" uid="uid://coutshwmfne6r" path="res://scripts/settings/acc_color_setting_entry.gd" id="3_e74c8"]
+[ext_resource type="Script" uid="uid://1e6esojl2i6u" path="res://scripts/settings/spinbox_setting_entry.gd" id="4_5ui0q"]
+[ext_resource type="Script" uid="uid://b1tli8r6syg6j" path="res://scripts/settings/enable_dnd_tooltip_setting_entry.gd" id="5_0b1i5"]
+[ext_resource type="Script" uid="uid://dh3m20myu62hj" path="res://scripts/settings/thumbs_init_scale_setting_entry.gd" id="5_5ui0q"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
 color = Color(1, 1, 1, 1)
@@ -11,7 +16,6 @@ anchor_right = 1.0
 offset_bottom = 146.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-script = ExtResource("1_sgufv")
 
 [node name="MiscHeaderLB" type="Label" parent="."]
 layout_mode = 2
@@ -22,17 +26,21 @@ text = "STTS_MISC_LB"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
 
-[node name="LangVBC" type="HBoxContainer" parent="."]
+[node name="LangHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
+script = ExtResource("1_1fncs")
+stts_section = "misc"
+stts_name = "locale_idx"
+editable_node = NodePath("LangOB")
 
-[node name="LangLB" type="Label" parent="LangVBC"]
+[node name="LangLB" type="Label" parent="LangHBC"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "STTS_LANG_LB"
 autowrap_mode = 3
 
-[node name="LangOB" type="OptionButton" parent="LangVBC"]
+[node name="LangOB" type="OptionButton" parent="LangHBC"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -42,33 +50,49 @@ popup/item_0/id = 0
 popup/item_1/text = "en"
 popup/item_1/id = 1
 
-[node name="AccColorVBC" type="HBoxContainer" parent="."]
+[node name="ResetSettingBTN" parent="LangHBC" instance=ExtResource("2_1fncs")]
+visible = false
 layout_mode = 2
 
-[node name="AccColorLB" type="Label" parent="AccColorVBC"]
+[node name="AccColorHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
+layout_mode = 2
+script = ExtResource("3_e74c8")
+stts_section = "misc"
+stts_name = "acc_color"
+editable_node = NodePath("AccColorCPB")
+
+[node name="AccColorLB" type="Label" parent="AccColorHBC"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "STTS_ACC_COLOR_LB"
 autowrap_mode = 3
 
-[node name="AccColorCB" type="ColorPickerButton" parent="AccColorVBC"]
+[node name="AccColorCPB" type="ColorPickerButton" parent="AccColorHBC"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScaleStepVBC" type="HBoxContainer" parent="."]
+[node name="ResetSettingBTN" parent="AccColorHBC" instance=ExtResource("2_1fncs")]
+visible = false
 layout_mode = 2
 
-[node name="ScaleStepLB" type="Label" parent="ScaleStepVBC"]
+[node name="ScaleStepHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
+layout_mode = 2
+script = ExtResource("4_5ui0q")
+stts_section = "misc"
+stts_name = "scale_step"
+editable_node = NodePath("ScaleStepSB")
+
+[node name="ScaleStepLB" type="Label" parent="ScaleStepHBC"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "STTS_SCALE_STEP_LB"
 autowrap_mode = 3
 
-[node name="ScaleStepSB" type="SpinBox" parent="ScaleStepVBC"]
+[node name="ScaleStepSB" type="SpinBox" parent="ScaleStepHBC"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -78,17 +102,25 @@ step = 0.01
 value = 0.1
 update_on_text_changed = true
 
-[node name="ThumbsInitialScaleVBC" type="HBoxContainer" parent="."]
+[node name="ResetSettingBTN" parent="ScaleStepHBC" instance=ExtResource("2_1fncs")]
+visible = false
 layout_mode = 2
 
-[node name="ThumbsInitialScaleLB" type="Label" parent="ThumbsInitialScaleVBC"]
+[node name="ThumbsInitScaleHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
+layout_mode = 2
+script = ExtResource("5_5ui0q")
+stts_section = "misc"
+stts_name = "thumbs_init_scale"
+editable_node = NodePath("ThumbsInitScaleSB")
+
+[node name="ThumbsInitScaleLB" type="Label" parent="ThumbsInitScaleHBC"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "STTS_THUMBS_INIT_SCALE_LB"
 autowrap_mode = 3
 
-[node name="ThumbsInitialScaleSB" type="SpinBox" parent="ThumbsInitialScaleVBC"]
+[node name="ThumbsInitScaleSB" type="SpinBox" parent="ThumbsInitScaleHBC"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -98,7 +130,23 @@ step = 0.1
 value = 0.5
 update_on_text_changed = true
 
-[node name="EnableDNDHintCB" type="CheckBox" parent="."]
+[node name="ResetSettingBTN" parent="ThumbsInitScaleHBC" instance=ExtResource("2_1fncs")]
+visible = false
+layout_mode = 2
+
+[node name="EnableDndTooltipHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
+layout_mode = 2
+script = ExtResource("5_0b1i5")
+stts_section = "misc"
+stts_name = "enable_dnd_tooltip"
+editable_node = NodePath("EnableDndTooltipCB")
+
+[node name="EnableDndTooltipCB" type="CheckBox" parent="EnableDndTooltipHBC"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 text = "STTS_ENABLE_DND_HINT_LB"
+
+[node name="ResetSettingBTN" parent="EnableDndTooltipHBC" instance=ExtResource("2_1fncs")]
+visible = false
+layout_mode = 2

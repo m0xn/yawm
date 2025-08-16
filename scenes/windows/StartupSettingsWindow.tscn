@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6gigxjv0lenm"]
 
 [ext_resource type="Script" uid="uid://dpa5xqtsn3ckq" path="res://scripts/windows/startup_settings_controller.gd" id="1_56kyj"]
-[ext_resource type="PackedScene" uid="uid://4gjb1b7nhkh2" path="res://scenes/settings_panels/DirSection.tscn" id="2_ldl8f"]
+[ext_resource type="PackedScene" uid="uid://4gjb1b7nhkh2" path="res://scenes/settings_panels/DirSections.tscn" id="2_ldl8f"]
 [ext_resource type="FontFile" uid="uid://b1ossgbydysof" path="res://fonts/Tomorrow-Medium.ttf" id="2_lky2e"]
-[ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CommandsSection.tscn" id="3_j2yrx"]
+[ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CmdsSection.tscn" id="3_j2yrx"]
 [ext_resource type="Texture2D" uid="uid://dwg10s2k07ksa" path="res://graphics/os_logos/linux_logo.svg" id="3_wsrws"]
 [ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="4_ldl8f"]
 
