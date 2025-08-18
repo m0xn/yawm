@@ -51,7 +51,6 @@ func verify_fields() -> void:
 		var param = field.split("|")[1]
 
 		if AppData.settings.get_value(section, param) == "":
-			push_error("[ERROR]: You haven't filled all the fields, missing value for: '%s|%s'" % [section, param])
 			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_FIELDS"))
 			return
 
@@ -59,6 +58,28 @@ func verify_fields() -> void:
 	get_parent().remove_child(self)
 
 	if len(DirAccess.get_files_at(AppData.settings.get_value("dirs", "wps_dir"))) != 0:
-		var process_wps_window = load("res://scenes/windows/ProcessFoundWpsWindow.tscn").instantiate()
-		process_wps_window.show()
+		var process_wps_window: Window = load("res://scenes/windows/ConfirmationWindow.tscn").instantiate()
+		process_wps_window.init_window("PROCESS_WPS_WINDOW_TTL", tr("PROCESS_WPS_WINDOW_MSG_LB") % AppData.settings.get_value("dirs", "wps_dir"), import_found_wps)
+
 		Global.nodes.app_root_ref.add_child(process_wps_window)
+
+func import_found_wps(caller_window_ref: Window) -> void:
+	var scene_tree_ref = Global.nodes.app_root_ref.get_tree()
+	Global.nodes.app_root_ref.remove_child(caller_window_ref)
+
+	var wps_dir = AppData.settings.get_value("dirs", "wps_dir")
+
+	Utils.Dir.iterate_dir(wps_dir, func (filename):
+		var img = Utils.ImgProcessing.render_img(
+			wps_dir.path_join(filename),
+			filename,
+			AppData.settings.get_value("img_proc", "thumbs_df"),
+			AppData.settings.get_value("dirs", "thumbs_dir")
+		)
+
+		AppData.wp_count += 1
+		Utils.GC.load_into_grid_container(filename, img)
+		Utils.GC.update_wp_count()
+
+		await scene_tree_ref.process_frame
+	)
