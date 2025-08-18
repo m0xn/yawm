@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://4acjp76x1ts7"]
+
+[ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="1_xqt4g"]
+[ext_resource type="FontFile" uid="uid://b75fm5jbk1qk8" path="res://fonts/Tomorrow-Italic.ttf" id="2_1qo4p"]
+[ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="3_1dghw"]
+[ext_resource type="FontFile" uid="uid://boscn51rhegt4" path="res://fonts/Tomorrow-Bold.ttf" id="4_5ympa"]
+
+[node name="Label" type="RichTextLabel"]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("1_xqt4g")
+theme_override_fonts/italics_font = ExtResource("2_1qo4p")
+theme_override_fonts/bold_italics_font = ExtResource("3_1dghw")
+theme_override_fonts/bold_font = ExtResource("4_5ympa")
+bbcode_enabled = true
+fit_content = true
