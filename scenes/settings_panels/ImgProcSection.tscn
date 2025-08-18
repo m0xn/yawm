@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5ol4xpiwl53n"]
+[gd_scene load_steps=11 format=3 uid="uid://b5ol4xpiwl53n"]
 
 [ext_resource type="Script" uid="uid://igxasc0b61eq" path="res://scripts/img_proc_controller.gd" id="1_40mog"]
 [ext_resource type="Script" uid="uid://1e6esojl2i6u" path="res://scripts/settings/spinbox_setting_entry.gd" id="2_40mog"]
 [ext_resource type="PackedScene" uid="uid://bbq8oa244tjsq" path="res://scenes/custom_components/ResetSettingBtn.tscn" id="2_iauv4"]
+[ext_resource type="Script" uid="uid://b72cirb481ahe" path="res://scripts/custom_tooltip.gd" id="2_yd6rq"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
 color = Color(1, 1, 1, 1)
@@ -66,7 +67,9 @@ localize_numeral_system = false
 [node name="ThumbsProcCfgVBC" type="VBoxContainer" parent="ThumbsDfHBC"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+tooltip_text = "THUMBS_DF_TTP"
 alignment = 1
+script = ExtResource("2_yd6rq")
 
 [node name="ThumbsDfLB" type="Label" parent="ThumbsDfHBC/ThumbsProcCfgVBC"]
 layout_mode = 2
@@ -83,10 +86,10 @@ editable_node = NodePath("ThumbsDfSB")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-min_value = 0.01
-max_value = 1.0
-step = 0.01
-value = 0.01
+mouse_filter = 1
+min_value = 1.0
+value = 1.0
+suffix = "%"
 
 [node name="ResetSettingBTN" parent="ThumbsDfHBC/ThumbsProcCfgVBC/ThumbsDfHBC" instance=ExtResource("2_iauv4")]
 layout_mode = 2
@@ -149,7 +152,9 @@ localize_numeral_system = false
 [node name="PrvwProcCfgVBC" type="VBoxContainer" parent="PrvwDfHBC"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+tooltip_text = "PRVW_DF_TTP"
 alignment = 1
+script = ExtResource("2_yd6rq")
 
 [node name="PrvwDfLB" type="Label" parent="PrvwDfHBC/PrvwProcCfgVBC"]
 layout_mode = 2
@@ -166,11 +171,10 @@ editable_node = NodePath("PrvwDfSB")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-min_value = 0.01
-max_value = 1.0
-step = 0.01
-value = 0.01
+min_value = 1.0
+value = 1.0
 update_on_text_changed = true
+suffix = "%"
 
 [node name="ResetSettingBTN" parent="PrvwDfHBC/PrvwProcCfgVBC/PrvwDfHBC" instance=ExtResource("2_iauv4")]
 layout_mode = 2

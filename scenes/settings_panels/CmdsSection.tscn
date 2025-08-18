@@ -25,6 +25,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
 
 [node name="SetAsWpCmdHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
+tooltip_text = "SET_AS_WP_TTP"
 script = ExtResource("1_e7pxg")
 stts_section = "cmds"
 stts_name = "set_wp_cmd"
@@ -54,6 +55,7 @@ layout_mode = 2
 
 [node name="OpenInImgVwrCmdHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
+tooltip_text = "OPEN_IN_IMG_VIEWER_TTP"
 script = ExtResource("1_e7pxg")
 stts_section = "cmds"
 stts_name = "open_img_vwr_cmd"

@@ -27,7 +27,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
 
 [node name="WpsDirHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
-tooltip_text = "lkjasdflkjasdflkjsadflkjsdf"
+tooltip_text = "WPS_DIR_TTP"
 script = ExtResource("1_xarl2")
 stts_section = "dirs"
 stts_name = "wps_dir"
@@ -37,6 +37,7 @@ editable_node = NodePath("WpsDirLE")
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 text = "STTS_WPS_DIR_LB"
 autowrap_mode = 3
 
@@ -65,6 +66,7 @@ layout_mode = 2
 
 [node name="ThumbsDirHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
+tooltip_text = "THUMBS_DIR_TTP"
 script = ExtResource("1_xarl2")
 stts_section = "dirs"
 stts_name = "thumbs_dir"
@@ -100,6 +102,7 @@ layout_mode = 2
 
 [node name="EnablePrvwProcessingHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
+tooltip_text = "ENABLE_PRVW_PROCESSING_TTP"
 script = ExtResource("5_wliso")
 stts_section = "dirs"
 stts_name = "enable_prvw_processing"
@@ -109,6 +112,7 @@ editable_node = NodePath("EnablePrvwProcessingCB")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 text = "STTS_PROCESS_PRVW_CB"
 
 [node name="ResetSettingBTN" parent="EnablePrvwProcessingHBC" instance=ExtResource("4_2ukj3")]
@@ -118,6 +122,7 @@ layout_mode = 2
 [node name="PrvwDirHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 visible = false
 layout_mode = 2
+tooltip_text = "PRVW_DIR_TTP"
 script = ExtResource("1_xarl2")
 stts_section = "dirs"
 stts_name = "prvw_dir"

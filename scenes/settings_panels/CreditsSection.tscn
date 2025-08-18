@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://clowtv2p8orur"]
 
+[ext_resource type="Script" uid="uid://c5nnu6h86u78l" path="res://scripts/license_handler.gd" id="1_7wauj"]
 [ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="1_pacub"]
-[ext_resource type="Script" uid="uid://ca031qgo87now" path="res://scripts/settings_panels/license_btns_handler.gd" id="1_pc0dt"]
 [ext_resource type="PackedScene" uid="uid://d0strmyqw0x0b" path="res://scenes/license_windows/AppLicense.tscn" id="3_l2ci0"]
 [ext_resource type="Texture2D" uid="uid://c1xdb5s6icw4a" path="res://graphics/app_icons/github.svg" id="3_nh1wb"]
 [ext_resource type="Script" uid="uid://chrji6x6uvc71" path="res://scripts/redirect_to_github.gd" id="4_7wauj"]
@@ -19,7 +19,7 @@ anchor_right = 1.0
 offset_bottom = 146.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-script = ExtResource("1_pc0dt")
+script = ExtResource("1_7wauj")
 
 [node name="CreditsHeaderLB" type="Label" parent="."]
 layout_mode = 2
