@@ -1,12 +1,14 @@
 extends VBoxContainer
 
 func _ready() -> void:
-	var random_thumb_img = Image.load_from_file(AppData.settings.get_value("dirs", "thumbs_dir").path_join(AppData.random_wp))
-	var random_prvw_img = Image.load_from_file(AppData.settings.get_value("dirs", "prvw_dir").path_join(AppData.random_wp))
+	var wps = DirAccess.get_files_at(AppData.settings.get_value("dirs", "thumbs_dir"))
+	var random_wp = wps[randi_range(0, len(wps))]
 
-	if random_thumb_img and random_prvw_img:
-		%ThumbTextureTR.texture = ImageTexture.create_from_image(random_thumb_img)
-		%PrvwTextureTR.texture = ImageTexture.create_from_image(random_prvw_img)
+	var random_thumb_img = Image.load_from_file(AppData.settings.get_value("dirs", "thumbs_dir").path_join(random_wp))
+	var random_prvw_img = Image.load_from_file(AppData.settings.get_value("dirs", "prvw_dir").path_join(random_wp))
+
+	%ThumbTextureTR.texture = ImageTexture.create_from_image(random_thumb_img) if random_thumb_img else load("res://graphics/template_images/thumbnail_template.png")
+	%PrvwTextureTR.texture = ImageTexture.create_from_image(random_prvw_img) if random_prvw_img else load("res://graphics/template_images/preview_template.png")
 
 	%ThumbsApplyDFBTN.button_down.connect(apply_df_factor.bind(%ThumbsDfSB, %ThumbTextureTR, AppData.settings.get_value("dirs", "thumbs_dir"), "STTS_XFORM_THUMBS_LB"))
 	%PrvwApplyDFBTN.button_down.connect(apply_df_factor.bind(%PrvwDfSB, %PrvwTextureTR, AppData.settings.get_value("dirs", "prvw_dir"), "STTS_XFORM_PRVW_LB"))
