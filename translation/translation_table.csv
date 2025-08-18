@@ -1,0 +1,151 @@
+keys,es,en
+PREVIEW_LB,Previsualizando:,Previewing:
+SET_AS_WP_BTN,Poner como fondo de pantalla,Set as wallpaper
+OPEN_IN_IMG_VIEWER_BTN,Abrir en visor de fotos,Open in image viewer
+ADD_WP_BTN,Añadir fondos de pantalla,Add wallpapers
+DRAG_AND_DROP_LB,Puedes añadir nuevos fondos de pantalla arrastrándolos a esta ventana,You can add new wallpapers by dragging files to this window
+WP_COUNT_LB,Fondos de pantalla:,Wallpapers:
+THUMB_SCALE_LB,Escala:,Scale:
+WP_IMPORT_WINDOW_TTL,Cargador de fondos de pantalla,Wallpaper loader
+WP_IMPORT_HEADER_LB,Listado de fondos de pantalla a cargar,List of wallpapers to load
+WP_IMPORT_WP_NO_LB,N.º de fondos de pantalla:,No. of wallpapers:
+WP_IMPORT_LOAD_BTN,Cargar,Load
+P_BAR_WINDOW_TTL,Barra de progreso,Progress bar
+P_BAR_IMPORTING_INFO_LB,Importando fondos de pantalla...,Importing wallpapers...
+STTS_WINDOW_TTL,Configuración,Settings
+STTS_DIR_HEADER_LB,Carpetas ,Folders
+STTS_WPS_DIR_LB,Carpeta para los fondos de pantalla,Folder for wallpapers
+STTS_THUMBS_DIR_LB,Carpeta para las miniaturas,Folder for thumbnails
+STTS_PROCESS_PRVW_CB,Procesar imágenes de previsualización,Process preview images
+STTS_PRVW_DIR_LB,Carpeta para las imágenes de previsualización,Folder for preview images
+STTS_CMDS_HEADER_LB,Comandos,Commands
+STTS_SET_AS_WP_SCRIPT_LB,Poner como fondo de pantalla (script),Set as wallpaper (script)
+STTS_IMG_PROC_HEADER_LB,Procesamiento de imágenes,Image processing
+STTS_THUMBS_PROC_LB,Miniaturas,Thumbnails
+STTS_PRVW_PROC_LB,Imagen de previsualización,Preview image
+STTS_DF_LB,Factor de reescalado,Downscale factor
+STTS_APPLY_BTN,Aplicar,Apply
+STTS_XFORM_THUMBS_LB,Renderizando miniaturas con el factor de escala:,Rendering thumbnails with scale factor:
+STTS_XFORM_PRVW_LB,Renderizando imágenes de previsualización con el factor de escala:,Rendering preview images with scale factor:
+STTS_MISC_LB,Misceláneo,Miscellaneous
+STTS_LANG_LB,Idioma,Language
+STTS_ACC_COLOR_LB,Color de acento,Accent color
+STTS_SCALE_STEP_LB,Incremento en la escala de las miniaturas,Thumbnail scale step
+STTS_THUMBS_INIT_SCALE_LB,Escala incial de las miniaturas,Thumbnail's initial scale
+STTS_ENABLE_DND_HINT_LB,Habilitar ayuda para arrastrar imágenes a la aplicación,Enable hint to drag and drop images to the app
+CRDTS_HEADER_LB,Créditos,Credits
+CRDTS_DEV_INFO_RTL,> [i]Desarrollado por: [color=#a980ed]m0xn (Rodrigo)[/color][/i],> [i]Developed by: [color=#a980ed]m0xn (Rodrigo)[/color][/i]
+CRDTS_SVG_ICONS_RTL,> [i]Iconos del programa: [url=https://www.svgrepo.com][color=lightblue]SVG REPO[/color][/url][/i],> [i]App icons: [url=https://www.svgrepo.com][color=lightblue]SVG REPO[/color][/url][/i]
+CRDTS_GE_RTL,> [i]Creado con: [color=#448cbc]Godot Engine[/color][/i],> [i]Made with: [color=#448cbc]Godot Engine[/color][/i]
+CRDTS_GD_LICENSE_BTN,Licencia de Godot,Godot's license
+CRDTS_FONT_LICENSE_BTN,Licencia de la fuente de texto,Font's license
+CRDTS_APP_LICENSE_BTN,Licencia del programa,App's license
+WELCOME_WINDOW_TTL,Bienvenida,Welcome
+WELCOME_WINDOW_HEADER_LB,¡Bienvenid@!,Welcome!
+WELCOME_WINDOW_MSG_RTL,"Como es tu primera vez utilizando [color=#a980ed]YAWM[/color] ([i][b][color=#a980ed]Y[/color][/b]et [b][color=#a980ed]A[/color][/b]nother [b][color=#a980ed]W[/color][/b]allpaper [b][color=#a980ed]M[/color][/b]anager[/i]) es necesario que configures algunos parámetros para el correcto funcionamiento del programa. Puedes modificar el resto de parámetros de la configuración más tarde haciendo click sobre el icono del engranaje situado en la esquina inferior derecha del programa.
+[b]¡Gracias por utilizar mi programa! Espero que te sea de utilidad ;-)[/b]","Since it's your first time using [color=#a980ed]YAWM[/color] ([i][b][color=#a980ed]Y[/color][/b]et [b][color=#a980ed]A[/color][/b]nother [b][color=#a980ed]W[/color][/b]allpaper [b][color=#a980ed]M[/color][/b]anager[/i]) you'll need to configure some of the apps settings in order for it to work properly. You can later configure the rest of the settings parameters by clicking on the gear icon located at the bottom right of the app.
+[b]Thank you for using my app! Hope it comes in handy ;-)[/b]"
+WELCOME_WINDOW_START_BTN,Empezar,Start
+STARTUP_STTS_WINDOW_TTL,Configuración inicial,Startup settings
+SAVE_BTN,Guardar,Save
+STARTUP_FIELD_NOTICE_LB,*Debes rellenar todos los campos para que el programa funcione correctamente,*You must fill all fields for the app to work properly
+DETECTED_OS_LB,Sistema operativo detectado:,Detected OS:
+PROCESS_WPS_WINDOW_TTL,Procesar fondos de pantalla encontrados,Process found wallpapers
+PROCESS_WPS_WINDOW_MSG_LB,¿Deseas importar todos los fondos de pantalla encontrados en '{0}'?,Do you want to import all wallpapers found at '{0}'?
+YES_BTN,Sí,Yes
+NO_BTN,No,No
+CLOSE_BTN,Cerrar,Close
+ERROR_WINDOW_TTL,Se ha producido un error,An error has ocurred
+DEBUG_WINDOW_TTL,Ventana de depurado,Debugging window
+DEBUG_WINDOW_HEADER,Registros de la aplicación,App logs
+WPS_DIR_TTP,"[b][i]Carpeta para los fondos de pantalla[/i][/b]
+En esta carpeta se almacenan los fondos de pantalla [b]originales[/b] que importes en el programa o guardes en dicha carpeta.
+
+[color=gray]Por defecto se creará y asignará una carpeta del sistema, puedes consultar su ruta haciendo click sobre el botón [img]res://graphics/app_icons/file_explorer_icon.svg[/img]. Si quieres usar otra carpeta, puedes escribir su ruta a mano o buscarla a través del gestor de archivos haciendo click sobre el botón [img]res://graphics/app_icons/mag_glass.svg[/img].[/color]","[b][i]Folder for wallpapers[/i][/b]
+This folder stores the original version of wallpapers imported through the app or already existing in said folder.
+
+[color=gray]A system folder will be made and assigned by default, you can get its path by clicking the [img]res://graphics/app_icons/file_explorer_icon.svg[/img] button. If you want to use another folder, you can type its path in the text field or search it through the file explorer menu by click on the [img]res://graphics/app_icons/mag_glass.svg[/img] button.[/color]"
+THUMBS_DIR_TTP,"[b][i]Carpeta para las miniaturas[/i][/b]
+En esta carpeta se almacenan versiones de menor resolución de los fondos de pantalla en la [b][i]Carpeta para los fondos de pantalla[/i][/b], utilizadas para representar los fondos de pantalla importados en el programa en un forma más compacta.
+
+[color=gray]Por defecto se creará y asignará una carpeta del sistema, puedes consultar su ruta haciendo click sobre el botón [img]res://graphics/app_icons/file_explorer_icon.svg[/img]. Si quieres usar otra carpeta, puedes escribir su ruta a mano o buscarla a través del gestor de archivos haciendo click sobre el botón [img]res://graphics/app_icons/mag_glass.svg[/img].[/color]","[b][i]Folder for thumbnails[/i][/b]
+This folder stores downscaled versions of the wallpapers in the [b][i]Folder for wallpapers[/i][/b] which are used to represent imported wallpapers in a more compact way.
+
+[color=gray]A system folder will be made and assigned by default, you can get its path by clicking the [img]res://graphics/app_icons/file_explorer_icon.svg[/img] button. If you want to use another folder, you can type its path in the text field or search it through the file explorer menu by click on the [img]res://graphics/app_icons/mag_glass.svg[/img] button.[/color]"
+ENABLE_PRVW_PROCESSING_TTP,"[b][i]Procesar imágenes de previsualización[/i][/b]
+Esta opción habilita el procesamiento de los fondos de pantalla para generar versiones de menor resolución que se carguen en la previsualización en lugar de sus versiones originales.
+
+[color=gray]Habilitar esta opción te permitirá cambiar la carpeta donde se guardan las imágenes de previsualización ([i]manualmente o con el botón [img]res://graphics/app_icons/mag_glass.svg[/img][/i]) y te mostrará un apartado en la sección de [b][i]Procesamiento de imágenes[/i][/b] para modificar el [b]factor de reescalado[/b]. Esta opción puede ser útil para reducir los tiempos de carga en previsualización si la resolución de los fondos de pantalla es demasiado grande.[/color]","[b][i]Process preview images[/i][/b]
+This option enables wallpaper processing to generate downscale versions that can load in the preview instead of their original versions.
+
+[color=gray]Checking this option will enable you to change the folder where the preview versions are stored ([i]manually or with the [img]res://graphics/app_icons/mag_glass.svg[/img] button[/i]) and it will provide you with a control in the [b][i]Image Processing[/i][/b] section to modify the [b]downscale factor[/b]. This can be useful to reduce load times in the preview if the resolution of the wallpapers is too large.[/color]"
+PRVW_DIR_TTP,"[b][i]Carpeta para las imágenes de previsualización[/i][/b]
+Esta carpeta almacena versiones de menor resolución de los fondos de pantalla en la [b][i]Carpeta para los fondos de pantalla[/i][/b], utilizadas como reemplazo de las versiones originales en la [b]previsualización[/b] de los mismos.
+
+[color=gray]Por defecto se creará y asignará una carpeta del sistema, puedes consultar su ruta haciendo click sobre el botón [img]res://graphics/app_icons/file_explorer_icon.svg[/img]. Si quieres usar otra carpeta, puedes escribir su ruta a mano o buscarla a través del gestor de archivos haciendo click sobre el botón [img]res://graphics/app_icons/mag_glass.svg[/img].[/color]","[b][i]Folder for preview images[/i][/b]
+This folder stores downscaled versions of the wallpapers in the [b][i]Folder for wallpapers[/i][/b] which are used as a replacement of their original versions for [b]previwing[/b].
+
+[color=gray]A system folder will be made and assigned by default, you can get its path by clicking the [img]res://graphics/app_icons/file_explorer_icon.svg[/img] button. If you want to use another folder, you can type its path in the text field or search it through the file explorer menu by click on the [img]res://graphics/app_icons/mag_glass.svg[/img] button.[/color]"
+SET_AS_WP_TTP,"[b][i]Poner como fondo de pantalla[/i][/b]
+Este comando ([i]o script[/i]) se encarga de decirle al sistema que cambie el fondo de pantalla actual con el fondo seleccionado en el programa, basándose en la [b]imagen seleccionada[/b] y la [b]carpeta de fondos de pantalla[/b] ([i]o de las imágenes de previsualización en caso de que la opción [b]Procesar imágenes de previsualización[/b] esté activada).
+
+[color=gray]Si tu sistema operativo tiene soporte en el programa, se te instalará un script para cambiar el fondo de pantalla la primera vez que abras la aplicación en la configuración incial. Por otro lado, puedes escribir el programa a mano en el campo de texto o bien buscar el script que quieras que se ejecute haciendo click sobre el botón [img]res://graphics/app_icons/mag_glass.svg[/img].","[b][i]Set as wallpaper[/i][/b]
+This command ([i]or script[/i]) is in charge of telling the system to change the current wallpaper based on the [b]image selected[/b] and [b]path for the wallpapers folder[/b] ([i]or preview folder if [b]Process preview images[/b] is enabled[/i]).
+
+[color=gray]If your OS has support in the app, a premade script to change the wallpaper will be automatically downloaded the first time you open the app in the startup configuration. Otherwise, you can type the command you want to be run or search for a script clicking on the [img]res://graphics/app_icons/mag_glass.svg[/img] button.[/color]"
+OPEN_IN_IMG_VIEWER_TTP,"[b][i]Abrir en visor de fotos[/i][/b]
+Este comando se encarga de decirle al sistema que abra el visor de fotos que elijas para ver el fondo de pantalla seleccionado con más detalle.
+
+[color=gray]De la misma manera que con el otro comando ([i]Poner como fondo de pantalla[/i]) he añadido la posibilidad de asignar un script también, pero hasta donde he podido investigar, sólo hace falta un simple comando para que esta funcionalidad dé el resultado esperado.[/color]","[b][i]Open in image viewer[/i][/b]
+This command is in charge of telling the system to open the image viewer of your preference in order to see the selected wallpaper with more detail.
+
+[color=gray]As well as with the other command ([i]Set as wallpaper[/i]) I've left the possibility of adding a custom script, but as far as I've researched, just one command should be enough to make this feature work.[/color]"
+THUMBS_DF_TTP,"[b][i]Factor de reesclado (Miniaturas)[/i][/b]
+Este parámetro controla el porcentaje de la resolución que las [b]miniaturas[/b] tendrán en comparación con los fondos de pantalla originales.
+
+[color=gray]Puedes poner un mínimo de un 1% y un máximo de un 100% de la resolución, pero debes tener en cuenta que los elementos se [b]cargan al iniciar el programa[/b] ([i]estáticamente[/i]), por lo que porcentajes más altos aumentarán el tiempo de carga de las miniaturas. No es necesario poner un valor tan bajo como 1%, pero valores alrededor de [b]20%-30%[/b] dan un [b]buen resultado[/b] calidad/rendimiento[/color]","[b][i]Downscale factor (Thumbnails)[/i][/b]
+This parameter controls the percentage of the resolution that the [b]thumbnails[/b] will have compared to the original wallpapers.
+
+[color=gray]You can go as low as 1% and as high as 100% of the resolution, but take in account that since these elements are [b]loaded at startup[/b] ([b][i]statically[/i][/b]), the load time will increase with the percentage value. There's no need of setting this parameter to 1%, but a value between [b]20%-30%[/b] gives a [b]good balance[/b] between quality and speed[/color]"
+PRVW_DF_TTP,"[b][i]Factor de reescalado (Imágenes de previsualización)[/i][/b]
+Este parámetro controla el porcentaje de la resolución que las [b]imagénes de previsualización[/b] tendrán en comparación con los fondos de pantalla originales.
+
+[color=gray]Este parámetro comparte los valores mínimos y máximos con el factor de escala de las [b]miniaturas[/b]. Pero al contrario que las miniaturas, los fondos de pantalla se cargan [b]cuando se necesitan[/b] ([i][b]dinámicamente[/b], de ahí que normalmente se carguen con su resolución original, 100%[/i]). Por tanto, se pueden establecer porcentajes más altos para beneficiarse de un tiempo de carga menor sin perder mucha calidad. Cualquier porcentaje entre [b]50%-75%[/b] da buenos resultados.[/color]","[b][i]Downscale factor (Preview images)[/i][/b]
+This parameter controls the percentage of the resolution that the [b]preview images[/b] will have compared to the original wallpapers.
+
+[color=gray]This parameter shares its minimum and maximum value with the [b]thumbanil's[/b] downscale factor. However, inversely to thumbnails, wallpapers are loaded on the way ([i][b]dynamically[/b], hence why they're usually loaded with their full resolution, 100%[/i]). Therefore, higher percentages can be set to benefit from a lower load time without loosing too much quality. Anything between [b]50%-75[/b] works fine.[/color] "
+LANG_TTP,"[b][i]Idioma[/i][/b]
+Cambia el idioma de todos los elementos de texto de la interfaz del programa.","[b][i]Language[/i][/b]
+Changes the language used to display every text component in the app UI."
+ACC_COLOR_TTP,"[b][i]Color de acento[/i][/b]
+Cambia la tonalidad de la mayoría de los elementos de la interfaz del programa.
+
+[color=gray]Nótese que sólo se tendrá en cuenta el valor de la [b]tonalidad[/b] para poner el color de acento, los valores de [i]luminosidad[/i] y [i]saturación[/i] son específicos para cada elemento de la interfaz.[/color]","[b][i]Accent color[/i][/b]
+Changes the hue of most of the UI elements in the app
+
+[color=gray]It's worth noting that only the [b]hue[/b] of the color you select will be taken in account in order to set the accent color, [i]saturation[/i] and [i]value[/i] are specific for each element in the app.[/color]
+"
+SCALE_STEP_TTP,"[b][i]Incremento en la escala de las miniaturas[/i][/b]
+Cambia el por el cual incrementa el control deslizante de la [b]escala de las miniaturas[/b].
+
+[color=gray]La escala de las miniaturas también se puede modificar a través de atajos tanto con el ratón, presionando [bgcolor=black][b]Control[/b][/bgcolor] y deslizando la [bgcolor=black][b]Rueda del ratón[/b][/bgcolor] ([i]hacia arriba -> aumentando la escala, hacia abajo -> disminuyendo la escala[/i]); como con el teclado, presionando [bgcolor=black][b]Control[/b][/bgcolor] y la tecla [bgcolor=black][b]+[/b][/bgcolor] para aumentar la escala o la tecla [bgcolor=black][b]-[/b][/bgcolor] para disminiurla.[/color]","[b][i]Thumbnail scale step[/i][/b]
+Changes the value by which the [b]thumbnail's scale[/b] slider increments.
+
+[color=gray]The scale of the thumbnails can be also modified through [b]mouse bindings[/b], by pressing [bgcolor=black][b]Control[/b][/bgcolor] and moving the [bgcolor=black][b]Scroll wheel[/b][/bgcolor] ([i]up -> increasing the scale, down -> decreasing the scale[/i]); or through keybindings, pressing [bgcolor=black][b]Control[/b][/bgcolor] and the [bgcolor=black][b]+[/b][/bgcolor] key to increase the scale or the [bgcolor=black][b]-[/b][/bgcolor] key to decrease.[/color]"
+THUMBS_INIT_SCALE_TTP,"[b][i]Escala inicial de las miniaturas[/i][/b]
+Cambia el valor de escala del control deslizante para la [b]escala de las miniaturas[/b]","[b][i]Thumbnail's initial scale[/i][/b]
+Changes the initial value of the [b]thumbnail's scale[/b] slider."
+ENABLE_DND_TOOLTIP_TTP,"[b][i]Habilitar ayuda para arrastrar imágenes a la aplicación[/i][/b]
+Muestra una ayuda en la [b]esquina inferior izquierda[/b] de la pantalla para informarte sobre la posibilidad de arrastrar imagénes a la ventana del programa para importar nuevos fondos de pantalla. ","[b][i]Enable hints to drag and drop images to the app[/i][/b]
+Shows a hint at the [b]bottom-left[/b] of the screen to inform about the possibility of dragging and dropping new images into the app's window in order to import new wallpapers."
+DBG_ALREADY_SELECTED_DIR,"Estar carpeta ya está en uso, selecciona otra diferente.","This folder is already being used, choose another one."
+DBG_MISSING_FIELDS,Debes rellenar todos los campos de configuración para comenzar a utilizar el programa.,You must fill all settings field in order to start using the app.
+DBG_MISSING_SELECTED_WP,"No has seleccionado ningún fondo de pantalla todavía.\n[color=gray][i]Ayuda: Si no has importado ningún fondo de pantalla, puedes darle al botón [b]%s[/b] o arrastrar nuevos archivos a esta ventana.[/i][/color]","You haven't selected any wallpaper yet.\n[color=gray][i]Hint: If you haven't imported any wallpapers, you can click on the [b]%s[/b] button or drag new files to this window.[/i][/color]"
+DBG_INVALID_SET_WP_CMD,Se ha producido un error intentando poner el fondo de pantalla con el comando [i]%s[/i].\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Puedes elegir un [i]script[/i] haciendo click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img] o introducir el comando completo en el campo de texto[/i][/color].\n[i]Error encontrado tras la ejecución fallida del comando:[/i],An error ocurred trying to set the wallpaper with the command [i]%s[/i].\n[color=gray][i]Hint: check the value of [b]%s > %s[/b] in the app settings[img=22][/img]. You can select any script by clicking on the button with the magnifying glass icon [img][/img] or introduce the full command into the text field[/i][/color].\n[i]Error obtained after failed command execution:[/i]
+DBG_INVALID_OPEN_WP_CMD,Se ha producido un error intentando abrir el fondo de pantalla con el comando [i]%s[/i].\n[color=gray][i]Ayuda: revisa en la configuración [img=22]res://graphics/app_icons/gear.svg[/img] el apartado [b]%s > %s[/b]. Introduce el comando del sistema asociado al programa para ver imágenes de tu preferencia[/i][/color].\n[i]Error encontrado tras la ejecución fallida del comando:[/i],An error ocurred trying to open the wallpaper with the command [i]%s[/i].[color=gray][i]Hint: check the value of [b] %s > %s[/b] in the app settings [img=22]res://graphics/app_icons/gear.svg[/img]. Set the system command linked to your image viewer of preference[/i][/color].\n[i]Error obtained after failed command execution:[/i]
+DBG_DUPLICATE_CMD,El comando [color=gray][i]%s[/i][/color] ya se ha introducido en el apartado [b][i]%s[/i][/b],The command [color=gray][i]%s[/i][/color] has been already introduced in the section [b][i]%s[/i][/b]
+DBG_INVALID_DIR_PATH,Se ha introducido una ruta inválida para la [b][i]%s[/i][/b].\n[color=gray][i]Ayuda: Comprueba que no haya errores en la ruta escrita o haz click sobre el botón con el icono de lupa [img]res://graphics/app_icons/mag_glass.svg[/img] para seleccionar una carpeta dentro de tu sistema[/i][/color].,Invalid path was introduced for the [b][i]%s[/i][/b].\n[color=gray][i]Hint: check for typos in the introduced path or click on the button with the magnifying glass [img]res://graphics/app_icons/mag_glass.svg[/img] to select one of the folders inside your system.
+DBG_DUPLICATE_PATH,La carpeta [color=gray][i]%s[/i][/color] ya se ha introducido en el apartado [b][i]%s[/i][/b].,The folder [color=gray][i]%s[/i][/color] has been already introduced in the section [b][i]%s[/i][/b]
+DBG_UNSUPPORTED_FILE_FORMAT,La extensión de archivo [b]%s[/b] no está contemplada en el programa.\n[color=gray][i]Ayuda: Si tu imagen tiene un [b]formato[/b] de imagen pero la extensión que le has asignado no está contemplada en [b]este programa[/b] saltará este error. Puedes comprobar en páginas como [color=lightblue][url=https://www.checkfiletype.com/][b]esta[/b][/url][/color] cuál es el verdadero formato de tu imagen para asociarle la extensión correspondiente.[/i][/color],"File extension [b]%s[/b] is not supported in the app.\n[color=gray][i]Hint: If your image file has a different [b]format[/b] than its extension, and that extension isn't suported [b]in this app[/b], this error will pop up. You can check the true image format in webpages like [color=ligthblue][url=https://www.checkfiletype.com/][b]this one[/b][/url][/color] so you can modify your file extension accordingly[/i][/color]"
+DBG_THUMB_W_UNSUPPORTED_FF,Se intentó cargar la miniatura [b]%s[/b] con el formato [b]%s[/b] no contemplado en el programa.\n[color=gray][i]Ayuda: Si tu imagen tiene un [b]formato[/b] de imagen pero la extensión que le has asignado no está contemplada en [b]este programa[/b] saltará este error. Puedes comprobar en páginas como [color=lightblue][url=https://www.checkfiletype.com/][b]esta[/b][/url][/color] cuál es el verdadero formato de tu imagen para asociarle la extensión correspondiente.[/i][/color],"Tried to load thumbnail [b]%s[/b] with unsupported file format [b]%s[/b].\n[color=gray][i]Hint: If your image file has a different [b]format[/b] than its extension, and that extension isn't suported [b]in this app[/b], this error will pop up. You can check the true image format in webpages like [color=ligthblue][url=https://www.checkfiletype.com/][b]this one[/b][/url][/color] so you can modify your file extension accordingly[/i][/color]"
+DBG_EMPTY_WPS_DIR,"No se encontraron fondos de pantalla en la carpeta [color=gray][i]%s[/i][/color] para renderizar.\n[color=gray][i]Ayuda: Si no has importado ningún fondo de pantalla, puedes darle al botón [b]%s[/b] o arrastrar nuevos archivos a la ventana del programa[i][/color]","Couldn't find any wallpapers in the folder [color=gray][i]%s[/i][/color] to render.\n[color=gray][i]Hint: If you haven't imported any wallpapers, you can click on the [b]%s[/b] button or drag new files into the app window.[/i][/color]"
