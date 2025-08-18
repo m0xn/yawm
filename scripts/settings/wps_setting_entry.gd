@@ -1,4 +1,4 @@
-extends "base_setting_entry.gd"
+extends "input_field_setting_entry.gd"
 
 @onready var container_base_name = name.trim_suffix("HBC")
 @onready var search_dir_btn: Button = get_node("Search%sBTN" % container_base_name)
@@ -30,6 +30,10 @@ func _on_value_change(new_value: Variant) -> void:
 	if not DirAccess.dir_exists_absolute(new_value) or new_value == "":
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_INVALID_DIR_PATH") % tr("STTS_%s_LB" % container_base_name.to_snake_case().to_upper()))
 		editable_node[editable_field] = ""
+		show_input_validity(false)
+		return
+
+	show_input_validity(true)
 
 func _ready() -> void:
 	super()

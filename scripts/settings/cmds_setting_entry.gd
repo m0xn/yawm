@@ -1,4 +1,4 @@
-extends "base_setting_entry.gd"
+extends "input_field_setting_entry.gd"
 
 @onready var container_base_name = name.trim_suffix("HBC")
 @onready var search_cmd_btn: Button = get_node("Search%sBTN" % container_base_name)
@@ -11,6 +11,10 @@ func check_for_duplicate(cmd: String) -> void:
 	if cmd == AppData.settings.get_value(stts_section, other_cmd_entry):
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_DUPLICATE_CMD") % [cmd, tr("%s_BTN" % container_base_name.trim_suffix("Cmd").to_snake_case().to_upper())])
 		editable_node[editable_field] = ""
+		show_input_validity(false)
+		return
+
+	show_input_validity(true)
 
 func handle_cmd_search() -> void:
 	search_cmd_fd.show()
