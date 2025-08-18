@@ -12,8 +12,8 @@ var map: Dictionary = {
 		"open_img_vwr_cmd": ""
 	},
 	"img_proc": {
-		"thumbs_df": 0.25,
-		"prvw_df": 1
+		"thumbs_df": 25,
+		"prvw_df": 100
 	},
 	"misc": {
 		"locale_idx": 0,

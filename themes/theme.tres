@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=42 format=3 uid="uid://bpy5dyipuxv1b"]
+[gd_resource type="Theme" load_steps=43 format=3 uid="uid://bpy5dyipuxv1b"]
 
 [ext_resource type="FontFile" uid="uid://b1ossgbydysof" path="res://fonts/Tomorrow-Medium.ttf" id="1_1h68f"]
 
@@ -283,6 +283,14 @@ content_margin_right = 5.0
 content_margin_bottom = 5.0
 bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phn4g"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.122252, 0.122252, 0.122252, 1)
+border_color = Color(0.226708, 0.226708, 0.226706, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv8us"]
 bg_color = Color(0.4972, 0.4158, 0.66, 1)
 corner_radius_top_right = 5
@@ -375,6 +383,7 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_d81ev")
 TextEdit/styles/focus = SubResource("StyleBoxFlat_72bos")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_xeclr")
 TextEdit/styles/read_only = SubResource("StyleBoxFlat_53ewu")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_phn4g")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_uv8us")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_7xeo8")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_m8t8o")

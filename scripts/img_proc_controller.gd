@@ -33,7 +33,7 @@ func apply_df_factor(spinbox_ref: SpinBox, texture_rect_ref: TextureRect, output
 
 	var total_thumbnails = AppData.wp_count if AppData.wp_count != 0 else len(DirAccess.get_files_at(AppData.settings.get_value("dirs", "wps_dir")))
 
-	var downscale_factor = spinbox_ref.value
+	var downscale_factor = spinbox_ref.value / 100
 	await Utils.Dir.iterate_dir(AppData.settings.get_value("dirs", "wps_dir"), func (filename):
 		var downscaled_img = Utils.ImgProcessing.render_img(AppData.settings.get_value("dirs", "wps_dir").path_join(filename), filename, downscale_factor, output_dir)
 		Utils.GC.load_into_grid_container(filename, downscaled_img)

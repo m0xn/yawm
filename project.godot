@@ -50,7 +50,7 @@ theme/custom_font="uid://b1ossgbydysof"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation/WPM Translation Table - Sheet1.en.translation", "res://translation/WPM Translation Table - Sheet1.es.translation")
+locale/translations=PackedStringArray("res://translation/translation_table.en.translation", "res://translation/translation_table.es.translation")
 locale/test="es"
 
 [rendering]

@@ -53,4 +53,3 @@ layout_mode = 2
 
 [node name="CreditsSectionVBC" parent="MainP/ScrollContainerSC/PanelsContainerVBC" instance=ExtResource("6_d3gnn")]
 layout_mode = 2
-script = null

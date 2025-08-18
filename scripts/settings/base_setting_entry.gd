@@ -18,6 +18,11 @@ var class_to_event_map: Dictionary[String, PackedStringArray] = {
 @onready var reset_to_def_btn = get_node("ResetSettingBTN")
 @onready var default_value = DefaultSettings.map[stts_section][stts_name]
 
+func _make_custom_tooltip(for_text: String) -> Object:
+	var label = load("res://scenes/custom_components/TooltipLabel.tscn").instantiate()
+	label.text = for_text
+	return label
+	
 func _on_value_change(new_value: Variant) -> void:
 	AppData.settings.set_value(stts_section, stts_name, new_value)
 	reset_to_def_btn["show" if check_imparity(new_value) else "hide"].call()
