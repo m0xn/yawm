@@ -4,7 +4,7 @@ var wp_count: int
 var wps_to_load: int
 
 var currently_selected_thumbnail: Panel
-var thumbnail_base_size: Vector2
+var thumbnail_base_size := Vector2(150.0, 150.0)
 
 var random_wp: String
 
@@ -24,3 +24,7 @@ var cached_debug_res: Dictionary[String, Array] = {
 	"info": ["#3584e4"],
 	"warn": ["#f5c211"]
 }
+
+var logs: String = "
+# LOGS #
+"

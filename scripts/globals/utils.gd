@@ -4,7 +4,7 @@ class ImgProcessing:
 	static func render_img(img_path: String, filename: String, downscale_factor: float, output_dir: String) -> Image:
 		var img = Image.load_from_file(img_path)
 		var img_size = img.get_size()
-		img.resize(img_size.x * downscale_factor, img_size.y * downscale_factor)
+		img.resize(img_size.x * downscale_factor / 100, img_size.y * downscale_factor / 100)
 
 		save_img(img, filename, output_dir)
 		return img
@@ -24,7 +24,7 @@ class GC:
 		wallpaper_thumbnail.get_node("WallpaperTR").texture = img_texture
 		
 		wallpaper_thumbnail.filename = filename
-		wallpaper_thumbnail.wallpaper_clicked.connect(Utils.GC._on_wallpaper_selection)
+		wallpaper_thumbnail.get_node("FrameP").wallpaper_clicked.connect(Utils.GC._on_wallpaper_selection)
 
 		Global.nodes.grid_container_ref.add_child(wallpaper_thumbnail)
 
@@ -35,7 +35,7 @@ class GC:
 	static func _on_wallpaper_selection(thumbnail_ref: Panel) -> void:
 		if AppData.currently_selected_thumbnail != null:
 			AppData.currently_selected_thumbnail.normalize_thumbnail()
-			AppData.currently_selected_thumbnail._thumbnail_clicked = false
+			AppData.currently_selected_thumbnail.thumbnail_clicked = false
 
 		thumbnail_ref.press_thumbnail()
 		AppData.currently_selected_thumbnail = thumbnail_ref
@@ -146,18 +146,31 @@ class Debug:
 				error_window.get_node("%CloseBTN").button_down.connect(on_error_close)
 				error_window.close_requested.connect(on_error_close)
 
+		var bbcode_tags_regex = RegEx.new()
+		# NOTE: Remove all BBCode tags, image tags and hint info
+		bbcode_tags_regex.compile("\\[.*?\\]|res:\\/(\\/\\w+)+.\\w+|\\.\\\n.*")
+		var plain_log = Utils.Str.trim_extra_spaces(bbcode_tags_regex.sub(msg, "", true))
+
+		AppData.logs += "\n#> " + plain_log + "." # NOTE: Missing dot after the RegEx search
+		print(AppData.logs)
+
 class Str:
 	static func flatten_array(accumulator: String, next_output: String, sep := "\n") -> String:
 		return accumulator + sep + next_output
 
+	static func trim_extra_spaces(input: String) -> String:
+		var word_list = input.split(" ")
+		var output = ""
+
+		for word in word_list:
+			if word == "":
+				continue
+
+			output += " " + word
+
+		return output
+
 class Stts:
-	static func change_locale(locale_idx: int, local_opt_btn_ref: OptionButton) -> void:
-		var new_locale = local_opt_btn_ref.get_item_text(locale_idx)
-		AppData.settings.set_value("misc", "locale_idx", locale_idx)
-
-		ProjectSettings.set_setting("internationalization/locale/test", new_locale)
-		ProjectSettings.save()
-
 	static func detect_imparity(caller_node: Node, value: Variant, stts_section: String, stts_name: String) -> void:
 		print("Section:\t%s\nName:\t%s\nValue:\t%s\nDefault value:\t%s\nImparity:\t%s\n\n" % [stts_section, stts_name, value, DefaultSettings.map[stts_section][stts_name], value != DefaultSettings.map[stts_section][stts_name]])
 		caller_node.get_parent().get_node("ResetSettingBTN").call("show" if value != DefaultSettings.map[stts_section][stts_name] else "hide")

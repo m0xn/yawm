@@ -14,6 +14,7 @@ initial_position = 1
 size = Vector2i(500, 150)
 transient = true
 exclusive = true
+min_size = Vector2i(500, 150)
 script = ExtResource("1_rklip")
 
 [node name="MainUIHBC" type="VBoxContainer" parent="."]

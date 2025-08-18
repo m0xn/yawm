@@ -11,6 +11,8 @@
 title = "STTS_WINDOW_TTL"
 initial_position = 1
 size = Vector2i(700, 500)
+transient = true
+exclusive = true
 script = ExtResource("1_t1c6x")
 
 [node name="MainP" type="Panel" parent="."]

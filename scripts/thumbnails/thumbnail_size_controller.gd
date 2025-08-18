@@ -1,32 +1,22 @@
 extends Panel
 
-@onready var main_window: Window = get_window()
-@onready var base_thumbnail_size: Vector2
 var current_thumbnail_size: Vector2
-
-@export var adjust_margin: float = 0.05
+@export var tolerance: float = 0.05
 
 func _ready() -> void:
-	main_window.size_changed.connect(adjust_grid_columns)
-
-	var thumbnail_instance: Panel = Global.res.wallpaper_thumbnail_res.instantiate()
-	base_thumbnail_size = thumbnail_instance.custom_minimum_size # NOTE: Save a global variable storing thumbnail's current size (important for the scale implementation)
-	thumbnail_instance.queue_free()
-
-	AppData.thumbnail_base_size = base_thumbnail_size
-	current_thumbnail_size = base_thumbnail_size
+	get_window().size_changed.connect(adjust_grid_columns)
+	current_thumbnail_size = AppData.thumbnail_base_size
 
 	resize_thumbnails(Global.nodes.scale_slider_ref.value)
 	Global.nodes.scale_slider_ref.value_changed.connect(resize_thumbnails)
 
-# TODO: Fix the code on this function to solve the debugger problem: p_columns < 1 (trying to set grid columns to a zero or negative value)
 func adjust_grid_columns() -> void:
-	if len(Global.nodes.grid_container_ref.get_children()) == 0:
+	if len(Global.nodes.grid_container_ref.get_children()) == 0 or size.x == 0:
 		return
 
 	var container_width = size.x
 	var columns_ratio = container_width / current_thumbnail_size.x
-	var new_gc_columns = floor(columns_ratio) if abs(columns_ratio - floor(columns_ratio)) < adjust_margin else ceil(columns_ratio)
+	var new_gc_columns = floor(columns_ratio) if abs(columns_ratio - floor(columns_ratio)) < tolerance else ceil(columns_ratio)
 
 	if new_gc_columns == Global.nodes.grid_container_ref.columns:
 		return
@@ -41,7 +31,7 @@ func resize_thumbnails(value: float) -> void:
 
 	Global.nodes.scale_factor_label_ref.text = str(value) + "x"
 	for thumbnail in Global.nodes.grid_container_ref.get_children():
-		thumbnail.custom_minimum_size = base_thumbnail_size * value
+		thumbnail.custom_minimum_size = AppData.thumbnail_base_size * value
 		current_thumbnail_size = thumbnail.custom_minimum_size
 		call_deferred("adjust_grid_columns")
 	

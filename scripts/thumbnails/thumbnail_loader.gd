@@ -24,5 +24,3 @@ func _ready() -> void:
 	if len(wps_filename_list) != 0:
 		AppData.random_wp = wps_filename_list[randi_range(0, len(wps_filename_list))]
 		wps_filename_list.clear()
-
-	Global.nodes.wallpaper_count_label_ref.text = tr("WP_COUNT_LB") + " " + str(AppData.wp_count)

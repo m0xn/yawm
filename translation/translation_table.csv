@@ -51,13 +51,16 @@ SAVE_BTN,Guardar,Save
 STARTUP_FIELD_NOTICE_LB,*Debes rellenar todos los campos para que el programa funcione correctamente,*You must fill all fields for the app to work properly
 DETECTED_OS_LB,Sistema operativo detectado:,Detected OS:
 PROCESS_WPS_WINDOW_TTL,Procesar fondos de pantalla encontrados,Process found wallpapers
-PROCESS_WPS_WINDOW_MSG_LB,¿Deseas importar todos los fondos de pantalla encontrados en '{0}'?,Do you want to import all wallpapers found at '{0}'?
+PROCESS_WPS_WINDOW_MSG_LB,¿Deseas importar todos los fondos de pantalla encontrados en [color=gray]'%s'[/color]?,Do you want to import all wallpapers found at [color=gray]'%s'[/color]?
 YES_BTN,Sí,Yes
 NO_BTN,No,No
 CLOSE_BTN,Cerrar,Close
 ERROR_WINDOW_TTL,Se ha producido un error,An error has ocurred
 DEBUG_WINDOW_TTL,Ventana de depurado,Debugging window
 DEBUG_WINDOW_HEADER,Registros de la aplicación,App logs
+DEBUG_WINDOW_COPY_LOGS_BTN,Copiar registros,Copy logs
+GH_ISSUE_WINDOW_TTL,Abrir un reporte en GitHub,Open an Issue on GitHub
+GH_ISSUE_WINDOW_CONF_MSG_LB,[color=gray]Se han copiado los registros al portapapeles[/color].\n¿Deseas abrir GitHub para reportar algún problema?,[color=gray]Logs have been copied to the clipboard[/color].\nDo you want to open GitHub to issue a bug?
 WPS_DIR_TTP,"[b][i]Carpeta para los fondos de pantalla[/i][/b]
 En esta carpeta se almacenan los fondos de pantalla [b]originales[/b] que importes en el programa o guardes en dicha carpeta.
 
@@ -149,3 +152,4 @@ DBG_DUPLICATE_PATH,La carpeta [color=gray][i]%s[/i][/color] ya se ha introducido
 DBG_UNSUPPORTED_FILE_FORMAT,La extensión de archivo [b]%s[/b] no está contemplada en el programa.\n[color=gray][i]Ayuda: Si tu imagen tiene un [b]formato[/b] de imagen pero la extensión que le has asignado no está contemplada en [b]este programa[/b] saltará este error. Puedes comprobar en páginas como [color=lightblue][url=https://www.checkfiletype.com/][b]esta[/b][/url][/color] cuál es el verdadero formato de tu imagen para asociarle la extensión correspondiente.[/i][/color],"File extension [b]%s[/b] is not supported in the app.\n[color=gray][i]Hint: If your image file has a different [b]format[/b] than its extension, and that extension isn't suported [b]in this app[/b], this error will pop up. You can check the true image format in webpages like [color=ligthblue][url=https://www.checkfiletype.com/][b]this one[/b][/url][/color] so you can modify your file extension accordingly[/i][/color]"
 DBG_THUMB_W_UNSUPPORTED_FF,Se intentó cargar la miniatura [b]%s[/b] con el formato [b]%s[/b] no contemplado en el programa.\n[color=gray][i]Ayuda: Si tu imagen tiene un [b]formato[/b] de imagen pero la extensión que le has asignado no está contemplada en [b]este programa[/b] saltará este error. Puedes comprobar en páginas como [color=lightblue][url=https://www.checkfiletype.com/][b]esta[/b][/url][/color] cuál es el verdadero formato de tu imagen para asociarle la extensión correspondiente.[/i][/color],"Tried to load thumbnail [b]%s[/b] with unsupported file format [b]%s[/b].\n[color=gray][i]Hint: If your image file has a different [b]format[/b] than its extension, and that extension isn't suported [b]in this app[/b], this error will pop up. You can check the true image format in webpages like [color=ligthblue][url=https://www.checkfiletype.com/][b]this one[/b][/url][/color] so you can modify your file extension accordingly[/i][/color]"
 DBG_EMPTY_WPS_DIR,"No se encontraron fondos de pantalla en la carpeta [color=gray][i]%s[/i][/color] para renderizar.\n[color=gray][i]Ayuda: Si no has importado ningún fondo de pantalla, puedes darle al botón [b]%s[/b] o arrastrar nuevos archivos a la ventana del programa[i][/color]","Couldn't find any wallpapers in the folder [color=gray][i]%s[/i][/color] to render.\n[color=gray][i]Hint: If you haven't imported any wallpapers, you can click on the [b]%s[/b] button or drag new files into the app window.[/i][/color]"
+DBG_IMPORTED_WALLPAPERS_INFO,Se han cargado [b]%d[/b] fondos de pantalla en [b][i]%d ms[/i][/b] ([i]%.2f s[/i]).,[b]%d[/b] wallpapers were loaded in [b][i]%d ms[/i][/b] ([i]%.2f s[/i])
