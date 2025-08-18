@@ -33,6 +33,7 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+scroll_vertical = 488
 
 [node name="PanelsContainerVBC" type="VBoxContainer" parent="MainP/ScrollContainerSC"]
 unique_name_in_owner = true

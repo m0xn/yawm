@@ -1,7 +1,6 @@
 extends VBoxContainer
 
 func _ready() -> void:
-	# NOTE: Implement a way of loading a placeholder image if there is no thumbnails or preview images loaded
 	var random_thumb_img = Image.load_from_file(AppData.settings.get_value("dirs", "thumbs_dir").path_join(AppData.random_wp))
 	var random_prvw_img = Image.load_from_file(AppData.settings.get_value("dirs", "prvw_dir").path_join(AppData.random_wp))
 
