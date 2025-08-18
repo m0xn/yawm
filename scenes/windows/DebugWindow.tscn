@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqisj0gcl5dd"]
+[gd_scene load_steps=3 format=3 uid="uid://bqisj0gcl5dd"]
 
 [ext_resource type="Script" uid="uid://cuswjymoa1x07" path="res://scripts/windows/base_hide_window.gd" id="1_txxn0"]
+[ext_resource type="Script" uid="uid://bja84261vk3po" path="res://scripts/buttons/copy_logs_btn.gd" id="2_25k5t"]
 
 [node name="DebugWindowWND" type="Window"]
 title = "DEBUG_WINDOW_TTL"
@@ -46,3 +47,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="CopyLogsBTN" type="Button" parent="MainUIVBC"]
+layout_mode = 2
+text = "DEBUG_WINDOW_COPY_LOGS_BTN"
+script = ExtResource("2_25k5t")
