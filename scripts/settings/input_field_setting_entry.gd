@@ -2,9 +2,6 @@ extends "base_setting_entry.gd"
 
 @onready var line_edit_ref = editable_node if editable_node.get_class() == "LineEdit" else editable_node.get_line_edit()
 
-func _on_value_change(new_value: Variant) -> void:
-	super(new_value)
-
 func _ready() -> void:
 	super()
 

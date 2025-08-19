@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bokffah8uv0a8"]
+[gd_scene load_steps=7 format=3 uid="uid://bokffah8uv0a8"]
 
 [ext_resource type="Script" uid="uid://uaslppv7xe55" path="res://scripts/windows/confirmation_window_controller.gd" id="1_stcx2"]
+[ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="2_qqf0o"]
+[ext_resource type="FontFile" uid="uid://b75fm5jbk1qk8" path="res://fonts/Tomorrow-Italic.ttf" id="3_sb06a"]
+[ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="4_bqms0"]
+[ext_resource type="FontFile" uid="uid://boscn51rhegt4" path="res://fonts/Tomorrow-Bold.ttf" id="5_b8gfu"]
+[ext_resource type="Script" uid="uid://bgy31prpbtrb3" path="res://scripts/rtl_url_handler.gd" id="6_sb06a"]
 
 [node name="ConfirmationWindowWND" type="Window"]
 title = "PLACEHOLDER_TTL"
@@ -23,10 +28,15 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_qqf0o")
+theme_override_fonts/italics_font = ExtResource("3_sb06a")
+theme_override_fonts/bold_italics_font = ExtResource("4_bqms0")
+theme_override_fonts/bold_font = ExtResource("5_b8gfu")
 bbcode_enabled = true
 text = "PLACEHOLDER_TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_sb06a")
 
 [node name="ControlBtnsHBC" type="HBoxContainer" parent="MainUIVBC"]
 layout_mode = 2

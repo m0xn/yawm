@@ -46,7 +46,7 @@ func import_wallpapers() -> void:
 		var filename = item.get_node("%WPFilenameLB").text if item_line_edit.text == "" else item_line_edit.text
 		var img_path = item.get_node("%WPAbsPathLB").text
 		var processed_filename = filename if filename.ends_with(original_ext) else filename + "." + original_ext
-
+		
 		var thumbnail_img = Utils.ImgProcessing.render_img(img_path, processed_filename, AppData.settings.get_value("img_proc", "thumbs_df"), AppData.settings.get_value("dirs", "thumbs_dir"))
 		Utils.GC.load_into_grid_container(processed_filename, thumbnail_img)
 
@@ -59,6 +59,9 @@ func import_wallpapers() -> void:
 
 		AppData.wp_count += 1
 		Utils.GC.update_wp_count()
+
+		if item_line_edit.text != "":
+			DirAccess.rename_absolute(img_path, img_path.get_base_dir().path_join(processed_filename))
 
 		progress_window.update_progress(processed_wallpapers, wp_list_container.item_count, "", filename)
 

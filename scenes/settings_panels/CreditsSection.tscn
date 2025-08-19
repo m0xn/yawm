@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="1_pacub"]
 [ext_resource type="PackedScene" uid="uid://d0strmyqw0x0b" path="res://scenes/license_windows/AppLicense.tscn" id="3_l2ci0"]
 [ext_resource type="Texture2D" uid="uid://c1xdb5s6icw4a" path="res://graphics/app_icons/github.svg" id="3_nh1wb"]
-[ext_resource type="Script" uid="uid://chrji6x6uvc71" path="res://scripts/redirect_to_github.gd" id="4_7wauj"]
+[ext_resource type="Script" uid="uid://bgy31prpbtrb3" path="res://scripts/rtl_url_handler.gd" id="4_nh1wb"]
 [ext_resource type="PackedScene" uid="uid://cljiws3pum2ep" path="res://scenes/license_windows/GodotLicense.tscn" id="4_vx0tj"]
 [ext_resource type="PackedScene" uid="uid://kooboykfrnnn" path="res://scenes/license_windows/TomorrowFontLicense.tscn" id="5_nh1wb"]
 
@@ -79,30 +79,30 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "CRDTS_APP_LICENSE_BTN"
 
-[node name="HSeparator" type="HSeparator" parent="."]
+[node name="LicenseBtnsGHSepHS" type="HSeparator" parent="."]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0o14x")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="GHRepoHBC" type="HBoxContainer" parent="."]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TextureRect" type="TextureButton" parent="HBoxContainer"]
+[node name="GHLogoTR" type="TextureButton" parent="GHRepoHBC"]
 layout_mode = 2
 texture_normal = ExtResource("3_nh1wb")
-script = ExtResource("4_7wauj")
 
-[node name="Label" type="RichTextLabel" parent="HBoxContainer"]
+[node name="GHRepoRTL" type="RichTextLabel" parent="GHRepoHBC"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.67451, 0.67451, 0.67451, 1)
 bbcode_enabled = true
-text = "[url=https://www.github.com/m0xn/yaw]m0xn/yawm[/url]"
+text = "[color=lightblue][url=https://www.github.com/m0xn/yawm]m0xn/yawm[/url][/color]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_nh1wb")
 
 [node name="AppLicenseWND" parent="." instance=ExtResource("3_l2ci0")]
 visible = false

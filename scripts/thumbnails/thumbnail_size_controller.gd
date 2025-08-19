@@ -11,10 +11,10 @@ func _ready() -> void:
 	Global.nodes.scale_slider_ref.value_changed.connect(resize_thumbnails)
 
 func adjust_grid_columns() -> void:
-	if len(Global.nodes.grid_container_ref.get_children()) == 0 or size.x == 0:
+	if len(Global.nodes.grid_container_ref.get_children()) == 0:
 		return
 
-	var container_width = size.x
+	var container_width = get_parent().size.x
 	var columns_ratio = container_width / current_thumbnail_size.x
 	var new_gc_columns = floor(columns_ratio) if abs(columns_ratio - floor(columns_ratio)) < tolerance else ceil(columns_ratio)
 

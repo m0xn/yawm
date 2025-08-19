@@ -4,6 +4,7 @@ var filename: String
 
 var mouse_inside_thumbnail: bool
 var thumbnail_clicked: bool
+var thumbnail_to_delete: bool
 var thumbnail_frame_stylebox: StyleBoxFlat
 
 func hover_thumbnail() -> void:

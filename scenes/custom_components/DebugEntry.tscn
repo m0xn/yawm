@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cba2ari7wjvi2"]
+[gd_scene load_steps=8 format=3 uid="uid://cba2ari7wjvi2"]
 
 [ext_resource type="Texture2D" uid="uid://ddt6qgqxwqb12" path="res://graphics/app_icons/debug_error_icon.svg" id="1_7ehrl"]
 [ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="2_kg5mp"]
 [ext_resource type="FontFile" uid="uid://b75fm5jbk1qk8" path="res://fonts/Tomorrow-Italic.ttf" id="4_0ykx2"]
 [ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="4_kg5mp"]
 [ext_resource type="FontFile" uid="uid://boscn51rhegt4" path="res://fonts/Tomorrow-Bold.ttf" id="5_0ykx2"]
+[ext_resource type="Script" uid="uid://bgy31prpbtrb3" path="res://scripts/rtl_url_handler.gd" id="6_0ykx2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it30x"]
 bg_color = Color(0.752941, 0.109804, 0.156863, 1)
@@ -38,3 +39,4 @@ theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
 fit_content = true
+script = ExtResource("6_0ykx2")
