@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dq72qw2ggilrk"]
+[gd_scene load_steps=32 format=3 uid="uid://dq72qw2ggilrk"]
 
 [ext_resource type="Script" uid="uid://dlywt5uosyndb" path="res://scripts/thumbnails/thumbnail_loader.gd" id="1_0bbpv"]
 [ext_resource type="Script" uid="uid://2l3wbvsgcvhb" path="res://scripts/globals/load_globals_refs.gd" id="1_rarhs"]
@@ -48,6 +48,17 @@ corner_radius_top_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa025"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.963508, 0, 0.185268, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="AppRoot" type="Control" node_paths=PackedStringArray("global_nodes")]
 layout_mode = 3
 anchors_preset = 15
@@ -59,6 +70,7 @@ script = ExtResource("1_rarhs")
 global_nodes = {
 "app_root_ref": NodePath("."),
 "grid_container_ref": NodePath("MainUIHBC/ThumbnailsVBC/ThumbnailsP/ThumbnailsSC/ThumbnailsGC"),
+"new_logs_ind_label_ref": NodePath("UIControlsHBC/LogsP/NewLogsIndicatorLB"),
 "preview_label_ref": NodePath("MainUIHBC/PreviewVBC/PreviewLabelsVBC/PreviewFileLB"),
 "preview_rect_ref": NodePath("MainUIHBC/PreviewVBC/PreviewImgP/PreviewImgTR"),
 "scale_factor_label_ref": NodePath("MainUIHBC/ThumbnailsVBC/ThumbnailsInfoP/InfoContainerHBC/ScaleFactorLB"),
@@ -263,6 +275,17 @@ grow_horizontal = 0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bb450")
+
+[node name="NewLogsIndicatorLB" type="Label" parent="UIControlsHBC/LogsP"]
+unique_name_in_owner = true
+visible = false
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 17.0
+offset_bottom = 17.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xa025")
+text = "0"
+horizontal_alignment = 1
 
 [node name="LogsBTN" type="TextureButton" parent="UIControlsHBC/LogsP"]
 unique_name_in_owner = true

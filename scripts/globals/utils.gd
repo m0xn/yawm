@@ -152,7 +152,9 @@ class Debug:
 		var plain_log = Utils.Str.trim_extra_spaces(bbcode_tags_regex.sub(msg, "", true))
 
 		AppData.logs += "\n#> " + plain_log + "." # NOTE: Missing dot after the RegEx search
-		print(AppData.logs)
+		AppData.new_logs += 1
+		Global.nodes.new_logs_ind_label_ref.show()
+		Global.nodes.new_logs_ind_label_ref.text = str(AppData.new_logs)
 
 class Str:
 	static func flatten_array(accumulator: String, next_output: String, sep := "\n") -> String:

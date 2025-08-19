@@ -28,3 +28,5 @@ var cached_debug_res: Dictionary[String, Array] = {
 var logs: String = "
 # LOGS #
 "
+
+var new_logs: int = 0
