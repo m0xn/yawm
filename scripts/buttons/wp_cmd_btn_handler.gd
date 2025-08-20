@@ -4,7 +4,7 @@ extends Button
 
 func execute_command() -> void:
 	var raw_cmd = AppData.settings.get_value("cmds", cmd_ref)
-	var wps_dir = AppData.settings.get_value("dirs", "wps_dir")
+	var wps_dir = ProjectSettings.globalize_path(AppData.settings.get_value("dirs", "wps_dir"))
 
 	if wps_dir == "":
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DDG_MISSING_DIR") % ["STTS_WPS_DIR_LB", "STTS_WPS_DIR_LB"])

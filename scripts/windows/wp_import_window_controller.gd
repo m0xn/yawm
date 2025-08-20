@@ -34,7 +34,7 @@ func add_wps(wp_paths: PackedStringArray) -> void:
 		%LoadWallpapersBTN.button_down.connect(import_wallpapers)
 
 func import_wallpapers() -> void:
-	var progress_window: Window = Global.res.progress_window_res.instantiate()
+	var progress_window: Window = load("res://scenes/windows/ProgressWindow.tscn").instantiate()
 	progress_window.init(tr("P_BAR_IMPORTING_INFO_LB"))
 	progress_window.show()
 	Global.nodes.app_root_ref.add_child(progress_window)
@@ -66,6 +66,9 @@ func import_wallpapers() -> void:
 
 		if item_line_edit.text != "":
 			DirAccess.rename_absolute(img_path, img_path.get_base_dir().path_join(processed_filename))
+
+		if not FileAccess.file_exists(AppData.settings.get_value("dirs", "wps_dir").path_join(processed_filename)):
+			DirAccess.copy_absolute(img_path, AppData.settings.get_value("dirs", "wps_dir").path_join(processed_filename))
 
 		progress_window.update_progress(processed_wallpapers, wp_list_container.item_count, "", filename)
 

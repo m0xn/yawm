@@ -53,7 +53,7 @@ class Preview:
 		if not FileAccess.file_exists(wps_base_dir.path_join(filename)):
 			Utils.Debug.log_msg(Types.DT.ERROR, Engine.tr("DBG_INVALID_PRVW_DIR_PATH" if AppData.settings.get_value("dirs", "enable_prvw_processing") else "DBG_INVALID_WPS_DIR_PATH") % [wps_base_dir.path_join(filename), Engine.tr("STTS_DIR_HEADER_LB"), Engine.tr("STTS_WPS_DIR_LB")])
 
-		var full_res_wp = Image.load_from_file(wps_base_dir.path_join(filename))
+		var full_res_wp = Image.load_from_file(ProjectSettings.globalize_path(wps_base_dir).path_join(filename))
 		Global.nodes.preview_rect_ref.texture = ImageTexture.create_from_image(full_res_wp)
 
 class Dir:
