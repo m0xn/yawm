@@ -27,7 +27,7 @@ func _ready() -> void:
 	DirAccess.make_dir_absolute("user://thumbs_dir")
 	DirAccess.make_dir_absolute("user://prvw_dir")
 
-	var os_name = "Windows" # OS.get_name()
+	var os_name = OS.get_name()
 	var os_icon = load(os_icon_map[os_name])
 
 	%DetectedOSLogoTR.texture = os_icon
