@@ -7,7 +7,7 @@ extends "input_field_setting_entry.gd"
 
 func check_for_duplicate(cmd: String) -> void:
 	var other_cmd_entry = "open_img_vwr_cmd" if container_base_name == "SetAsWpCmd" else "set_wp_cmd"
-	if cmd == AppData.settings.get_value(stts_section, other_cmd_entry):
+	if cmd == AppData.settings.get_value(stts_section, other_cmd_entry) and cmd != "":
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_DUPLICATE_CMD") % [cmd, tr("%s_BTN" % container_base_name.trim_suffix("Cmd").to_snake_case().to_upper())])
 		editable_node[editable_field] = ""
 		show_input_validity(false)

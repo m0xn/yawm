@@ -24,6 +24,7 @@ func _make_custom_tooltip(for_text: String) -> Object:
 	return label
 	
 func _on_value_change(new_value: Variant) -> void:
+	print("Detected value change on %s > %s" % [stts_section, stts_name])
 	AppData.settings.set_value(stts_section, stts_name, new_value)
 	reset_to_def_btn["show" if check_imparity(new_value) else "hide"].call()
 

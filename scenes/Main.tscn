@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://dq72qw2ggilrk"]
+[gd_scene load_steps=27 format=3 uid="uid://dq72qw2ggilrk"]
 
 [ext_resource type="Script" uid="uid://dlywt5uosyndb" path="res://scripts/thumbnails/thumbnail_loader.gd" id="1_0bbpv"]
 [ext_resource type="Script" uid="uid://2l3wbvsgcvhb" path="res://scripts/globals/load_globals_refs.gd" id="1_rarhs"]
 [ext_resource type="FontFile" uid="uid://cjntax1xa75sl" path="res://fonts/Tomorrow-MediumItalic.ttf" id="2_rvslj"]
 [ext_resource type="Texture2D" uid="uid://buvtdh0slsxgf" path="res://graphics/app_icons/mag_glass.svg" id="3_c01mt"]
 [ext_resource type="Script" uid="uid://5kv6sv6j207r" path="res://scripts/thumbnails/thumbnail_size_controller.gd" id="3_vcsgt"]
-[ext_resource type="PackedScene" uid="uid://b4fxnfkkvwm27" path="res://scenes/windows/SettingsWindow.tscn" id="6_3p2gp"]
 [ext_resource type="Script" uid="uid://io47526ry36b" path="res://scripts/buttons/add_wallpapers_handler.gd" id="8_q8u5g"]
 [ext_resource type="PackedScene" uid="uid://bp7ddcbiwa5vd" path="res://scenes/windows/ErrorWindow.tscn" id="8_xa025"]
 [ext_resource type="Texture2D" uid="uid://dlpy2aaa5uh1x" path="res://graphics/app_icons/info_icon.svg" id="11_cvmbd"]
@@ -334,10 +333,6 @@ filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
 visible = false
 
 [node name="DebugWindowWND" parent="." instance=ExtResource("22_yxlcp")]
-visible = false
-
-[node name="SettingsWindow" parent="." instance=ExtResource("6_3p2gp")]
-unique_name_in_owner = true
 visible = false
 
 [node name="ErrorWindowWND" parent="." instance=ExtResource("8_xa025")]

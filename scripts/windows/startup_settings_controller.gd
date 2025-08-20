@@ -27,7 +27,7 @@ func _ready() -> void:
 	DirAccess.make_dir_absolute("user://thumbs_dir")
 	DirAccess.make_dir_absolute("user://prvw_dir")
 
-	var os_name = OS.get_name()
+	var os_name = "Windows" # OS.get_name()
 	var os_icon = load(os_icon_map[os_name])
 
 	%DetectedOSLogoTR.texture = os_icon
@@ -43,11 +43,11 @@ func _ready() -> void:
 		http_request.download_file = "user://%s" % [set_wp_script_url.get_file()]
 		http_request.request(set_wp_script_url)
 
-		%CmdsSectionVBC.get_node("%SetAsWpCmdLE").text = ("sh %s" if os_name != "Windows" else "powershell.exe -Command %s") % ProjectSettings.globalize_path(set_wp_script_url.get_file())
-		%CmdsSectionVBC.get_node("%OpenInImgVwrCmdLE").text = script_map[map_entry][1]
+		AppData.settings.set_value("cmds", "set_wp_cmd", ("sh %s" if os_name != "Windows" else "powershell.exe -Command %s") % ProjectSettings.globalize_path("user://".path_join(set_wp_script_url.get_file())))
+		%CmdsSectionVBC.get_node("%SetAsWpCmdLE").text = ("sh %s" if os_name != "Windows" else "powershell.exe -Command %s") % ProjectSettings.globalize_path("user://".path_join(set_wp_script_url.get_file()))
 
-		AppData.settings.set_value("cmds", "set_wp_cmd", ("sh %s" if os_name != "Windows" else "powershell.exe -Command %s") % ProjectSettings.globalize_path(set_wp_script_url.get_file()))
 		AppData.settings.set_value("cmds", "open_img_vwr_cmd", script_map[map_entry][1])
+		%CmdsSectionVBC.get_node("%OpenInImgVwrCmdLE").text = script_map[map_entry][1]
 
 func verify_fields() -> void:
 	for field in ["dirs|wps_dir", "dirs|thumbs_dir", "cmds|set_wp_cmd", "cmds|open_img_vwr_cmd"]:
