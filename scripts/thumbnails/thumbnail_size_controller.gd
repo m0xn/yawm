@@ -7,7 +7,7 @@ func _ready() -> void:
 	get_window().size_changed.connect(adjust_grid_columns)
 	current_thumbnail_size = AppData.thumbnail_base_size
 
-	resize_thumbnails(Global.nodes.scale_slider_ref.value)
+	resize_thumbnails(AppData.settings.get_value("misc", "thumbs_init_scale"))
 	Global.nodes.scale_slider_ref.value_changed.connect(resize_thumbnails)
 
 func adjust_grid_columns() -> void:
@@ -28,8 +28,8 @@ func resize_thumbnails(value: float) -> void:
 		return
 
 	Global.nodes.scale_slider_ref.step = AppData.settings.get_value("misc", "scale_step")
-
 	Global.nodes.scale_factor_label_ref.text = str(value) + "x"
+
 	for thumbnail in Global.nodes.grid_container_ref.get_children():
 		thumbnail.custom_minimum_size = AppData.thumbnail_base_size * value
 		current_thumbnail_size = thumbnail.custom_minimum_size

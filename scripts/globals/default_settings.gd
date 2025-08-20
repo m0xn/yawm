@@ -13,12 +13,12 @@ var map: Dictionary = {
 	},
 	"img_proc": {
 		"thumbs_df": 25,
-		"prvw_df": 100
+		"prvw_df": 50
 	},
 	"misc": {
 		"locale_idx": 0,
 		"acc_color": Color.from_hsv(263 / 359.0, 1.0, 1.0),
-		"scale_step": 0.01,
+		"scale_step": 0.1,
 		"thumbs_init_scale": 1.0,
 		"enable_dnd_tooltip": true
 	},

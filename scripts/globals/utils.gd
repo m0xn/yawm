@@ -22,6 +22,7 @@ class GC:
 
 		var wallpaper_thumbnail = load("res://scenes/custom_components/WallpaperThumbnail.tscn").instantiate()
 		wallpaper_thumbnail.get_node("WallpaperTR").texture = img_texture
+		wallpaper_thumbnail.custom_minimum_size = AppData.thumbnail_base_size * AppData.settings.get_value("misc", "thumbs_init_scale")
 		
 		wallpaper_thumbnail.filename = filename
 		wallpaper_thumbnail.get_node("FrameP").wallpaper_clicked.connect(Utils.GC._on_wallpaper_selection)
