@@ -9,7 +9,7 @@ var os_icon_map: Dictionary[String, String] = {
 # NOTE: This variable maps Desktop Environments with their matching scripts or cmds
 #		to change or open the selected wallpaper
 var script_map: Dictionary[String, Array] = {
-	"windows": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_windows.ps1", "start"],
+	"windows": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_windows.ps1", "CMD.exe /C start"],
 	"budgie": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_gnome_based.sh", "eog"],
 	"cinnamon": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_cinnamon.sh", "xviewer"],
 	"kde": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_kde.sh", "gwenview"],
@@ -43,10 +43,10 @@ func _ready() -> void:
 		http_request.download_file = "user://%s" % [set_wp_script_url.get_file()]
 		http_request.request(set_wp_script_url)
 
-		%CmdsSectionVBC.get_node("%SetAsWpCmdLE").text = "sh %s" % [set_wp_script_url.get_file()] if os_name != "Windows" else set_wp_script_url.get_file()
+		%CmdsSectionVBC.get_node("%SetAsWpCmdLE").text = ("sh %s" if os_name != "Windows" else "powershell.exe -Command %s") % ProjectSettings.globalize_path(set_wp_script_url.get_file())
 		%CmdsSectionVBC.get_node("%OpenInImgVwrCmdLE").text = script_map[map_entry][1]
 
-		AppData.settings.set_value("cmds", "set_wp_cmd", "sh %s" % [set_wp_script_url.get_file()] if os_name != "Windows" else set_wp_script_url.get_file())
+		AppData.settings.set_value("cmds", "set_wp_cmd", ("sh %s" if os_name != "Windows" else "powershell.exe -Command %s") % ProjectSettings.globalize_path(set_wp_script_url.get_file()))
 		AppData.settings.set_value("cmds", "open_img_vwr_cmd", script_map[map_entry][1])
 
 func verify_fields() -> void:
