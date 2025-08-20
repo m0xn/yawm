@@ -32,17 +32,17 @@ func _ready() -> void:
 	var http_request := HTTPRequest.new()
 	add_child(http_request)
 
-	var map_entry = os_name if os_name != "Linux" else OS.get_environment("XDG_SESSION_DESKTOP").to_lower()
+	var map_entry = os_name.to_lower() if os_name != "Linux" else OS.get_environment("XDG_SESSION_DESKTOP").to_lower()
 
-	if script_map.has(map_entry):
+	if map_entry in script_map:
 		var set_wp_script_url = script_map[map_entry][0]
 		http_request.download_file = "user://%s" % [set_wp_script_url.get_file()]
 		http_request.request(set_wp_script_url)
 
-		%CmdsSectionVBC.get_node("%SetAsWpScriptLE").text = "sh %s" % [set_wp_script_url.get_file()]
-		%CmdsSectionVBC.get_node("%OpenInImgVwrLE").text = script_map[map_entry][1]
+		%CmdsSectionVBC.get_node("%SetAsWpCmdLE").text = "sh %s" % [set_wp_script_url.get_file()] if os_name != "Windows" else set_wp_script_url.get_file()
+		%CmdsSectionVBC.get_node("%OpenInImgVwrCmdLE").text = script_map[map_entry][1]
 
-		AppData.settings.set_value("cmds", "set_wp_cmd", "sh %s" % [set_wp_script_url.get_file()])
+		AppData.settings.set_value("cmds", "set_wp_cmd", "sh %s" % [set_wp_script_url.get_file()] if os_name != "Windows" else set_wp_script_url.get_file())
 		AppData.settings.set_value("cmds", "open_img_vwr_cmd", script_map[map_entry][1])
 
 func verify_fields() -> void:

@@ -10,7 +10,7 @@
 [node name="StartupSettingsWND" type="Window"]
 title = "STARTUP_STTS_WINDOW_TTL"
 initial_position = 1
-size = Vector2i(640, 370)
+size = Vector2i(640, 375)
 transient = true
 exclusive = true
 script = ExtResource("1_56kyj")
