@@ -23,6 +23,10 @@ func _ready() -> void:
 	%DirSectionVBC.get_node("%EnablePrvwProcessingCB").hide()
 	%SaveBTN.button_down.connect(verify_fields)
 
+	DirAccess.make_dir_absolute("user://wps_dir")
+	DirAccess.make_dir_absolute("user://thumbs_dir")
+	DirAccess.make_dir_absolute("user://prvw_dir")
+
 	var os_name = OS.get_name()
 	var os_icon = load(os_icon_map[os_name])
 
