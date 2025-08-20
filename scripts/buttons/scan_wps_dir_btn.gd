@@ -2,6 +2,8 @@ extends Button
 
 var new_wallpapers: PackedStringArray
 func handle_new_wps_import() -> void:
+	new_wallpapers.clear()
+
 	Utils.Dir.iterate_dir(AppData.settings.get_value("dirs", "wps_dir"), func (filename):
 		if not FileAccess.file_exists(AppData.settings.get_value("dirs", "thumbs_dir").path_join(filename)):
 			new_wallpapers.append(AppData.settings.get_value("dirs", "wps_dir").path_join(filename))

@@ -3,7 +3,7 @@ extends Node
 func _ready() -> void:
 	if FileAccess.file_exists("user://settings.cfg"):
 		if AppData.settings.get_value("dirs", "thumbs_dir") == "":
-			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_THUMBS_DIR") % [tr("STTS_DIR_HEADER_LB"), tr("STTS_THUMBS_DIR_LB")])
+			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_DIR") % [tr("STTS_THUMBS_DIR_LB"), tr("STTS_THUMBS_DIR_LB")])
 			return
 	else:
 		return # NOTE: Avoid loading thumbnails on startup configuration

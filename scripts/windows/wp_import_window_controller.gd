@@ -35,11 +35,15 @@ func add_wps(wp_paths: PackedStringArray) -> void:
 
 func import_wallpapers() -> void:
 	var progress_window: Window = Global.res.progress_window_res.instantiate()
-	progress_window.init("P_BAR_IMPORTING_INFO_LB")
+	progress_window.init(tr("P_BAR_IMPORTING_INFO_LB"))
 	progress_window.show()
 	Global.nodes.app_root_ref.add_child(progress_window)
 
 	await wp_list_container.process_items(func (item, processed_wallpapers):
+		if progress_window.cancel_progress:
+			progress_window.queue_free()
+			return
+
 		var item_line_edit = item.get_node("%WPRenameLE")
 		var original_ext = item.get_node("%WPFilenameLB").text.get_extension()
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bp7ddcbiwa5vd"]
 
-[ext_resource type="Script" uid="uid://djnkajot3mo3n" path="res://scripts/windows/error_window_controller.gd" id="1_f5iej"]
+[ext_resource type="Script" uid="uid://cuswjymoa1x07" path="res://scripts/windows/base_hide_window.gd" id="1_jji6g"]
 [ext_resource type="Texture2D" uid="uid://ddt6qgqxwqb12" path="res://graphics/app_icons/debug_error_icon.svg" id="1_ppfow"]
 [ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="3_f5iej"]
 [ext_resource type="Script" uid="uid://c7muu0jdxjy1n" path="res://scripts/buttons/close_error_btn.gd" id="3_yt1nn"]
@@ -17,7 +17,7 @@ wrap_controls = true
 transient = true
 exclusive = true
 min_size = Vector2i(500, 150)
-script = ExtResource("1_f5iej")
+script = ExtResource("1_jji6g")
 
 [node name="MainUIHBC" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -49,7 +49,6 @@ theme_override_fonts/italics_font = ExtResource("4_jji6g")
 theme_override_fonts/bold_italics_font = ExtResource("5_g7qvl")
 theme_override_fonts/bold_font = ExtResource("6_pluov")
 bbcode_enabled = true
-text = "SOMETHING"
 script = ExtResource("7_jji6g")
 
 [node name="CloseBTN" type="Button" parent="MainUIHBC"]

@@ -41,6 +41,7 @@ vertical_alignment = 1
 
 [node name="WPAbsPathLB" type="Label" parent="ElementsContainerHBC/ImportedInfoVBC"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -48,6 +49,8 @@ theme_override_colors/font_color = Color(0.650128, 0.650128, 0.650128, 1)
 theme_override_font_sizes/font_size = 10
 text = "ABS_PATH_PLACEHOLDER"
 vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="WPRenameLE" type="LineEdit" parent="ElementsContainerHBC"]
 unique_name_in_owner = true

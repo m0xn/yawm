@@ -35,7 +35,7 @@ editable_node = NodePath("SetAsWpCmdLE")
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "STTS_SET_AS_WP_SCRIPT_LB"
+text = "SET_WP_BTN"
 autowrap_mode = 3
 
 [node name="SetAsWpCmdLE" type="LineEdit" parent="SetAsWpCmdHBC"]
@@ -65,7 +65,7 @@ editable_node = NodePath("OpenInImgVwrCmdLE")
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "OPEN_IN_IMG_VIEWER_BTN"
+text = "OPEN_IMG_VWR_BTN"
 autowrap_mode = 3
 
 [node name="OpenInImgVwrCmdLE" type="LineEdit" parent="OpenInImgVwrCmdHBC"]

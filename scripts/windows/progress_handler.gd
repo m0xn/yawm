@@ -1,6 +1,7 @@
 extends "base_window.gd"
 
 var base_info: String
+var cancel_progress: bool = false
 
 func init(progress_info: StringName) -> void:
 	%ProgressInfoLB.text = tr(progress_info)

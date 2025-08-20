@@ -6,8 +6,6 @@ var wps_to_load: int
 var currently_selected_thumbnail: Panel
 var thumbnail_base_size := Vector2(150.0, 150.0)
 
-var random_wp: String
-
 var current_theme: Theme
 
 var settings: ConfigFile

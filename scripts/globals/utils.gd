@@ -20,7 +20,7 @@ class GC:
 	static func load_into_grid_container(filename: String, img: Image) -> void:
 		var img_texture := ImageTexture.create_from_image(img)
 
-		var wallpaper_thumbnail = Global.res.wallpaper_thumbnail_res.instantiate()
+		var wallpaper_thumbnail = load("res://scenes/custom_components/WallpaperThumbnail.tscn").instantiate()
 		wallpaper_thumbnail.get_node("WallpaperTR").texture = img_texture
 		
 		wallpaper_thumbnail.filename = filename
@@ -50,7 +50,6 @@ class Preview:
 		Global.nodes.preview_label_ref.text = filename
 
 		var wps_base_dir = AppData.settings.get_value("dirs", "prvw_dir") if AppData.settings.get_value("dirs", "enable_prvw_processing") else AppData.settings.get_value("dirs", "wps_dir")
-		printt(wps_base_dir, wps_base_dir.path_join(filename), AppData.settings.get_value("dirs", "enable_prvw_processing"))
 		if not FileAccess.file_exists(wps_base_dir.path_join(filename)):
 			Utils.Debug.log_msg(Types.DT.ERROR, Engine.tr("DBG_INVALID_PRVW_DIR_PATH" if AppData.settings.get_value("dirs", "enable_prvw_processing") else "DBG_INVALID_WPS_DIR_PATH") % [wps_base_dir.path_join(filename), Engine.tr("STTS_DIR_HEADER_LB"), Engine.tr("STTS_WPS_DIR_LB")])
 
@@ -73,7 +72,7 @@ class Dir:
 class Import:
 	static func load_to_import_window(files_selected: PackedStringArray, node_ref: Node) -> void:
 		var context = "MAIN" if node_ref.get_window().name == "root" else "WINDOW"
-		var wallpaper_loader_window = Global.res.wallpaper_loader_window_res.instantiate() if context == "MAIN" else node_ref.get_window()
+		var wallpaper_loader_window = load("res://scenes/windows/WallpaperLoader.tscn").instantiate() if context == "MAIN" else node_ref.get_window()
 		wallpaper_loader_window.add_wps(files_selected)
 
 		if context == "MAIN":
@@ -120,7 +119,7 @@ class Debug:
 			Types.DT.ERROR: type = "error"
 
 		var debug_window = Global.nodes.app_root_ref.get_node("DebugWindowWND")
-		var debug_entry = Global.res.debug_entry_res.instantiate()
+		var debug_entry = load("res://scenes/custom_components/DebugEntry.tscn").instantiate()
 
 		var has_been_cached = len(AppData.cached_debug_res[type]) > 1
 		var color_panel_stylebox = AppData.cached_debug_res[type][Types.STYLEBOX] if has_been_cached else StyleBoxFlat.new()
@@ -174,5 +173,4 @@ class Str:
 
 class Stts:
 	static func detect_imparity(caller_node: Node, value: Variant, stts_section: String, stts_name: String) -> void:
-		print("Section:\t%s\nName:\t%s\nValue:\t%s\nDefault value:\t%s\nImparity:\t%s\n\n" % [stts_section, stts_name, value, DefaultSettings.map[stts_section][stts_name], value != DefaultSettings.map[stts_section][stts_name]])
 		caller_node.get_parent().get_node("ResetSettingBTN").call("show" if value != DefaultSettings.map[stts_section][stts_name] else "hide")

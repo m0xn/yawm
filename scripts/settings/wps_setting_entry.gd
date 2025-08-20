@@ -12,7 +12,8 @@ func check_for_duplicates(dir_path: String) -> void:
 	for entry in duplicates_search_list:
 		if dir_path == AppData.settings.get_value(stts_section, entry):
 			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_DUPLICATE_PATH") % [dir_path, tr("STTS_%s_LB" % container_base_name.to_snake_case().to_upper())])
-			editable_node[editable_field] = ""
+			editable_node[editable_field] = DefaultSettings.map[stts_section][stts_name]
+			AppData.settings.set_value(stts_section, stts_name, editable_node[editable_field])
 
 func handle_search_dir() -> void:
 	search_dir_fd.show()
@@ -29,7 +30,8 @@ func _on_value_change(new_value: Variant) -> void:
 
 	if not DirAccess.dir_exists_absolute(new_value) or new_value == "":
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_INVALID_DIR_PATH") % tr("STTS_%s_LB" % container_base_name.to_snake_case().to_upper()))
-		editable_node[editable_field] = ""
+		editable_node[editable_field] = DefaultSettings.map[stts_section][stts_name]
+		AppData.settings.set_value(stts_section, stts_name, editable_node[editable_field])
 		show_input_validity(false)
 		return
 

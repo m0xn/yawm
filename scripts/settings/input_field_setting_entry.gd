@@ -31,7 +31,6 @@ func gen_mod_stylebox(unmodified: bool) -> StyleBoxFlat:
 	return border_stylebox
 
 func show_input_validity(valid_input: bool) -> void:
-	print(valid_input)
 	var border_stylebox = gen_mod_stylebox(not valid_input) # NOTE: In this case, since a valid input would result in a red border, we need to invert this parameter
 	line_edit_ref.add_theme_stylebox_override("focus", border_stylebox)
 

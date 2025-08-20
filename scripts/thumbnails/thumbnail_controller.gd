@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and thumbnail_root.mouse_inside_thumbnail:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT and AppData.currently_selected_thumbnail != thumbnail_root:
 			thumbnail_root.thumbnail_clicked = true
 			wallpaper_clicked.emit(thumbnail_root)
 
@@ -31,7 +31,6 @@ func _gui_input(event: InputEvent) -> void:
 			var delete_thumbnail_window = load("res://scenes/windows/ConfirmationWindow.tscn").instantiate()
 			delete_thumbnail_window.show()
 			add_child(delete_thumbnail_window)
-			printt(thumbnail_root.filename)
 
 			var red_border = StyleBoxFlat.new()
 			red_border.border_color = Color8(255, 0, 0)

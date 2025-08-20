@@ -47,6 +47,7 @@ theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
 theme_override_fonts/italics_font = ExtResource("1_pacub")
 bbcode_enabled = true
 text = "CRDTS_SVG_ICONS_RTL"
+script = ExtResource("4_nh1wb")
 
 [node name="GELB" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(0, 20)
