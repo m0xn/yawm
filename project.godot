@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="uid://5ptvws5i5476"
+config/icon="uid://dvcrybb2pi1n8"
 config/windows_native_icon="res://graphics/app_logos/yawm_main.ico"
 
 [autoload]
