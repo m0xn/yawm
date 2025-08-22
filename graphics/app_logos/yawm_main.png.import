@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ptvws5i5476"
-path="res://.godot/imported/yawm_main.svg-3ed16f1c7f84d16e45e35ce06013921a.ctex"
+uid="uid://dvcrybb2pi1n8"
+path="res://.godot/imported/yawm_main.png-a2765a3a7444267ec6f75f8a3a33052b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/app_logos/yawm_main.svg"
-dest_files=["res://.godot/imported/yawm_main.svg-3ed16f1c7f84d16e45e35ce06013921a.ctex"]
+source_file="res://graphics/app_logos/yawm_main.png"
+dest_files=["res://.godot/imported/yawm_main.png-a2765a3a7444267ec6f75f8a3a33052b.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
