@@ -1,7 +1,7 @@
 extends Panel
 
 var current_thumbnail_size: Vector2
-@export var tolerance: float = 0.05
+@export var tolerance: float = 0.15
 
 func _ready() -> void:
 	get_window().size_changed.connect(adjust_grid_columns)
@@ -14,7 +14,8 @@ func adjust_grid_columns() -> void:
 	if len(Global.nodes.grid_container_ref.get_children()) == 0:
 		return
 
-	var container_width = get_parent().size.x
+	# NOTE: Can't get the exact width with the MainUIHBC. Combining this approx. with the tolerance gives a decent result
+	var container_width = get_parent().get_parent().size.x / 2
 	var columns_ratio = container_width / current_thumbnail_size.x
 	var new_gc_columns = floor(columns_ratio) if abs(columns_ratio - floor(columns_ratio)) < tolerance else ceil(columns_ratio)
 

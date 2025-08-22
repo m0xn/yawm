@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://clowtv2p8orur"]
 
 [ext_resource type="Script" uid="uid://c5nnu6h86u78l" path="res://scripts/license_handler.gd" id="1_7wauj"]
-[ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="1_pacub"]
+[ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="2_nh1wb"]
 [ext_resource type="PackedScene" uid="uid://d0strmyqw0x0b" path="res://scenes/license_windows/AppLicense.tscn" id="3_l2ci0"]
 [ext_resource type="Texture2D" uid="uid://c1xdb5s6icw4a" path="res://graphics/app_icons/github.svg" id="3_nh1wb"]
 [ext_resource type="Script" uid="uid://bgy31prpbtrb3" path="res://scripts/rtl_url_handler.gd" id="4_nh1wb"]
@@ -35,7 +35,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
-theme_override_fonts/italics_font = ExtResource("1_pacub")
+theme_override_fonts/italics_font = ExtResource("2_nh1wb")
 bbcode_enabled = true
 text = "CRDTS_DEV_INFO_RTL"
 
@@ -44,7 +44,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
-theme_override_fonts/italics_font = ExtResource("1_pacub")
+theme_override_fonts/italics_font = ExtResource("2_nh1wb")
 bbcode_enabled = true
 text = "CRDTS_SVG_ICONS_RTL"
 script = ExtResource("4_nh1wb")
@@ -54,7 +54,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.674815, 0.674815, 0.674815, 1)
-theme_override_fonts/italics_font = ExtResource("1_pacub")
+theme_override_fonts/italics_font = ExtResource("2_nh1wb")
 bbcode_enabled = true
 text = "CRDTS_GE_RTL"
 

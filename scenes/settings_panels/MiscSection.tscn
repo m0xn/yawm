@@ -103,7 +103,6 @@ min_value = 0.01
 max_value = 0.5
 step = 0.01
 value = 0.1
-update_on_text_changed = true
 
 [node name="ResetSettingBTN" parent="ScaleStepHBC" instance=ExtResource("2_1fncs")]
 visible = false
@@ -132,7 +131,6 @@ min_value = 0.5
 max_value = 2.0
 step = 0.1
 value = 0.5
-update_on_text_changed = true
 
 [node name="ResetSettingBTN" parent="ThumbsInitScaleHBC" instance=ExtResource("2_1fncs")]
 visible = false

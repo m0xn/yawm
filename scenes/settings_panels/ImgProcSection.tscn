@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5ol4xpiwl53n"]
+[gd_scene load_steps=12 format=3 uid="uid://b5ol4xpiwl53n"]
 
 [ext_resource type="Script" uid="uid://igxasc0b61eq" path="res://scripts/img_proc_controller.gd" id="1_40mog"]
-[ext_resource type="Script" uid="uid://1e6esojl2i6u" path="res://scripts/settings/spinbox_setting_entry.gd" id="2_40mog"]
 [ext_resource type="PackedScene" uid="uid://bbq8oa244tjsq" path="res://scenes/custom_components/ResetSettingBtn.tscn" id="2_iauv4"]
 [ext_resource type="Script" uid="uid://b72cirb481ahe" path="res://scripts/custom_tooltip.gd" id="2_yd6rq"]
+[ext_resource type="Script" uid="uid://b2hek3x5jtwci" path="res://scripts/settings/downscale_factor_setting_entry.gd" id="3_yd6rq"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_if5qn"]
 color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd6rq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrbld"]
 
@@ -77,7 +79,7 @@ text = "STTS_DF_LB"
 
 [node name="ThumbsDfHBC" type="HBoxContainer" parent="ThumbsDfHBC/ThumbsProcCfgVBC" node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
-script = ExtResource("2_40mog")
+script = ExtResource("3_yd6rq")
 stts_section = "img_proc"
 stts_name = "thumbs_df"
 editable_node = NodePath("ThumbsDfSB")
@@ -94,10 +96,10 @@ suffix = "%"
 [node name="ResetSettingBTN" parent="ThumbsDfHBC/ThumbsProcCfgVBC/ThumbsDfHBC" instance=ExtResource("2_iauv4")]
 layout_mode = 2
 
-[node name="ThumbsApplyDFBTN" type="Button" parent="ThumbsDfHBC/ThumbsProcCfgVBC"]
-unique_name_in_owner = true
+[node name="BottomMarginHS" type="HSeparator" parent="ThumbsDfHBC/ThumbsProcCfgVBC"]
 layout_mode = 2
-text = "STTS_APPLY_BTN"
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_yd6rq")
 
 [node name="DFOptsThumbVS" type="VSeparator" parent="ThumbsDfHBC"]
 layout_mode = 2
@@ -162,7 +164,7 @@ text = "STTS_DF_LB"
 
 [node name="PrvwDfHBC" type="HBoxContainer" parent="PrvwDfHBC/PrvwProcCfgVBC" node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
-script = ExtResource("2_40mog")
+script = ExtResource("3_yd6rq")
 stts_section = "img_proc"
 stts_name = "prvw_df"
 editable_node = NodePath("PrvwDfSB")
@@ -178,10 +180,10 @@ suffix = "%"
 [node name="ResetSettingBTN" parent="PrvwDfHBC/PrvwProcCfgVBC/PrvwDfHBC" instance=ExtResource("2_iauv4")]
 layout_mode = 2
 
-[node name="PrvwApplyDFBTN" type="Button" parent="PrvwDfHBC/PrvwProcCfgVBC"]
-unique_name_in_owner = true
+[node name="BottomMarginHS" type="HSeparator" parent="PrvwDfHBC/PrvwProcCfgVBC"]
 layout_mode = 2
-text = "STTS_APPLY_BTN"
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_yd6rq")
 
 [node name="DFOptionsPrvwVS" type="VSeparator" parent="PrvwDfHBC"]
 layout_mode = 2

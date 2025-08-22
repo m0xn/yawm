@@ -3,9 +3,7 @@ extends Node
 var map: Dictionary = {
 	"dirs": {
 		"wps_dir": "user://wps_dir",
-		"thumbs_dir": "user://thumbs_dir",
 		"enable_prvw_processing": false,
-		"prvw_dir": "user://prvw_dir"
 	},
 	"cmds": {
 		"set_wp_cmd": "",

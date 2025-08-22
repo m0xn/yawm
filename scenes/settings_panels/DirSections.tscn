@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://4gjb1b7nhkh2"]
 
-[ext_resource type="Script" uid="uid://b4hf7m7xeiyb4" path="res://scripts/settings/wps_setting_entry.gd" id="1_xarl2"]
+[ext_resource type="Script" uid="uid://74deaasrqcn8" path="res://scripts/settings/wps_dir_setting_entry.gd" id="1_wliso"]
 [ext_resource type="Texture2D" uid="uid://buvtdh0slsxgf" path="res://graphics/app_icons/mag_glass.svg" id="2_wliso"]
 [ext_resource type="Texture2D" uid="uid://bkfxww80g54y3" path="res://graphics/app_icons/file_explorer_icon.svg" id="3_ac7bs"]
 [ext_resource type="PackedScene" uid="uid://bbq8oa244tjsq" path="res://scenes/custom_components/ResetSettingBtn.tscn" id="4_2ukj3"]
@@ -28,7 +28,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_if5qn")
 [node name="WpsDirHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
 tooltip_text = "WPS_DIR_TTP"
-script = ExtResource("1_xarl2")
+script = ExtResource("1_wliso")
 stts_section = "dirs"
 stts_name = "wps_dir"
 editable_node = NodePath("WpsDirLE")
@@ -64,42 +64,6 @@ icon_alignment = 1
 visible = false
 layout_mode = 2
 
-[node name="ThumbsDirHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
-layout_mode = 2
-tooltip_text = "THUMBS_DIR_TTP"
-script = ExtResource("1_xarl2")
-stts_section = "dirs"
-stts_name = "thumbs_dir"
-editable_node = NodePath("ThumbsDirLE")
-
-[node name="ThumbsDirLB" type="Label" parent="ThumbsDirHBC"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "STTS_THUMBS_DIR_LB"
-
-[node name="ThumbsDirLE" type="LineEdit" parent="ThumbsDirHBC"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="SearchThumbsDirBTN" type="Button" parent="ThumbsDirHBC"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 0)
-layout_mode = 2
-icon = ExtResource("2_wliso")
-icon_alignment = 1
-
-[node name="OpenInFEThumbsDirBTN" type="Button" parent="ThumbsDirHBC"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 0)
-layout_mode = 2
-icon = ExtResource("3_ac7bs")
-icon_alignment = 1
-
-[node name="ResetSettingBTN" parent="ThumbsDirHBC" instance=ExtResource("4_2ukj3")]
-visible = false
-layout_mode = 2
-
 [node name="EnablePrvwProcessingHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
 layout_mode = 2
 tooltip_text = "ENABLE_PRVW_PROCESSING_TTP"
@@ -116,45 +80,6 @@ mouse_filter = 1
 text = "STTS_PROCESS_PRVW_CB"
 
 [node name="ResetSettingBTN" parent="EnablePrvwProcessingHBC" instance=ExtResource("4_2ukj3")]
-visible = false
-layout_mode = 2
-
-[node name="PrvwDirHBC" type="HBoxContainer" parent="." node_paths=PackedStringArray("editable_node")]
-visible = false
-layout_mode = 2
-tooltip_text = "PRVW_DIR_TTP"
-script = ExtResource("1_xarl2")
-stts_section = "dirs"
-stts_name = "prvw_dir"
-editable_node = NodePath("PrvwDirLE")
-
-[node name="PrvwDirLB" type="Label" parent="PrvwDirHBC"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "STTS_PRVW_DIR_LB"
-autowrap_mode = 3
-
-[node name="PrvwDirLE" type="LineEdit" parent="PrvwDirHBC"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="SearchPrvwDirBTN" type="Button" parent="PrvwDirHBC"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 0)
-layout_mode = 2
-icon = ExtResource("2_wliso")
-icon_alignment = 1
-
-[node name="OpenInFEPrvwDirBTN" type="Button" parent="PrvwDirHBC"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 0)
-layout_mode = 2
-icon = ExtResource("3_ac7bs")
-icon_alignment = 1
-
-[node name="ResetSettingBTN" parent="PrvwDirHBC" instance=ExtResource("4_2ukj3")]
 visible = false
 layout_mode = 2
 

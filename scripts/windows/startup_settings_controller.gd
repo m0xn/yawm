@@ -23,9 +23,9 @@ func _ready() -> void:
 	%DirSectionVBC.get_node("%EnablePrvwProcessingCB").hide()
 	%SaveBTN.button_down.connect(verify_fields)
 
-	DirAccess.make_dir_absolute("user://wps_dir")
-	DirAccess.make_dir_absolute("user://thumbs_dir")
-	DirAccess.make_dir_absolute("user://prvw_dir")
+	if not DirAccess.dir_exists_absolute("user://wps_dir"): DirAccess.make_dir_absolute("user://wps_dir")
+	if not DirAccess.dir_exists_absolute("user://thumbs_dir"): DirAccess.make_dir_absolute("user://thumbs_dir")
+	if not DirAccess.dir_exists_absolute("user://prvw_dir"): DirAccess.make_dir_absolute("user://prvw_dir")
 
 	var os_name = OS.get_name()
 	var os_icon = load(os_icon_map[os_name])
@@ -50,22 +50,12 @@ func _ready() -> void:
 		%CmdsSectionVBC.get_node("%OpenInImgVwrCmdLE").text = script_map[map_entry][1]
 
 func verify_fields() -> void:
-	for field in ["dirs|wps_dir", "dirs|thumbs_dir", "cmds|set_wp_cmd", "cmds|open_img_vwr_cmd"]:
-		var section = field.split("|")[0]
-		var param = field.split("|")[1]
-
-		if AppData.settings.get_value(section, param) == "":
-			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_FIELDS"))
-			return
+	if AppData.settings.get_value("dirs", "wps_dir") == "" or AppData.settings.get_value("cmds", "set_wp_cmd") == "" or AppData.settings.get_value("cmds", "open_img_vwr_cmd") == "":
+		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_FIELDS"))
+		return
 
 	AppData.settings.save("user://settings.cfg")
 	get_parent().remove_child(self)
-
-	if len(DirAccess.get_files_at(AppData.settings.get_value("dirs", "wps_dir"))) != 0:
-		var process_wps_window: Window = load("res://scenes/windows/ConfirmationWindow.tscn").instantiate()
-		process_wps_window.init_window("PROCESS_WPS_WINDOW_TTL", tr("PROCESS_WPS_WINDOW_MSG_LB") % AppData.settings.get_value("dirs", "wps_dir"), import_found_wps)
-
-		Global.nodes.app_root_ref.add_child(process_wps_window)
 
 func import_found_wps(caller_window_ref: Window) -> void:
 	var scene_tree_ref = Global.nodes.app_root_ref.get_tree()
@@ -78,7 +68,6 @@ func import_found_wps(caller_window_ref: Window) -> void:
 			wps_dir.path_join(filename),
 			filename,
 			AppData.settings.get_value("img_proc", "thumbs_df"),
-			AppData.settings.get_value("dirs", "thumbs_dir")
 		)
 
 		AppData.wp_count += 1

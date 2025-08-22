@@ -13,10 +13,8 @@ func add_wps(wp_paths: PackedStringArray) -> void:
 	%WPNoLB.text = tr("WP_IMPORT_WP_NO_LB") + " " + str(AppData.wps_to_load)
 
 	for path in wp_paths:
-		if path.get_extension() not in ["png", "jpg", "jpeg"]:
-			queue_free()
-			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_UNSUPPORTED_FILE_FORMAT") % [path.get_extension()])
-			return
+		if Utils.Format.img_format(path) == "":
+			continue
 
 		wp_list_container.add_item(func (item):
 			item.get_node("%WPFilenameLB").text = path.get_file()
@@ -35,10 +33,11 @@ func add_wps(wp_paths: PackedStringArray) -> void:
 
 func import_wallpapers() -> void:
 	var progress_window: Window = load("res://scenes/windows/ProgressWindow.tscn").instantiate()
-	progress_window.init(tr("P_BAR_IMPORTING_INFO_LB"))
+	progress_window.init_window(tr("P_BAR_IMPORTING_INFO_LB"))
 	progress_window.show()
 	Global.nodes.app_root_ref.add_child(progress_window)
 
+	Global.nodes.grid_container_ref.get_parent().scroll_vertical = 100000
 	await wp_list_container.process_items(func (item, processed_wallpapers):
 		if progress_window.cancel_progress:
 			progress_window.queue_free()
@@ -50,19 +49,15 @@ func import_wallpapers() -> void:
 		var filename = item.get_node("%WPFilenameLB").text if item_line_edit.text == "" else item_line_edit.text
 		var img_path = item.get_node("%WPAbsPathLB").text
 		var processed_filename = filename if filename.ends_with(original_ext) else filename + "." + original_ext
-		
-		var thumbnail_img = Utils.ImgProcessing.render_img(img_path, processed_filename, AppData.settings.get_value("img_proc", "thumbs_df"), AppData.settings.get_value("dirs", "thumbs_dir"))
-		Utils.GC.load_into_grid_container(processed_filename, thumbnail_img)
 
-		Utils.ImgProcessing.render_img(
-			img_path,
-			processed_filename,
-			AppData.settings.get_value("img_proc", "prvw_df") if AppData.settings.get_value("dirs", "prvw_dir") == "" else 1.0,
-			AppData.settings.get_value("dirs", "wps_dir") if AppData.settings.get_value("dirs", "prvw_dir") == "" else AppData.settings.get_value("dirs", "prvw_dir")
-		)
+		var thumbnail_img = Utils.ImgProcessing.render_img(img_path, AppData.settings.get_value("img_proc", "thumbs_df"), true, processed_filename)
+		Utils.GC.load_into_grid_container(processed_filename, thumbnail_img)
 
 		AppData.wp_count += 1
 		Utils.GC.update_wp_count()
+
+		if AppData.settings.get_value("dirs", "enable_prvw_processing"):
+			Utils.ImgProcessing.render_img(img_path, AppData.settings.get_value("img_proc", "prvw_df"), false, processed_filename)
 
 		if item_line_edit.text != "":
 			DirAccess.rename_absolute(img_path, img_path.get_base_dir().path_join(processed_filename))
@@ -70,8 +65,7 @@ func import_wallpapers() -> void:
 		if not FileAccess.file_exists(AppData.settings.get_value("dirs", "wps_dir").path_join(processed_filename)):
 			DirAccess.copy_absolute(img_path, AppData.settings.get_value("dirs", "wps_dir").path_join(processed_filename))
 
-		progress_window.update_progress(processed_wallpapers, wp_list_container.item_count, "", filename)
-
+		progress_window.update_progress(processed_wallpapers, wp_list_container.item_count, processed_filename)
 		await get_tree().process_frame
 	)
 

@@ -1,15 +1,61 @@
 extends Node
 
 class ImgProcessing:
-	static func render_img(img_path: String, filename: String, downscale_factor: float, output_dir: String) -> Image:
-		var img = Image.load_from_file(img_path)
+	static func process_new_wps(missing_wps: PackedStringArray, is_thumbnail := true, render_prvw_imgs := false) -> void:
+		var scene_tree_ref = Global.nodes.app_root_ref.get_tree()
+
+		var wps_dir = AppData.settings.get_value("dirs", "wps_dir")
+		var downscale_factor = AppData.settings.get_value("img_proc", "thumbs_df" if is_thumbnail else "prvw_df")
+
+		var progress_label = "STTS_XFORM_THUMBS_LB" if is_thumbnail else "STTS_XFORM_PRVW_LB"
+		var debug_label = "DBG_THUMBS_RNL_TIME" if is_thumbnail else "DBG_PRVW_RENDER_TIME"
+
+		var progress_window = load("res://scenes/windows/ProgressWindow.tscn").instantiate()
+		progress_window.init_window(Engine.tr(progress_label) % downscale_factor)
+		progress_window.show()
+		Global.nodes.app_root_ref.add_child.call_deferred(progress_window)
+
+		var processed_wallpapers = 0
+		var start_time = Time.get_ticks_msec()
+		for wp in missing_wps:
+			if progress_window.cancel_progress:
+				progress_window.queue_free()
+				return
+
+			var rendered_img = ImgProcessing.render_img(wps_dir.path_join(wp), downscale_factor, is_thumbnail)
+			processed_wallpapers += 1
+
+			if is_thumbnail and AppData.settings.get_value("dirs", "enable_prvw_processing") and render_prvw_imgs:
+				if not DirAccess.dir_exists_absolute("user://prvw_dir"):
+					DirAccess.make_dir_absolute("user://prvw_dir")
+					Debug.log_msg(Types.DT.WARN, Engine.tr("DBG_MISSING_PRVW_DIR"))
+
+				ImgProcessing.render_img(wps_dir.path_join(wp), AppData.settings.get_value("img_proc", "prvw_df"), false)
+
+			if is_thumbnail:
+				GC.load_into_grid_container(wp, rendered_img)
+				AppData.wp_count += 1
+				GC.update_wp_count()
+
+			progress_window.update_progress(processed_wallpapers, len(missing_wps), wp)
+			await scene_tree_ref.process_frame
+
+		progress_window.queue_free()
+
+		var time_taken = Time.get_ticks_msec() - start_time
+		if len(missing_wps) > 0:
+			Debug.log_msg(Types.DT.INFO, Engine.tr(debug_label) % [len(missing_wps), time_taken, time_taken / 1000.0])
+
+	static func render_img(img_path: String, downscale_factor: float, is_thumbnail := true, filename := "") -> Image:
+		var img = Image.load_from_file(ProjectSettings.globalize_path(img_path))
 		var img_size = img.get_size()
 		img.resize(img_size.x * downscale_factor / 100, img_size.y * downscale_factor / 100)
 
-		save_img(img, filename, output_dir)
+		save_img(img, filename if filename != "" else img_path.get_file(), "user://thumbs_dir" if is_thumbnail else "user://prvw_dir")
 		return img
 
 	static func save_img(img: Image, filename: String, output_path: String) -> void:
+		# NOTE: Refactor this fucntion to save the image depending on its **format**
 		match filename.get_extension():
 			"jpeg", "jpg":
 				img.save_jpg(output_path.path_join(filename), 0.9)
@@ -25,7 +71,7 @@ class GC:
 		wallpaper_thumbnail.custom_minimum_size = AppData.thumbnail_base_size * AppData.settings.get_value("misc", "thumbs_init_scale")
 		
 		wallpaper_thumbnail.filename = filename
-		wallpaper_thumbnail.get_node("FrameP").wallpaper_clicked.connect(Utils.GC._on_wallpaper_selection)
+		wallpaper_thumbnail.get_node("FrameP").wallpaper_clicked.connect(GC._on_wallpaper_selection)
 
 		Global.nodes.grid_container_ref.add_child(wallpaper_thumbnail)
 
@@ -41,25 +87,59 @@ class GC:
 		thumbnail_ref.press_thumbnail()
 		AppData.currently_selected_thumbnail = thumbnail_ref
 
-		Utils.Preview.load_wp_into_preview(thumbnail_ref.filename)
+		Preview.load_wp_into_preview(thumbnail_ref.filename)
 
 	static func update_wp_count() -> void:
 		Global.nodes.wallpaper_count_label_ref.text = Engine.tr("WP_COUNT_LB") + " " + str(AppData.wp_count)
 
 class Preview:
 	static func load_wp_into_preview(filename: String) -> void:
-		Global.nodes.preview_label_ref.text = filename
+		var prvw_processing_enabled = AppData.settings.get_value("dirs", "enable_prvw_processing")
+		var wps_dir = AppData.settings.get_value("dirs", "wps_dir")
+		var wps_base_dir = "user://prvw_dir" if prvw_processing_enabled else wps_dir
 
-		var wps_base_dir = AppData.settings.get_value("dirs", "prvw_dir") if AppData.settings.get_value("dirs", "enable_prvw_processing") else AppData.settings.get_value("dirs", "wps_dir")
-		if not FileAccess.file_exists(wps_base_dir.path_join(filename)):
-			Utils.Debug.log_msg(Types.DT.ERROR, Engine.tr("DBG_INVALID_PRVW_DIR_PATH" if AppData.settings.get_value("dirs", "enable_prvw_processing") else "DBG_INVALID_WPS_DIR_PATH") % [wps_base_dir.path_join(filename), Engine.tr("STTS_DIR_HEADER_LB"), Engine.tr("STTS_WPS_DIR_LB")])
+		if not FileAccess.file_exists(wps_dir.path_join(filename)) and wps_base_dir == wps_dir:
+			Debug.log_msg(Types.DT.ERROR, Engine.tr("DBG_MISSING_WP") % [filename, AppData.settings.get_value("dirs", "wps_dir")])
+			Global.nodes.grid_container_ref.remove_child(AppData.currently_selected_thumbnail)
+			AppData.currently_selected_thumbnail = null
+			AppData.wp_count -= 1
+			GC.update_wp_count()
+			Global.nodes.preview_label_ref.text = "..."
+			Global.nodes.preview_rect_ref.texture = ImageTexture.new()
+			return
+
+		if wps_base_dir == "user://prvw_dir" and not FileAccess.file_exists("user://prvw_dir".path_join(filename)):
+			if FileAccess.file_exists(wps_dir.path_join(filename)):
+				wps_base_dir = wps_dir
+				if not AppData.denied_missing_prvw_imgs_render:
+					var missing_prvw_imgs = Dir.get_missing_wps(false)
+
+					var render_missing_prvw_imgs_window = load("res://scenes/windows/ConfirmationWindow.tscn").instantiate()
+					var confirmation_msg = Engine.tr("RENDER_MISSING_PRVW_IMGS_LB") % len(missing_prvw_imgs) if len(missing_prvw_imgs) > 1 else Engine.tr("RENDER_MISSING_PRVW_IMG_LB")
+					render_missing_prvw_imgs_window.init_window(Engine.tr("RENDER_MISSING_PRVW_IMGS_TTL"), confirmation_msg, func (caller_window):
+						caller_window.queue_free()
+						ImgProcessing.process_new_wps(missing_prvw_imgs, false)
+						var debug_msg = Engine.tr("DBG_MISSING_PRVW_IMGS") % len(missing_prvw_imgs) if len(missing_prvw_imgs) > 1 else Engine.tr("DBG_MISSING_PRVW_IMG")
+						Debug.log_msg(Types.DT.WARN, debug_msg)
+					, func (caller_window):
+						caller_window.queue_free()
+						AppData.denied_missing_prvw_imgs_render = true
+					)
+					render_missing_prvw_imgs_window.window_input.connect(func (input):
+						if input is InputEventKey:
+							if input.keycode == KEY_ESCAPE and input.is_pressed():
+								AppData.denied_missing_prvw_imgs_render = true
+					)
+					Global.nodes.app_root_ref.add_child(render_missing_prvw_imgs_window)
+
+		Global.nodes.preview_label_ref.text = "%s (res: %d%%)" % [filename, AppData.settings.get_value("img_proc", "prvw_df") if prvw_processing_enabled and wps_base_dir == "user://prvw_dir" else 100]
 
 		var full_res_wp = Image.load_from_file(ProjectSettings.globalize_path(wps_base_dir).path_join(filename))
 		Global.nodes.preview_rect_ref.texture = ImageTexture.create_from_image(full_res_wp)
 
 class Dir:
-	static func iterate_dir(dir_name: String, callback: Callable) -> void:
-		var dir = DirAccess.open(dir_name)
+	static func iterate_dir(dir_path: String, callback: Callable) -> void:
+		var dir = DirAccess.open(dir_path)
 		dir.list_dir_begin()
 
 		var filename = dir.get_next()
@@ -69,6 +149,41 @@ class Dir:
 			filename = dir.get_next()
 
 		dir.list_dir_end()
+
+	static func get_valid_img_files(dir_path: String) -> PackedStringArray:
+		var valid_img_files: PackedStringArray
+		var dir = DirAccess.open(dir_path)
+		dir.list_dir_begin()
+
+		var filename = dir.get_next()
+
+		while filename != "":
+			if dir.dir_exists(filename):
+				filename = dir.get_next()
+				continue
+
+			if Format.img_format(dir_path.path_join(filename)) == "":
+				filename = dir.get_next()
+				continue
+
+			valid_img_files.append(filename)
+			filename = dir.get_next()
+
+		dir.list_dir_end()
+		return valid_img_files
+
+	static func get_missing_wps(compare_to_thumbnails := true) -> PackedStringArray:
+		var compare_dir = "user://thumbs_dir" if compare_to_thumbnails else "user://prvw_dir"
+		var valid_wps = Dir.get_valid_img_files(AppData.settings.get_value("dirs", "wps_dir"))
+		var missing_wps: PackedStringArray
+
+		for wp in valid_wps:
+			if FileAccess.file_exists(compare_dir.path_join(wp)):
+				continue
+
+			missing_wps.append(wp)
+
+		return missing_wps
 
 class Import:
 	static func load_to_import_window(files_selected: PackedStringArray, node_ref: Node) -> void:
@@ -149,7 +264,7 @@ class Debug:
 		var bbcode_tags_regex = RegEx.new()
 		# NOTE: Remove all BBCode tags, image tags and hint info
 		bbcode_tags_regex.compile("\\[.*?\\]|res:\\/(\\/\\w+)+.\\w+|\\.\\\n.*")
-		var plain_log = Utils.Str.trim_extra_spaces(bbcode_tags_regex.sub(msg, "", true))
+		var plain_log = Str.trim_extra_spaces(bbcode_tags_regex.sub(msg, "", true))
 
 		AppData.logs += "\n#> " + plain_log + "." # NOTE: Missing dot after the RegEx search
 		AppData.new_logs += 1
@@ -175,3 +290,15 @@ class Str:
 class Stts:
 	static func detect_imparity(caller_node: Node, value: Variant, stts_section: String, stts_name: String) -> void:
 		caller_node.get_parent().get_node("ResetSettingBTN").call("show" if value != DefaultSettings.map[stts_section][stts_name] else "hide")
+
+class Format:
+	static func img_format(path: String) -> String:
+		var file_handle = FileAccess.open(ProjectSettings.globalize_path(path), FileAccess.READ)
+		var signature = file_handle.get_buffer(3)
+
+		for entry in AppData.file_signature_map:
+			if AppData.file_signature_map[entry] == signature:
+				return entry
+
+		file_handle.close()
+		return ""

@@ -59,17 +59,17 @@ func handle_wp_deletion(caller_window: Window) -> void:
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_DIR") % [tr("STTS_WPS_DIR_LB"), tr("STTS_WPS_DIR_LB")])
 		return
 
-	DirAccess.remove_absolute(AppData.settings.get_value("dirs", "thumbs_dir").path_join(thumbnail_root.filename))
+	DirAccess.remove_absolute("user://thumbs_dir".path_join(thumbnail_root.filename))
 	DirAccess.remove_absolute(AppData.settings.get_value("dirs", "wps_dir").path_join(thumbnail_root.filename))
-	Global.nodes.grid_container_ref.remove_child(AppData.currently_selected_thumbnail)
+	Global.nodes.grid_container_ref.remove_child(thumbnail_root)
+
+	AppData.wp_count -= 1
+	Utils.GC.update_wp_count()
 
 	if AppData.settings.get_value("dirs", "enable_prvw_processing"):
-		if AppData.settings.get_value("dirs", "prvw_dir") == "":
-			Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_DIR") % [tr("STTS_PRVW_DIR_LB"), tr("STTS_PRVW_DIR_LB")])
-			return
-
-	DirAccess.remove_absolute(AppData.settings.get_value("dirs", "prvw_dir").path_join(thumbnail_root.filename))
+		DirAccess.remove_absolute("user://prvw_dir".path_join(thumbnail_root.filename))
 
 	if thumbnail_root.thumbnail_clicked:
 		AppData.currently_selected_thumbnail = null
+		Global.nodes.preview_label_ref.text = "..."
 		Global.nodes.preview_rect_ref.texture = ImageTexture.new()

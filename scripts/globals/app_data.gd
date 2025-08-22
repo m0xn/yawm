@@ -1,6 +1,6 @@
 extends Node
 
-var wp_count: int
+var wp_count := 0
 var wps_to_load: int
 
 var currently_selected_thumbnail: Panel
@@ -9,6 +9,8 @@ var thumbnail_base_size := Vector2(150.0, 150.0)
 var current_theme: Theme
 
 var settings: ConfigFile
+
+var random_wp: String
 
 var debug_res_map: Dictionary[String, Array] = {
 	"error": ["#c01c28", "res://graphics/app_icons/debug_error_icon.svg"],
@@ -28,3 +30,10 @@ var logs: String = "
 "
 
 var new_logs: int = 0
+
+var file_signature_map: Dictionary[String, PackedByteArray] = {
+	"jpg": PackedByteArray([0xff, 0xd8, 0xff]),
+	"png": PackedByteArray([0x89, 0x50, 0x4e])
+}
+
+var denied_missing_prvw_imgs_render: bool

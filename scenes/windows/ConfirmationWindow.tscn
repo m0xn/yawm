@@ -10,7 +10,11 @@
 [node name="ConfirmationWindowWND" type="Window"]
 title = "PLACEHOLDER_TTL"
 initial_position = 1
-size = Vector2i(600, 100)
+size = Vector2i(650, 120)
+wrap_controls = true
+transient = true
+exclusive = true
+min_size = Vector2i(650, 120)
 script = ExtResource("1_stcx2")
 
 [node name="MainUIVBC" type="VBoxContainer" parent="."]

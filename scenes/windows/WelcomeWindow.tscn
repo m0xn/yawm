@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://b75fm5jbk1qk8" path="res://fonts/Tomorrow-Italic.ttf" id="1_6ph2y"]
 [ext_resource type="Script" uid="uid://dd0jet7fi345e" path="res://scripts/windows/welcome_window_controller.gd" id="1_o3twq"]
 [ext_resource type="FontFile" uid="uid://v5blnmmpoaji" path="res://fonts/Tomorrow-Regular.ttf" id="1_rvda4"]
-[ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="2_rvda4"]
-[ext_resource type="FontFile" uid="uid://1l5s45rufli3" path="res://fonts/Tomorrow-SemiBold.ttf" id="3_o3twq"]
+[ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="4_o3twq"]
+[ext_resource type="FontFile" uid="uid://boscn51rhegt4" path="res://fonts/Tomorrow-Bold.ttf" id="5_m2u8a"]
 
 [node name="WelcomeWindowWND" type="Window"]
 title = "WELCOME_WINDOW_TTL"
@@ -36,8 +36,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("1_rvda4")
 theme_override_fonts/italics_font = ExtResource("1_6ph2y")
-theme_override_fonts/bold_italics_font = ExtResource("2_rvda4")
-theme_override_fonts/bold_font = ExtResource("3_o3twq")
+theme_override_fonts/bold_italics_font = ExtResource("4_o3twq")
+theme_override_fonts/bold_font = ExtResource("5_m2u8a")
 bbcode_enabled = true
 text = "WELCOME_WINDOW_MSG_RTL"
 fit_content = true

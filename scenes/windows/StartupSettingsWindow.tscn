@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b1ossgbydysof" path="res://fonts/Tomorrow-Medium.ttf" id="2_lky2e"]
 [ext_resource type="PackedScene" uid="uid://dajf1oyojh3am" path="res://scenes/settings_panels/CmdsSection.tscn" id="3_j2yrx"]
 [ext_resource type="Texture2D" uid="uid://dwg10s2k07ksa" path="res://graphics/os_logos/linux_logo.svg" id="3_wsrws"]
-[ext_resource type="FontFile" uid="uid://ctboihohsilwy" path="res://fonts/Tomorrow-SemiBoldItalic.ttf" id="4_ldl8f"]
+[ext_resource type="FontFile" uid="uid://45ifaucywgm5" path="res://fonts/Tomorrow-BoldItalic.ttf" id="6_lky2e"]
 
 [node name="StartupSettingsWND" type="Window"]
 title = "STARTUP_STTS_WINDOW_TTL"
@@ -84,7 +84,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.603922, 0.6, 0.588235, 1)
-theme_override_fonts/font = ExtResource("4_ldl8f")
+theme_override_fonts/font = ExtResource("6_lky2e")
 text = "STARTUP_FIELD_NOTICE_LB"
 autowrap_mode = 2
 
