@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="73.933594mm"
+   height="73.933594mm"
+   viewBox="0 0 73.933594 73.933594"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="drawing.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#000000"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2"
+     inkscape:cx="366.25"
+     inkscape:cy="414"
+     inkscape:window-width="1916"
+     inkscape:window-height="1031"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="73.933594"
+       height="73.933594"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="C,0,0,1,0,0,0,1 @ C,0,0,1,0,5.2916665,0,1 @ C,0,0,1,0,0,0,1 @ C,0,0,1,0,5.2916665,0,1"
+       radius="20"
+       unit="px"
+       method="auto"
+       mode="C"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-31.066404,-74.566405)">
+    <path
+       style="fill:#303030;fill-opacity:1;stroke:#e6aaff;stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="71.933594"
+       height="71.933594"
+       x="43.408203"
+       y="67.38607"
+       inkscape:path-effect="#path-effect1"
+       sodipodi:type="rect"
+       d="m 43.408203,67.38607 h 66.641927 l 5.29167,5.291667 V 139.31966 H 48.69987 L 43.408203,134.028 Z"
+       transform="translate(-11.341797,8.180336)"
+       inkscape:export-filename="yawm_logos/yawm_main.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70.5556px;font-family:Tomorrow-Medium;-inkscape-font-specification:Tomorrow-Medium;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:0;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       x="69.056252"
+       y="98.557289"
+       id="text9"
+       transform="translate(-24.306392,38.975636)"
+       inkscape:export-filename="yawm_logos/yawm_full.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         id="tspan9"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:70.5556px;font-family:Tomorrow;-inkscape-font-specification:'Tomorrow Medium';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2"
+         x="69.056252"
+         y="98.557289">Y</tspan></text>
+  </g>
+</svg>
