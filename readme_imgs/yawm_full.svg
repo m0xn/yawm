@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="480"
-   height="250"
-   viewBox="0 0 127 66.145835"
+   width="458.31854"
+   height="212.15211"
+   viewBox="0 0 121.26345 56.131915"
    version="1.1"
    id="svg1"
    inkscape:export-filename="yawm_full.svg"
@@ -27,8 +27,8 @@
     <inkscape:page
        x="0"
        y="0"
-       width="127"
-       height="66.145836"
+       width="121.26345"
+       height="56.131916"
        id="page2"
        margin="0"
        bleed="0" />
@@ -56,7 +56,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-3.8568019,-4.7815551)">
     <path
        style="fill:#303030;fill-opacity:1;stroke:#e6aaff;stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
        id="rect1"
