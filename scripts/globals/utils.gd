@@ -266,7 +266,7 @@ class Debug:
 		bbcode_tags_regex.compile("\\[.*?\\]|res:\\/(\\/\\w+)+.\\w+|\\.\\\n.*")
 		var plain_log = Str.trim_extra_spaces(bbcode_tags_regex.sub(msg, "", true))
 
-		AppData.logs += "\n#> " + plain_log + "." # NOTE: Missing dot after the RegEx search
+		AppData.logs += "\n#> " + plain_log + ("" if plain_log.ends_with(".") else "") # NOTE: Missing dot after the RegEx search
 		AppData.new_logs += 1
 		Global.nodes.new_logs_ind_label_ref.show()
 		Global.nodes.new_logs_ind_label_ref.text = str(AppData.new_logs)

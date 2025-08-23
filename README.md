@@ -142,3 +142,19 @@ Finally, since it is called a **wallpaper manager** app, I've also added a featu
 clicking** the **thumbnail** of the wallpaper you want to delete. Don't worry, the program won't destroy it right away, but instead will prompt you with a
 **confirmation message** to delete it. I know that I might need to make it more obvious, but for now, to delete wallpapers: ***RTFM*** (*or in this case the 
 README file*).
+
+## Reporting issues
+I've implemented a feature that might come in handy for reporting errors in the program, which is a simple **Logs system**. You can access app logs by
+clicking on the <img src="graphics/app_icons/logs.svg" width="17"/> button. The following window will popup:
+![](readme_imgs/logs_window.jpg)
+Here, you'll see all **info**, **warning** and **error** messages thrown by the **debug system** in the app. Clicking on the **Copy logs** buttons will
+copy the contents of the debug window in a **plain format** and will prompt you to go to GitHub in order to report an **issue** or **bug** you might have
+found while using the app. Accepting to go to GitHub will redirect you to the **Issues page** of this GitHub repository:
+![](readme_imgs/issues_page.jpg)
+Clicking on the **New issue** button will show **3 options** to create a new issue (*you can report a bug using a template in Spanish or English, either way
+someone or myself will be able to help with that particular issue*), select whichever template fits with you and write the requested info to report it.
+![](readme_imgs/issue_report_english_window.jpg)
+Just add a title alongside the `[BUG]` label indicator and **paste the logs** that the app copied to your clipboard previously into the **Attach App Logs**
+section. Finally, click on the **Create** button and the report will be saved into the repository.
+
+Hurray! You've just reported your first issue for this app.

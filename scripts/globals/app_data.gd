@@ -25,9 +25,7 @@ var cached_debug_res: Dictionary[String, Array] = {
 	"warn": ["#f5c211"]
 }
 
-var logs: String = "
-# LOGS #
-"
+var logs: String = "# LOGS #"
 
 var new_logs: int = 0
 
