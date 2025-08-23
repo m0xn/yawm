@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1500"
-   height="150"
-   viewBox="0 0 396.87499 39.6875"
+   width="500.00003"
+   height="250"
+   viewBox="0 0 132.29167 66.145834"
    version="1.1"
    id="svg1"
    inkscape:export-filename="yawm_full.svg"
@@ -27,8 +27,8 @@
     <inkscape:page
        x="0"
        y="0"
-       width="396.875"
-       height="39.6875"
+       width="132.29167"
+       height="66.145836"
        id="page2"
        margin="0"
        bleed="0" />
@@ -67,7 +67,7 @@
        inkscape:path-effect="#path-effect1"
        sodipodi:type="rect"
        d="m 43.408203,67.38607 h 66.641927 l 5.29167,5.291667 V 139.31966 H 48.69987 L 43.408203,134.028 Z"
-       transform="matrix(0.45063115,0,0,0.45063115,146.46089,-26.730273)"
+       transform="matrix(0.73417911,0,0,0.73417911,-25.398666,-43.274165)"
        inkscape:export-filename="godot-projects/wallpaper-manager-final/graphics/app_logos/yawm_full.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
@@ -77,7 +77,7 @@
        x="69.056252"
        y="98.557289"
        id="text9"
-       transform="matrix(0.45063115,0,0,0.45063115,140.61864,-12.852952)"
+       transform="matrix(0.73417911,0,0,0.73417911,-34.917001,-20.6649)"
        inkscape:export-filename="yawm_logos/yawm_full.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
@@ -87,18 +87,18 @@
          y="98.557289">Y</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.3589px;font-family:Tomorrow;-inkscape-font-specification:'Tomorrow Medium';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;stroke-width:0.321985;stroke-linejoin:bevel"
-       x="201.46507"
-       y="24.029512"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:18.5062px;font-family:Tomorrow;-inkscape-font-specification:'Tomorrow Medium';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;stroke-width:0.524586;stroke-linejoin:bevel"
+       x="64.215469"
+       y="39.424896"
        id="text1"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="stroke-width:0.321985"
-         x="201.46507"
-         y="24.029512">YAWM</tspan></text>
+         style="stroke-width:0.524586"
+         x="64.215469"
+         y="39.424896">YAWM</tspan></text>
     <path
-       style="fill:#ffffff;stroke:#e6aaff;stroke-width:0.901263;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
-       d="m 201.57865,25.799979 h 35.96793"
+       style="fill:#ffffff;stroke:#e6aaff;stroke-width:1.46836;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="M 64.400514,42.309385 H 123.00033"
        id="path1" />
   </g>
 </svg>
