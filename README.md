@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="readme_imgs/yawm_full.svg" width="500"/>
+    <img src="readme_imgs/yawm_full.png" width="500"/>
 </p>
 
 **Y**et **A**nother **W**allpaper **M**anager, a simple and minimalist wallpaper manager for Linux and Windows (*MacOS coming soon*).
