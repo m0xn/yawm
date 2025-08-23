@@ -12,8 +12,8 @@
     - [Adding new wallpapers](#adding-new-wallpapers)
     - [Other minor features of the app](#other-minor-features-of-the-app)
 - [Reporting issues](#reporting-issues)
-- [Contributing]()
-- [Conclusions / changes I would make]()
+- [Contributing](#contributing)
+- [Personal conclusions](#personal-conclusions)
 
 ## Installation
 At the mooment of writing this readme file (*08/23/2025*), the **1.1 version** is available for **Windows** and **Linux** for the **x86** (*32 and 64 bits*) and the 
@@ -158,3 +158,18 @@ Just add a title alongside the `[BUG]` label indicator and **paste the logs** th
 section. Finally, click on the **Create** button and the report will be saved into the repository.
 
 Hurray! You've just reported your first issue for this app.
+
+## Contributing
+I assume that if you want to contribute to the project you're already an experienced enough developer to know how to make a **pull request**, but no shame for
+you anyways, if you don't know how to do it here are a couple of articles from the GitHub documentation that will teach you how to do a **pull request**:
+[\[1\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?platform=windows&tool=desktop),
+[\[2\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+
+In any case, the basic steps to follow are:
+1. Create a fork of the project
+2. Change the current working branch to `experimental` (*that way the new feature can be properly tested before being merged with `main`*)
+3. Submit your pull request!
+
+I have no strict rules or specific template for submitting a pull request, just include what makes sense to include: info about the features you want to include and
+any kind of information that might help understand your proposal (*alongside some screenshots if you want to showcase that feature in a more visual way*). I'll then
+take a look at your request and make any changes if necessary to integrate it into the project.
