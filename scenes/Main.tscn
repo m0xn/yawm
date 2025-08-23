@@ -226,6 +226,7 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_qnwvq")
 
 [node name="PreviewImgP" type="Panel" parent="MainUIHBC/PreviewVBC"]
+clip_children = 2
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnwvq")

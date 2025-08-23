@@ -10,3 +10,6 @@ func _ready() -> void:
 
 		get_parent().remove_child(self)
 	)
+
+	# NOTE: Allow the user to quit the app on startup config
+	close_requested.connect(func (): get_node("/root").close_requested.emit())

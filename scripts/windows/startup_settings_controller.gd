@@ -49,6 +49,9 @@ func _ready() -> void:
 		AppData.settings.set_value("cmds", "open_img_vwr_cmd", script_map[map_entry][1])
 		%CmdsSectionVBC.get_node("%OpenInImgVwrCmdLE").text = script_map[map_entry][1]
 
+	# NOTE: Allow the user to quit the app on startup config
+	close_requested.connect(func (): get_tree().quit())
+
 func verify_fields() -> void:
 	if AppData.settings.get_value("dirs", "wps_dir") == "" or AppData.settings.get_value("cmds", "set_wp_cmd") == "" or AppData.settings.get_value("cmds", "open_img_vwr_cmd") == "":
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_MISSING_FIELDS"))

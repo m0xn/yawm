@@ -22,7 +22,7 @@ STTS_CMDS_HEADER_LB,Comandos,Commands
 STTS_SET_AS_WP_SCRIPT_LB,Poner como fondo de pantalla (script),Set as wallpaper (script)
 STTS_IMG_PROC_HEADER_LB,Procesamiento de imágenes,Image processing
 STTS_THUMBS_PROC_LB,Miniaturas,Thumbnails
-STTS_PRVW_PROC_LB,Imagen de previsualización,Preview image
+STTS_PRVW_PROC_LB,Imágenes de previsualización,Preview images
 STTS_DF_LB,Factor de reescalado,Downscale factor
 STTS_APPLY_BTN,Aplicar,Apply
 STTS_XFORM_THUMBS_LB,Renderizando miniaturas con el factor de escala: %d%%...,Rendering thumbnails with scale factor: %d%%...
