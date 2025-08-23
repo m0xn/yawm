@@ -13,7 +13,7 @@
     - [Other minor features of the app](#other-minor-features-of-the-app)
 - [Reporting issues](#reporting-issues)
 - [Contributing](#contributing)
-- [Personal conclusions](#personal-conclusions)
+- [Final thoughts](#final-thoughts)
 
 ## Installation
 At the mooment of writing this readme file (*08/23/2025*), the **1.1 version** is available for **Windows** and **Linux** for the **x86** (*32 and 64 bits*) and the 
@@ -173,3 +173,26 @@ In any case, the basic steps to follow are:
 I have no strict rules or specific template for submitting a pull request, just include what makes sense to include: info about the features you want to include and
 any kind of information that might help understand your proposal (*alongside some screenshots if you want to showcase that feature in a more visual way*). I'll then
 take a look at your request and make any changes if necessary to integrate it into the project.
+
+## Final thoughts
+Just so I have some starting point for myself, or maybe for others to remake this app, I want to write some of the things that I thought they'd be cool to implement
+but I don't want to do so right now because I'm happy with the result at the moment (*and tired*).
+Here's a list of the things that I can recall (*I might update it if I come up with anything interesting later on*):
+
+- Making the loading algorithm much faster by using Godot `Threads` implementation or event trying to talk to the GPU for that matter to increase the rendering speed
+even more (*I don't know much about graphics programming but I suppose that **compute shaders** could be a way to do this*).
+- Making a **better logging system** that can integrate with Engine logs and save reports on crash.
+- Making a better integration of the startup settings with the main loop of the app (*I had to implement multiple guard clauses to avoid some processes from running
+the first time you boot up the app*).
+- Making a better implementation of *preview image* rendering (*right now, you can't re-render your preview images because of the way I implemented it*)
+- Adding support for **multiple wallpaper** folders and maybe some sort of option to change between those folders within the main UI (*this would need a much better
+infrastructure from the start and probably some of that work offload to the GPU*)
+- Adding support for **animated wallpapers** which I'm guessing it would require me to tinker with some shader stuff, so GPU implementation would be crucial for this
+one.
+- Adding support for more languages than Spanish and English (*that would come at the cost of revisiting all the UI and making changes to the format of the translation
+tables to allow for a more complex behavior and fonts with special characters*).
+
+For now, those are the things that I think would make the program better. As I've said, I'm ok with how it turned out, but I'd surely rebuild the entire thing again if
+I wanted to implement any of the things I've listed before.
+
+That's it, I hope that you could find anything you needed in this README and that this little tool I've made for me, also works for you ;-).
