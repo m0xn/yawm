@@ -11,7 +11,7 @@
     - [What are Thumbnails and Preview Images](#what-are-thumbnails-and-preview-images)
     - [Adding new wallpapers](#adding-new-wallpapers)
     - [Other minor features of the app](#other-minor-features-of-the-app)
-- [Reporting issues]()
+- [Reporting issues](#reporting-issues)
 - [Contributing]()
 - [Conclusions / changes I would make]()
 
