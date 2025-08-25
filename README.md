@@ -21,7 +21,7 @@
 > time than I'm willing to spend right now** or force me to **rewrite the app** with another architectural focus.
 > For now, I can recommend you to read [this Reddit post](https://www.reddit.com/r/pcgaming/comments/nhwuas/is_there_an_alternative_for_wallpaper_engine/)
 > about **open source** alternatives to [**wallpaper engine**](https://www.wallpaperengine.io/en) which would work on any Windows machine (and serves the
-> same purpose as my program). **Thanks to @rubberTriangle for spotting this problem :-)**.
+> same purpose as my program). **Thanks to [@rubberTriangle](https://github.com/rubberTriangle) for spotting this problem :-)**.
 
 ## Installation
 At the mooment of writing this readme file (*08/23/2025*), the **1.1 version** is available for **Windows** and **Linux** for the **x86** (*32 and 64 bits*) and the 
