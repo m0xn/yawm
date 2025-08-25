@@ -15,6 +15,14 @@
 - [Contributing](#contributing)
 - [Final thoughts](#final-thoughts)
 
+> [!CAUTION]
+> Due to the *naïve* implementation for changing the wallpaper in **Windows**, users with **unlicensed** versions **WON'T BE ABLE TO CHANGE THEIR WALLPAPER**.
+> I apologize for this since I can tell that a good amount of people will be in this situation and the fix for this issue would make me either **take more 
+> time than I'm willing to spend right now** or force me to **rewrite the app** with another architectural focus.
+> For now, I can recommend you to read [this Reddit post](https://www.reddit.com/r/pcgaming/comments/nhwuas/is_there_an_alternative_for_wallpaper_engine/)
+> about **open source** alternatives to [**wallpaper engine**](https://www.wallpaperengine.io/en) which would work on any Windows machine (and serves the
+> same purpose as my program). **Thanks to @rubberTriangle for spotting this problem :-)**.
+
 ## Installation
 At the mooment of writing this readme file (*08/23/2025*), the **1.1 version** is available for **Windows** and **Linux** for the **x86** (*32 and 64 bits*) and the 
 **arm** architectures. To download the app, you can head over to [Releases](https://github.com/m0xn/yawm/releases), where you'll find executable files
