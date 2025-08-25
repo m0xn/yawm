@@ -13,11 +13,7 @@ func handle_search_dir() -> void:
 	)
 
 func _on_value_change(new_value: Variant) -> void:
-	var valid_wps := PackedStringArray([])
-	if DirAccess.dir_exists_absolute(new_value) and new_value != "":
-		valid_wps = Utils.Dir.get_valid_img_files(new_value)
-
-	if not DirAccess.dir_exists_absolute(new_value) or new_value == "" or len(valid_wps) == 0:
+	if not DirAccess.dir_exists_absolute(new_value) or new_value == "":
 		Utils.Debug.log_msg(Types.DT.ERROR, tr("DBG_INVALID_WPS_DIR_PATH"))
 		editable_node[editable_field] = AppData.settings.get_value(stts_section, stts_name)
 		AppData.settings.set_value(stts_section, stts_name, editable_node[editable_field])
@@ -28,9 +24,11 @@ func _on_value_change(new_value: Variant) -> void:
 
 	super(new_value)
 
-	Utils.GC.empty_grid_container()
-	AppData.wp_count = 0
-	Utils.ImgProcessing.process_new_wps(valid_wps, true, true)
+	var valid_wps = Utils.Dir.get_valid_img_files(new_value)
+	if len(valid_wps) > 0:
+		Utils.GC.empty_grid_container()
+		AppData.wp_count = 0
+		Utils.ImgProcessing.process_new_wps(valid_wps, true, true)
 
 func _ready() -> void:
 	super()
