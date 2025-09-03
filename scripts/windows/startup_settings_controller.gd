@@ -2,8 +2,8 @@ extends Window
 
 var os_icon_map: Dictionary[String, String] = {
 	"Linux": "res://graphics/os_logos/linux_logo.svg",
-	"Windows": "res://graphics/os_logos/windows_logo.svg"
-	# NOTE: Implement MacOS support after testing
+	"Windows": "res://graphics/os_logos/windows_logo.svg",
+	"macOS": "res://graphics/os_logos/macos_logo.svg"
 }
 
 # NOTE: This variable maps Desktop Environments with their matching scripts or cmds
@@ -16,6 +16,7 @@ var script_map: Dictionary[String, Array] = {
 	"gnome": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_gnome_based.sh", "eog"],
 	"mate": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_kde.sh", "eom"],
 	"xfce": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_xfce.sh", "ristretto"],
+	"macos": ["https://raw.githubusercontent.com/m0xn/yawm/refs/heads/main/external_scripts/change_wallpaper_macos.sh", "open"]
 }
 
 func _ready() -> void:
